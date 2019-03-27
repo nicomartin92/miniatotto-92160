@@ -1,0 +1,246 @@
+{
+  "cars": [
+    {
+      "id": 1,
+      "brandshop": "Ottomobile",
+      "brand": "Peugeot",
+      "model": "305",
+      "version": "GTX",
+      "year": "1985",
+      "reference": "OT104",
+      "color": "#868C8C",
+      "colorname": "Winchester Grey",
+      "image": "/_nuxt/assets/cars/peugeot-305-gtx.jpg",
+      "views": [
+        {
+          "image1": "/_nuxt/assets/cars/peugeot-305-gtx-profil.jpg"
+        }
+      ],
+      "available": true,
+      "price": "90€",
+      "description": "",
+      "nouveauté": false,
+      "stock": 2
+    },
+    {
+      "id": 2,
+      "brandshop": "Ottomobile",
+      "brand": "Peugeot",
+      "model": "505",
+      "version": "v6",
+      "year": "1987",
+      "reference": "OT057",
+      "color": "#373F52",
+      "colorname": "Bleu Delft",
+      "image": "/_nuxt/assets/cars/peugeot-505-v6.jpg",
+      "views": [
+        {
+          "image1": "/_nuxt/assets/cars/peugeot-505-v6-profil.jpg"
+        }
+      ],
+      "available": true,
+      "price": "130€",
+      "description": "",
+      "nouveauté": false,
+      "stock": 3
+    },
+    {
+      "id": 3,
+      "brandshop": "Ottomobile",
+      "brand": "Renault",
+      "model": "Megane 4",
+      "version": "RS",
+      "year": "2017",
+      "reference": "OT751",
+      "color": "#B92B29",
+      "colorname": "Rouge Flamme",
+      "image": "/_nuxt/assets/cars/renault-megane-rs-trophy.jpg",
+      "views": [
+        {
+          "image1": "/_nuxt/assets/cars/renault-megane-rs-trophy-profil.jpg"
+        }
+      ],
+      "available": true,
+      "price": "90€",
+      "description": "La Megane RS Trophy de 2018 est la plus puissante des Megane jamais construite. Pour passer la barre des 300 chevaux elle se dote du moteur de sa cousine Alpine dans une version retravaillée. La puissance augmente de 20 chevaux tandis que le couple progresse lui de 20 Nm. La transmission est confiée à une boîte EDC à double embrayage et 6 rapports. Avec une vitesse de pointe de 260 km/h, cette Megane n’a plus grand chose de commun avec une paisible compacte.",
+      "nouveauté": false,
+      "stock": 2
+    },
+    {
+      "id": 4,
+      "brandshop": "Ottomobile",
+      "brand": "Alpine",
+      "model": "A110",
+      "version": "v6",
+      "year": "2017",
+      "reference": "OT278",
+      "color": "#0043B2",
+      "colorname": "Bleu Alpine",
+      "image": "/_nuxt/assets/cars/alpine-a110-premiere-edition.jpg",
+      "views": [
+        {
+          "image1": "/_nuxt/assets/cars/alpine-a110-premiere-edition-profil.jpg"
+        }
+      ],
+      "available": false,
+      "price": "90€",
+      "description": "Réinterprétation moderne de la Berlinette originale, la Première Edition est lancée au printemps 2017 et marque le retour tant espéré et attendu de la marque. Produite à 1955 exemplaires seulement, cette série limitée rend hommage à l’année de création d’Alpine par Jean Rédélé.",
+      "nouveauté": false,
+      "stock": 0
+    },
+    {
+      "id": 5,
+      "brandshop": "Ottomobile",
+      "brand": "BMW",
+      "model": "E36",
+      "version": "M3",
+      "year": "1998",
+      "reference": "OT307",
+      "color": "#4B3F4D",
+      "colorname": "Daytona Violet",
+      "image": "/_nuxt/assets/cars/bmw-e36-m3-4-doors.jpg",
+      "views": [
+        {
+          "image1": "/_nuxt/assets/cars/bmw-e36-m3-4-doors-profil.jpg"
+        }
+      ],
+      "available": false,
+      "price": "110€",
+      "description": "",
+      "nouveauté": false,
+      "stock": 0
+    },
+    {
+      "id": 6,
+      "brandshop": "Ottomobile",
+      "brand": "BMW",
+      "model": "E34",
+      "version": "M5 phase 1",
+      "year": "1989",
+      "reference": "OT690",
+      "color": "#101010",
+      "colorname": "Black I 086",
+      "image": "/_nuxt/assets/cars/bmw-e34-m5-phase-i.jpg",
+      "views": [
+        {
+          "image1": "/_nuxt/assets/cars/bmw-e34-m5-phase-i-profil.jpg"
+        }
+      ],
+      "available": true,
+      "price": "90€",
+      "description": "",
+      "nouveauté": false,
+      "stock": 3
+    },
+    {
+      "id": 7,
+      "brandshop": "Ottomobile",
+      "brand": "Renault",
+      "model": "Megane 4",
+      "version": "RS Trophy",
+      "year": "2018",
+      "reference": "OT807",
+      "color": "#000000",
+      "colorname": "Noir étoilé",
+      "image": "/_nuxt/assets/cars/renault-megane-rs-trophy-n.jpg",
+      "views": [
+        {
+          "image1": "/_nuxt/assets/cars/renault-megane-rs-trophy-n-profil.jpg"
+        }
+      ],
+      "available": true,
+      "price": "100€",
+      "description": "La Megane RS Trophy de 2018 est la plus puissante des Megane jamais construite. Pour passer la barre des 300 chevaux elle se dote du moteur de sa cousine Alpine dans une version retravaillée.",
+      "nouveauté": true,
+      "stock": 4
+    },
+    {
+      "id": 8,
+      "brandshop": "Ottomobile",
+      "brand": "Alfa Romeo",
+      "model": "Giulia",
+      "version": "QV Quadrifoglio",
+      "year": "2018",
+      "reference": "OT284",
+      "color": "#AF3432",
+      "colorname": "Rosso Competizione",
+      "image": "/_nuxt/assets/cars/alfa-romeo-giulia-quadrifoglio.jpg",
+      "views": [
+        {
+          "image1": "/_nuxt/assets/cars/alfa-romeo-giulia-quadrifoglio-profil.jpg"
+        }
+      ],
+      "available": false,
+      "price": "120€",
+      "description": "L’Alfa Romeo Giulia Quadrifoglio est bouillante comme un volcan italien en éruption. Avec ses 4 sorties d’échappement format XXL, son diffuseur arrière, ses disques en carbone céramique, son capot en carbone, elle renferme une pièce d'orfèvrerie.",
+      "nouveauté": false,
+      "stock": 0
+    },
+    {
+      "id": 9,
+      "brandshop": "Ottomobile",
+      "brand": "Audi",
+      "model": "RS4",
+      "version": "B7",
+      "year": "2006",
+      "reference": "OT721",
+      "color": "#8F8F91",
+      "colorname": "Daytona Grey",
+      "image": "/_nuxt/assets/cars/audi-rs4-b7.jpg",
+      "views": [
+        {
+          "image1": "/_nuxt/assets/cars/audi-rs4-b7-profil.jpg"
+        }
+      ],
+      "available": true,
+      "price": "90€",
+      "description": "Soucieux de proposer une sportive à tout type de clientèle, Audi propose son fameux label RS et transforme le tranquille break des familles. Animé par le V8 420ch, vous ne rechignerez plus pour aller faire (la) les courses !",
+      "nouveauté": false,
+      "stock": 2
+    },
+    {
+      "id": 10,
+      "brandshop": "Ottomobile",
+      "brand": "BMW",
+      "model": "E46",
+      "version": "M3 CSL",
+      "year": "2003",
+      "reference": "G034",
+      "color": "#000000",
+      "colorname": "Black",
+      "image": "/_nuxt/assets/cars/bmw-e46-m3-csl.jpg",
+      "views": [
+        {
+          "image1": "/_nuxt/assets/cars/bmw-e46-m3-csl-profil.jpg"
+        }
+      ],
+      "available": true,
+      "price": "200€",
+      "description": "(R)évolution de la M3 E46, la CSL se veut plus puissante (360ch), plus précise (trains revus) et plus légère (1385kg) que sa grande sœur. Le kit carrosserie évolue pour la rendre plus bestiale (pare-chocs, malle arrière avec becquet intégré, jantes en 19 et toit tout carbone). ",
+      "nouveauté": true,
+      "stock": 3
+    },
+    {
+      "id": 11,
+      "brandshop": "Ottomobile",
+      "brand": "Renault",
+      "model": "Clio",
+      "version": "R.S. 16 Concept",
+      "year": "2016",
+      "reference": "OT629",
+      "color": "#F0C80E",
+      "colorname": "Jaune Sirius",
+      "image": "/_nuxt/assets/cars/concept-car-clio-rs-16.jpg",
+      "views": [
+        {
+          "image1": "/_nuxt/assets/cars/concept-car-clio-rs-16-profil.jpg"
+        }
+      ],
+      "available": true,
+      "price": "110€",
+      "description": "(R)évolution de la M3 E46, la CSL se veut plus puissante (360ch), plus précise (trains revus) et plus légère (1385kg) que sa grande sœur. Le kit carrosserie évolue pour la rendre plus bestiale (pare-chocs, malle arrière avec becquet intégré, jantes en 19 et toit tout carbone). ",
+      "nouveauté": true,
+      "stock": 3
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+html {
+  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px;
+  word-spacing: 1px;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/* template */
+.main {
+  padding-top: 65px;
+  padding-bottom: 150px;
+  transition: all .5s cubic-bezier(.55,0,.1,1);
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+/* glabal styles */
+h1 {
+  margin: 20px 0;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.center {
+  text-align: center;
+}
+
+a {
+  color: #000000;;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+  margin: 0 20px;
+}
+
+input {
+  padding: 10px 20px;
+  border: 2px solid black;
+  margin: 20px 0;
+}
+
+/* page transition */
+.page-enter-active, .page-leave-active {
+  transition: all .3s;
+}
+.page-enter, .page-leave-active {
+  opacity: 0;
+}
+
+.bounce-enter-active {
+  animation: bounce-in .3s;
+}
+.bounce-leave-active {
+  animation: bounce-out .3s;
+}
+@keyframes bounce-in {
+  0% { transform: scale(0) }
+  100% { transform: scale(1) }
+}
+@keyframes bounce-out {
+  0% { transform: scale(1) }
+  100% { transform: scale(0) }
+}
+
+.slide-left-enter,
+.slide-right-leave-active {
+  opacity: 0;
+  transform: translate(30px, 0);
+}
+.slide-left-leave-active,
+.slide-right-enter {
+  opacity: 0;
+  transform: translate(-30px, 0);
+}
+
+
+.sticky {
+  position: sticky;
+  z-index: 2;
+}
+
+.squareColor {
+  display: inline-block;
+  width: 30px;
+  height: 14px;
+}

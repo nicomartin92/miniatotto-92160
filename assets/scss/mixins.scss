@@ -1,0 +1,56 @@
+@mixin button($color1, $color2) {
+  background-color: transparent;
+  margin-bottom: 0;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  margin: 20px 10px;
+  padding: 10px 15px;
+  text-transform: uppercase;
+  overflow: hidden;
+  display: block;
+  color: $color1;
+  position: relative;
+  border-radius: 0;
+  border: 2px solid $color1;
+  transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+
+  input {
+    display: none;
+
+    &:checked + span {
+      font-weight: bold;
+      text-decoration: underline;
+    }
+  }
+
+  &::before {
+    display: block;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    height: 100%;
+    width: 0px;
+    z-index: -1;
+    content: '';
+    color: $color1;
+    background: $color1;
+    transition: all 0.4s cubic-bezier(0.42, 0, 0.58, 1);
+  }
+
+  &:hover {
+    color: $color2;
+    background-color: transparent;
+
+    &::before {
+      left: 0%;
+      right: auto;
+      width: 100%;
+    }
+  }
+}
