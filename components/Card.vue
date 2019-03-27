@@ -28,6 +28,7 @@
         <div class="card__price">
           <span class="bold">Prix:</span> {{price}}
         </div>
+        <nuxt-link class="button-like" :to="`/cars/${reference}`" >{{ model }} Profil</nuxt-link>
       </div>
     </div>
   </div>

@@ -64,6 +64,10 @@ input {
   margin: 20px 0;
 }
 
+.button-like {
+  @include button($colorBlack, $colorWhite);
+}
+
 /* page transition */
 .page-enter-active, .page-leave-active {
   transition: all .3s;
