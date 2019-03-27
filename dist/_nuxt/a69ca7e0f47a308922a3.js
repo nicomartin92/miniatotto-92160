@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[2],{191:function(t,n,e){"use strict";e.r(n);var o={layout:"aboutLayout"},l=e(3),component=Object(l.a)(o,function(){var t=this.$createElement;return(this._self._c||t)("h1",[this._v("About Miniatauto")])},[],!1,null,null,null);n.default=component.exports}}]);
