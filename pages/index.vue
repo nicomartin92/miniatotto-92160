@@ -169,7 +169,6 @@
                 :stock="carsFromStore[carNumber10].stock">
     </panelIntro>
 
-
     <p>ALL {{carOption}}</p>
     <div v-for="(result, index) in allCars" :key="index">
       {{result.brand}} {{result.model}} {{result.version}}

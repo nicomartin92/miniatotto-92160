@@ -1,4 +1,4 @@
-import Vuex from 'vuex'
+import Vuex from 'vuex';
 
 const createStore = () => {
   return new Vuex.Store({
@@ -11,6 +11,11 @@ const createStore = () => {
       }
     },
     actions: {
+      async nuxtServerInit ({ commit }) {
+        const response = await axios.get('http://localhost:3001/cars')
+        console.warn('hellllooooooooooooooooooooooooooooooooooooooooooooooooo prefetch data ?')
+        return Promise.resolve(commit('setCars', response.data))
+      },
       setCars(vueContext) {
         vueContext.commit('setCars', cars)
       }
