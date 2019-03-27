@@ -8,6 +8,9 @@
 # install dependencies
 $ yarn install
 
+# serve local server: json server
+$ yarn run jsonserver
+
 # serve with hot reload at localhost:3000
 $ yarn run dev
 
