@@ -29,7 +29,8 @@
 <script>
 import axios from 'axios';
 
-import Card from '~/components/Card.vue'
+import Card from '~/components/Card.vue';
+import cars from '~/components/cars.vue';
 
 export default {
   data  () {
@@ -48,6 +49,7 @@ export default {
   },
   transition: 'bounce',
   components: {
+    cars,
     Card
   },
   asyncData (params) {

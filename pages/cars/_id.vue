@@ -20,7 +20,6 @@
       <div class="imageContent">
         <img :src="carsData[0].views[0].image1" :alt="carsData[0].model">
       </div>
-      {{carsData}}
     </div>
   </div>
 </template>
@@ -28,7 +27,7 @@
 <script>
 import axios from 'axios';
 
-import Card from '~/components/Card.vue'
+import Card from '~/components/Card.vue';
 
 export default {
   data  () {

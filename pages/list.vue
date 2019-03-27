@@ -9,6 +9,7 @@
       <form @submit.prevent="submit()" class="center">
         <input type="text" placeholder="Exemple: BMW..." v-model="search" autofocus>
       </form>
+      
 
       <div class="list__filter">
         <label>
@@ -36,7 +37,7 @@
 
     <ul class="list__wrapper">
       <li class="list__item"
-          v-for="car in filteredCarsFromStore"
+          v-for="car in filteredCars"
           :key="car.id"
       >
         <div>
@@ -154,12 +155,12 @@ export default {
       });
     }, false);
   },
-  /* async asyncData () {
+  async asyncData () {
     return axios.get('http://localhost:3001/cars')
     .then((response) => {
       return { cars: response.data }
     })
-  }, */
+  },
   async fetch ({ store, params }) {
     let { data } = await axios.get('http://localhost:3001/cars')
     store.commit('setCars', data)

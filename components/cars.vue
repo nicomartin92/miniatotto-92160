@@ -24,3 +24,10 @@
       <img src="~/assets/cars/concept-car-clio-rs-16-profil.jpg" />
     </div>
 </template>
+
+<script>
+export default {
+  name: 'cars'
+}
+</script>
+
