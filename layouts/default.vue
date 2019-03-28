@@ -21,9 +21,7 @@ export default {
 }
 </script>
 
-
 <style>
-
 .button--green {
   display: inline-block;
   border-radius: 4px;

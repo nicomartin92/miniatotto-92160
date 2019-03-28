@@ -1,12 +1,11 @@
 const pkg = require('./package')
 
-
 module.exports = {
   mode: 'spa',
 
   /*
-  ** Headers of the page
-  */
+   ** Headers of the page
+   */
   head: {
     title: pkg.name,
     meta: [
@@ -24,47 +23,37 @@ module.exports = {
   },
 
   /*
-  ** Customize the progress-bar color
-  */
+   ** Customize the progress-bar color
+   */
   // loading: { color: '#fff' }, /* default configuration */
   Loading: false,
 
   styleResources: {
-    scss: [
-      '@/assets/scss/variables.scss',
-      '@/assets/scss/mixins.scss'
-    ]
+    scss: ['@/assets/scss/variables.scss', '@/assets/scss/mixins.scss']
   },
 
   /*
-  ** Global CSS
-  */
-  css: [
-    '@/assets/scss/main.scss'
-  ],
+   ** Global CSS
+   */
+  css: ['@/assets/scss/main.scss'],
 
   /*
-  ** Plugins to load before mounting the App
-  */
-  plugins: [
-  ],
+   ** Plugins to load before mounting the App
+   */
+  plugins: [],
 
   /*
-  ** Nuxt.js modules
-  */
-  modules: [
-    '@nuxtjs/style-resources',
-  ],
+   ** Nuxt.js modules
+   */
+  modules: ['@nuxtjs/style-resources'],
 
   /*
-  ** Build configuration
-  */
+   ** Build configuration
+   */
   build: {
     /*
-    ** You can extend webpack config here
-    */
-    extend(config, ctx) {
-
-    }
+     ** You can extend webpack config here
+     */
+    // extend(config, ctx) {}
   }
 }

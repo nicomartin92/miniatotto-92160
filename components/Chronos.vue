@@ -3,19 +3,23 @@
     <div class="chronosIntro">
       <h2>La chronologie des OTTO</h2>
       <div>Possibilité de filtrer par ordre crissant ou décroissant</div>
-      <button @click="changeDirection('asc')">Croissant</button>
-      <button @click="changeDirection('desc')">Décroissant</button>
+      <button @click="changeDirection('asc')">
+        Croissant
+      </button>
+      <button @click="changeDirection('desc')">
+        Décroissant
+      </button>
     </div>
     <ul class="chronosList">
-      <li class="chronosItem" v-for="(chrono, index) in orderList" :key="index">
+      <li v-for="(chrono, index) in orderList" :key="index" class="chronosItem">
         <div class="chronosItem__container">
           <div class="chronosItem__info">
-              <span class="bold">{{chrono.year}}</span>
+            <span class="bold">{{ chrono.year }}</span>
           </div>
-          <div class="chronosItem__marker"></div>
+          <div class="chronosItem__marker" />
           <div class="chronosItem__content">
-              <span><img :src="chrono.image" alt=""></span>
-              <h3>{{chrono.brand}} {{chrono.model}} {{chrono.version}}</h3>
+            <span><img :src="chrono.image" alt=""></span>
+            <h3>{{ chrono.brand }} {{ chrono.model }} {{ chrono.version }}</h3>
           </div>
         </div>
       </li>
@@ -25,32 +29,29 @@
 
 <script>
 export default {
-  data () {
+  props: ['chronoData', 'order'],
+  data() {
     return {
       orderBy: this.order
     }
   },
-  props: [
-    'chronoData',
-    'order'
-  ],
-  methods: {
-    sort (sortOrder) {
-			return this.orderedListOptions[sortOrder]()
-    },
-    changeDirection(direction) {
-      this.orderBy = direction;
-    }
-  },
   computed: {
-    orderList () {
+    orderList() {
       return this.chronoData.slice().sort((a, b) => {
-        if(this.orderBy === 'asc') {
-          return a.year - b.year;
+        if (this.orderBy === 'asc') {
+          return a.year - b.year
         } else {
           return b.year - a.year
         }
-      });
+      })
+    }
+  },
+  methods: {
+    sort(sortOrder) {
+      return this.orderedListOptions[sortOrder]()
+    },
+    changeDirection(direction) {
+      this.orderBy = direction
     }
   }
 }
@@ -73,7 +74,7 @@ export default {
     background: $colorGray01;
     width: 35%;
     max-width: 35%;
-    z-index: 0
+    z-index: 0;
   }
 
   .chronosIntro {
@@ -121,42 +122,40 @@ export default {
       padding: 0 15px;
 
       &:before {
-          background: $colorBlack;
-          border: 3px solid transparent;
-          border-radius: 100%;
-          content: "";
-          display: block;
-          height: 15px;
-          position: absolute;
-          top: 4px;
-          left: 0;
-          width: 15px;
-          transition: background 0.3s ease-in-out, border 0.3s ease-in-out;
+        background: $colorBlack;
+        border: 3px solid transparent;
+        border-radius: 100%;
+        content: '';
+        display: block;
+        height: 15px;
+        position: absolute;
+        top: 4px;
+        left: 0;
+        width: 15px;
+        transition: background 0.3s ease-in-out, border 0.3s ease-in-out;
       }
 
       &:after {
-          content: "";
-          width: 2px;
-          background: $colorGray02;
-          display: block;
-          position: absolute;
-          top: 24px;
-          bottom: 0;
-          left: 6px;
+        content: '';
+        width: 2px;
+        background: $colorGray02;
+        display: block;
+        position: absolute;
+        top: 24px;
+        bottom: 0;
+        left: 6px;
       }
     }
 
     &__content {
       padding-bottom: 20px;
 
-      span, h3 {
+      span,
+      h3 {
         display: inline-block;
         vertical-align: middle;
       }
     }
-
   }
 }
 </style>
-
-

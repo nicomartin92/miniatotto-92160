@@ -1,16 +1,24 @@
 <template>
   <div class="nav">
     <li>
-      <nuxt-link to="/">Accueil</nuxt-link>
+      <nuxt-link to="/">
+        Accueil
+      </nuxt-link>
     </li>
     <li>
-      <nuxt-link to="/list">Categorie</nuxt-link>
+      <nuxt-link to="/list">
+        Categorie
+      </nuxt-link>
     </li>
     <li>
-      <nuxt-link to="/about">About</nuxt-link>
+      <nuxt-link to="/about">
+        About
+      </nuxt-link>
     </li>
     <li>
-      <nuxt-link to="/contact">Contact</nuxt-link>
+      <nuxt-link to="/contact">
+        Contact
+      </nuxt-link>
     </li>
   </div>
 </template>
