@@ -1,6 +1,9 @@
 <template>
   <div class="nav">
     <li>
+      <Panelcall>cars</Panelcall>
+    </li>
+    <li>
       <nuxt-link to="/">
         Accueil
       </nuxt-link>
@@ -22,6 +25,17 @@
     </li>
   </div>
 </template>
+
+<script>
+import Panelcall from '~/components/Panelnav/Panelcall.vue'
+
+export default {
+  components: {
+    Panelcall
+  }
+}
+</script>
+
 
 <style lang="scss">
 .nav {

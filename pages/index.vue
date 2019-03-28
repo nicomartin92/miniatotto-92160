@@ -33,7 +33,7 @@
 <script>
 import axios from 'axios'
 import panelIntro from '~/components/PanelIntro.vue'
-import Panelnav from '~/components/Panelnav.vue'
+import Panelnav from '~/components/Panelnav/Panelnav.vue'
 import Chronos from '~/components/Chronos.vue'
 
 export default {

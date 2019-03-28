@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Panelnav :initialdata="carsData" />
     <div class="pdp">
       <h3>Modèle: {{ $route.params.id }}</h3>
       <div class="textBlock">
@@ -33,9 +34,12 @@
 
 <script>
   import axios from 'axios'
+  import Panelnav from '~/components/Panelnav/Panelnav.vue'
 
   export default {
-    components: {},
+    components: {
+      Panelnav
+    },
     data () {
       return {
         title: 'Miniatauto',
@@ -68,7 +72,7 @@
         .get(`http://localhost:3001/cars?q=${ params.params.id }`)
         .then(response => {
           return { carsData: response.data }
-        })
+        }) 
     },
     middleware: 'search',
     methods: {

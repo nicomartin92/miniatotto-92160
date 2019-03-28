@@ -1,5 +1,7 @@
 <template>
   <div>
+    <Panelnav :initialdata="carsData" />
+
     <h1 class="center">
       Les modèles recherchés: {{ $route.params.id }}
     </h1>
@@ -32,12 +34,13 @@
 
 <script>
 import axios from 'axios'
-
 import Card from '~/components/Card.vue'
+import Panelnav from '~/components/Panelnav/Panelnav.vue'
 
 export default {
   components: {
-    Card
+    Card,
+    Panelnav
   },
   data() {
     return {

@@ -1,7 +1,7 @@
 <template>
   <div class="list">
     <Cars />
-
+    <Panelnav :initialdata="cars" />
     <Modal />
 
     <div class="sticky">
@@ -79,6 +79,7 @@
 
   import Cars from '~/components/Cars.vue'
   import Modal from '~/components/modal/ModalContent.vue'
+  import Panelnav from '~/components/Panelnav/Panelnav.vue'
   import CallModal from '~/components/modal/CallModal.vue'
 
   export default {
@@ -87,7 +88,8 @@
     components: {
       Cars,
       Modal,
-      CallModal
+      CallModal,
+      Panelnav
     },
     data () {
       return {

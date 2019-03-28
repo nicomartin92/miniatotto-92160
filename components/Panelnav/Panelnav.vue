@@ -1,5 +1,8 @@
 <template>
-  <div class="panelNav">
+  <div class="panelNav" :class="{ expanded: isOpen }">
+    <div class="modal__close" @click="panelSwitcher(false)">
+      X
+    </div>
     <ul>
       <li v-for="(car, index) in initialdata" :key="car.id" class="panelNav__item">  
         <div class="panelNav__image">
@@ -17,14 +20,25 @@
 
 <script>
 export default {
-    name: 'Panelnav',
     props: [
         'initialdata'
     ],
     data() {
         return {
-            cars: ''
+            cars: '',
+            isOpen: false
         }
+    },
+    created() {
+      this.$nuxt.$on('modal1', () => {
+        console.warn('listen1')
+        this.isOpen = true
+      })
+    },
+    methods: {
+      panelSwitcher(value) {
+        this.isOpen = value
+      }
     }
 }
 </script>
@@ -34,18 +48,22 @@ export default {
     z-index: 4;
     position: fixed;
     top: 0;
-    right: -60vw;
+    left: -60vw;
     height: 100vh;
     overflow-y: auto;
     overflow-x: hidden;
     background-color: $colorWhite;
     color: $colorBlack;
-    width: 60vw;
+    width: 40vw;
     z-index: 6;
     padding: 18vh 8.5vmax 0 9vmax;
     transition: right 2s cubic-bezier(.19,1,.22,1),left 2s cubic-bezier(.19,1,.22,1);
     padding: 60px 25px;
     box-shadow: 0 10px 36px 0 rgba(186, 194, 195, 0.47);
+
+    &.expanded {
+      left: 0;
+    }
 
     &__item {
         display: flex;
@@ -54,7 +72,7 @@ export default {
 
     &__image {
         img {
-            width: 120px;
+            width: 100px;
             height: auto;
         }
     }
