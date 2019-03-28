@@ -1,12 +1,13 @@
 <template>
   <div class="container">
+    <Panelnav :initialdata="cars" />
     <h1 class="center">
       Miniatotto
     </h1>
 
     <chronos :chrono-data="cars" :order="ascDirection" />
 
-    <panelIntro v-for="(car, index) in carNumber" :key="index"
+    <panelIntro v-for="(car, index) in carNumber" :key="car.id"
                 :reversedisplay="(index % 2) ? true : false"
                 :brand="carsFromStore[car].brandshop"
                 :carbrand="carsFromStore[car].brand"
@@ -32,18 +33,20 @@
 <script>
 import axios from 'axios'
 import panelIntro from '~/components/PanelIntro.vue'
-import chronos from '~/components/Chronos.vue'
+import Panelnav from '~/components/Panelnav.vue'
+import Chronos from '~/components/Chronos.vue'
 
 export default {
   layout: 'default',
   components: {
     panelIntro,
-    chronos
+    Chronos,
+    Panelnav
   },
   data() {
     return {
-      title: 'Minaitauto',
-      carNumber: [1,2,3],
+      title: 'Miniatauto',
+      carNumber: [0,1,2,3,4,5,6,7,8,9],
       carOption: 'Peugeot',
       ascDirection: 'asc',
       descDirection: 'desc'
@@ -132,39 +135,6 @@ export default {
 }
 </script>
 
-<!-- <template>
-  <section class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        miniatauto
-      </h1>
-      <h2 class="subtitle">
-        car selling
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green"
-        >Documentation</a>
+<!-- 
         < img src = "~ / assets / image.png" >
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >GitHub</a>
-      </div>
-    </div>
-  </section>
-</template>
-
-<script>
-import Logo from '~/components/Logo.vue'
-
-export default {
-  components: {
-    Logo
-  }
-}
-</script> -->
+  -->
