@@ -1,25 +1,29 @@
 <template>
   <transition name="fade">
-    <div class="modal"
-        @click="displayModal(false)"
-        v-show="showModal">
+    <div v-show="showModal" class="modal" @click="displayModal(false)">
       <div class="modal__wrapper">
         <div class="modal__container">
           <h3 class="modal__label">
-            {{imageLabel}}
-            <span class="modal__color" :style="{ backgroundColor: imageColor }"></span>
+            {{ imageLabel }}
+            <span
+              class="modal__color"
+              :style="{ backgroundColor: imageColor }"
+            />
           </h3>
           <img :src="imageView" :alt="imageLabel">
         </div>
       </div>
-      <div class="modal__close">X</div>
+      <div class="modal__close">
+        X
+      </div>
     </div>
   </transition>
 </template>
 
 <script>
 export default {
-  data () {
+  props: ['image'],
+  data() {
     return {
       showModal: false,
       imageView: '',
@@ -27,25 +31,22 @@ export default {
       imageColor: ''
     }
   },
-  props: [
-    'image'
-  ],
+  created() {
+    this.$nuxt.$on('modal', value => {
+      this.showModal = value
+      this.imageView = value.image
+      this.imageLabel = value.brand + ' ' + value.model + ' ' + value.version
+      this.imageColor = value.color
+    })
+  },
   methods: {
-    displayModal (show) {
+    displayModal(show) {
       if (show) {
-        this.showModal = true;
+        this.showModal = true
       } else {
-        this.showModal = false;
+        this.showModal = false
       }
     }
-  },
-  created() {
-    this.$nuxt.$on('modal', (value) => {
-      this.showModal = value;
-      this.imageView = value.image;
-      this.imageLabel = value.brand + ' ' + value.model + ' ' + value.version;
-      this.imageColor = value.color;
-    });
   }
 }
 </script>
@@ -60,7 +61,7 @@ export default {
   height: 100%;
   background: rgba(255, 255, 255, 1);
   display: table;
-  transition: opacity .3s ease;
+  transition: opacity 0.3s ease;
 
   &__wrapper {
     display: table-cell;
@@ -124,14 +125,15 @@ export default {
   }
 }
 
-.fade-enter-active, .fade-leave-active {
-  transition: all .3s ease;
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.3s ease;
   transform: scale(1) rotate(0);
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */
+ {
   opacity: 0;
   transform: scale(2.5) rotate(32deg);
 }
 </style>
-
-

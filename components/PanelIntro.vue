@@ -1,18 +1,30 @@
 <template>
-  <div class="panelIntro" :class="{ 'reverse': reversedisplay }">
+  <div class="panelIntro" :class="{ reverse: reversedisplay }">
     <div class="panelIntro__color" :style="{ backgroundColor: color }">
-      <div class="panelIntro__label">{{carbrand}}</div>
+      <div class="panelIntro__label">
+        {{ carbrand }}
+      </div>
     </div>
     <div class="panelIntro__container">
       <article class="panelIntro__text">
-        <div class="shop uppercase">{{brand}}</div>
-        <div class="title">{{carbrand}} {{model}} {{version}}</div>
-        <div class="description">{{description}}</div>
-        <div>Couleur: {{colorname}}</div>
-        <div>Prix: {{price}}</div>
-        <div>Stock: {{stock}}</div>
-        <nuxt-link to="/list" >Acheter</nuxt-link>
-        <button v-if="stock > 0" >Add to bag</button>
+        <div class="shop uppercase">
+          {{ brand }}
+        </div>
+        <div class="title">
+          {{ carbrand }} {{ model }} {{ version }}
+        </div>
+        <div class="description">
+          {{ description }}
+        </div>
+        <div>Couleur: {{ colorname }}</div>
+        <div>Prix: {{ price }}</div>
+        <div>Stock: {{ stock }}</div>
+        <nuxt-link to="/list">
+          Acheter
+        </nuxt-link>
+        <button v-if="stock > 0">
+          Add to bag
+        </button>
       </article>
       <section class="panelIntro__image">
         <img :src="image" :alt="model">
@@ -24,42 +36,42 @@
 <script>
 export default {
   props: [
-          'reversedisplay',
-          'carbrand',
-          'brand',
-          'model',
-          'version',
-          'description',
-          'color',
-          'colorname',
-          'price',
-          'stock',
-          'image'
-         ]
+    'reversedisplay',
+    'carbrand',
+    'brand',
+    'model',
+    'version',
+    'description',
+    'color',
+    'colorname',
+    'price',
+    'stock',
+    'image'
+  ]
 }
 </script>
 
 <style lang="scss">
 @keyframes slideInLeft {
-    from {
-        transform: translate3d(-100%,0,0);
-        visibility: visible;
-    }
+  from {
+    transform: translate3d(-100%, 0, 0);
+    visibility: visible;
+  }
 
-    to {
-        transform: translate3d(0,0,0)
-    }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
 }
 
 @keyframes slideInRight {
-    from {
-        transform: translate3d(100%,0,0);
-        visibility: visible;
-    }
+  from {
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+  }
 
-    to {
-        transform: translate3d(0,0,0)
-    }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
 }
 
 .panelIntro {
@@ -69,7 +81,7 @@ export default {
   padding: 7% 5% 4% 0;
   margin-top: 70px;
   margin-bottom: 70px;
-  $root: "";
+  $root: '';
 
   &.reverse {
     padding: 7% 0 4% 5%;
@@ -98,16 +110,16 @@ export default {
     width: 60%;
     height: 100%;
     z-index: 0;
-    transform: translate3d(-100%,0,0);
+    transform: translate3d(-100%, 0, 0);
     visibility: visible;
     /* animation-name: slideInLeft;
-    animation-fill-mode: both;
-    animation-duration: 1.5s; */
+      animation-fill-mode: both;
+      animation-duration: 1.5s; */
 
     .reverse & {
       right: 0;
       left: auto;
-      transform: translate3d(100%,0,0);
+      transform: translate3d(100%, 0, 0);
       visibility: visible;
       // animation-name: slideInRight;
     }
@@ -172,6 +184,4 @@ export default {
     }
   }
 }
-
 </style>
-

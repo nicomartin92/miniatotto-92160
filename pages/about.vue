@@ -7,5 +7,3 @@ export default {
   layout: 'aboutLayout'
 }
 </script>
-
-

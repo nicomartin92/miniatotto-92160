@@ -1,4 +1,4 @@
-import Vuex from 'vuex';
+import Vuex from 'vuex'
 
 const createStore = () => {
   return new Vuex.Store({
@@ -16,13 +16,13 @@ const createStore = () => {
         console.warn('hellllooooooooooooooooooooooooooooooooooooooooooooooooo prefetch data ?')
         return Promise.resolve(commit('setCars', response.data))
       }, */
-      setCars(vueContext) {
-        vueContext.commit('setCars', cars)
+      setCars({ commit }, cars) {
+        commit('setCars', cars)
       }
     },
     getters: {
       loadedCars(state) {
-        return state.loadedCars;
+        return state.loadedCars
       }
     }
   })

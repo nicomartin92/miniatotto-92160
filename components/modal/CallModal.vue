@@ -6,14 +6,12 @@
 
 <script>
 export default {
+  props: ['imageData'],
   methods: {
-    callModal () {
-      this.$nuxt.$emit('modal', (true, this.imageData));
+    callModal() {
+      this.$nuxt.$emit('modal', (true, this.imageData))
     }
-  },
-  props: [
-    'imageData'
-  ]
+  }
 }
 </script>
 
@@ -24,4 +22,3 @@ export default {
   cursor: pointer;
 }
 </style>
-
