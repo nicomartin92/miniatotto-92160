@@ -1,4 +1,5 @@
 import Vuex from 'vuex'
+import axios from 'axios'
 
 const createStore = () => {
   return new Vuex.Store({
@@ -12,9 +13,12 @@ const createStore = () => {
     },
     actions: {
       /* async nuxtServerInit ({ commit }) {
-        const response = await axios.get('http://localhost:3001/cars')
+        /* const response = await axios.get('http://localhost:3001/cars')
         console.warn('hellllooooooooooooooooooooooooooooooooooooooooooooooooo prefetch data ?')
-        return Promise.resolve(commit('setCars', response.data))
+        return Promise.resolve(commit('setCars', response.data)) 
+        return axios.get('http://localhost:3001/cars').then((response) =>{
+          commit('setCars', response.data)
+        })
       }, */
       setCars({ commit }, cars) {
         commit('setCars', cars)
