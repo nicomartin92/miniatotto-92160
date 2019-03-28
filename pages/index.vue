@@ -191,8 +191,8 @@
 
 <script>
 import axios from 'axios'
-import panelIntro from '~/components/panelIntro.vue'
-import chronos from '~/components/chronos.vue'
+import panelIntro from '~/components/PanelIntro.vue'
+import chronos from '~/components/Chronos.vue'
 
 export default {
   layout: 'default',
