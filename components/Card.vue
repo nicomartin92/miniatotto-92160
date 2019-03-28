@@ -28,61 +28,60 @@
         <div class="card__price">
           <span class="bold">Prix:</span> {{price}}
         </div>
-        <nuxt-link class="button-like" :to="`/cars/${reference}`" >{{ model }} Profil</nuxt-link>
+        <nuxt-link class="button-like" :to="`/cars/${reference}`">{{ model }} Profil</nuxt-link>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import cars from '~/components/cars.vue';
 
-export default {
-  props: [
-          'brand',
-          'carbrand',
-          'model',
-          'version',
-          'reference',
-          'image',
-          'colorname',
-          'color',
-          'available',
-          'price'
-        ]
-}
+  export default {
+    props: [
+      'brand',
+      'carbrand',
+      'model',
+      'version',
+      'reference',
+      'image',
+      'colorname',
+      'color',
+      'available',
+      'price'
+    ]
+  }
 </script>
 
 <style lang="scss">
-.card {
-  position: relative;
-  box-shadow: 0 10px 36px 0 rgba(186,194,195,.47);
-  margin: 25px;
-  padding: 20px;
-  min-width: 400px;
-  max-width: 400px;
-  transition: .15s all ease-in-out;
+  .card {
+    position: relative;
+    box-shadow: 0 10px 36px 0 rgba(186, 194, 195, .47);
+    margin: 25px;
+    padding: 20px;
+    min-width: 400px;
+    max-width: 400px;
+    transition: .15s all ease-in-out;
 
-  &:hover {
-    transform: scale(1.1);
-  }
+    &:hover {
+      transform: scale(1.1);
+    }
 
-  &__image {
-    img {
-      width: 100%;
-      height: auto;
+    &__image {
+      img {
+        width: 100%;
+        height: auto;
 
+        .unavailable & {
+          opacity: .5;
+        }
+      }
+    }
+
+    &__available {
       .unavailable & {
-        opacity: .5;
+        color: red;
       }
     }
   }
-
-  &__available {
-    .unavailable & {
-      color: red;
-    }
-  }
-}
 </style>
 
