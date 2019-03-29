@@ -1,18 +1,22 @@
 <template>
   <div class="panelNav" :class="{ expanded: isOpen }">
-    <div class="modal__close" @click="panelSwitcher(false)">
-      X
-    </div>
+    <div class="panelNav__overlay" @click="panelSwitcher(false)" />
+    <button class="buttonClose outer" @click="panelSwitcher(false)">
+      <div class="inner">
+        <label>Fermer</label>
+      </div>
+    </button>
+    <h3>cars</h3>
     <ul>
-      <li v-for="(car, index) in initialdata" :key="car.id" class="panelNav__item">  
-        <div class="panelNav__image">
-          <img :src="car.views[0].image1" :alt="car.model">
-        </div>
-        <div class="panelNav__label">
-          <nuxt-link :to="`/cars/${car.reference}`">
+      <li v-for="(car, index) in initialdata" :key="car.id">  
+        <nuxt-link :to="`/cars/${car.reference}`" class="panelNav__item">
+          <div class="panelNav__label">
             {{ car.brand }} {{ car.model }} {{ car.version }}
-          </nuxt-link>
-        </div>
+          </div>
+          <div class="panelNav__image">
+            <img :src="car.views[0].image1" :alt="car.model">
+          </div>
+        </nuxt-link>
       </li>
     </ul>
   </div>
@@ -31,7 +35,6 @@ export default {
     },
     created() {
       this.$nuxt.$on('modal1', () => {
-        console.warn('listen1')
         this.isOpen = true
       })
     },
@@ -50,8 +53,6 @@ export default {
     top: 0;
     left: -60vw;
     height: 100vh;
-    overflow-y: auto;
-    overflow-x: hidden;
     background-color: $colorWhite;
     color: $colorBlack;
     width: 50vw;
@@ -65,6 +66,17 @@ export default {
       left: 0;
     }
 
+    &__overlay {
+      position: fixed;
+      top: 0;
+      width: 50vw;
+      height: 100%;
+      left: 50%;
+      display: none;
+
+      .expanded & {}
+    }
+
     &__item {
         display: flex;
         align-items: center;
@@ -75,6 +87,14 @@ export default {
             width: 100px;
             height: auto;
         }
+    }
+
+    .buttonClose {
+      @include buttonClose(70px, $colorBlack, $colorBlack);
+
+      position: absolute;
+      right: 20px;
+      top: 20px;
     }
 }
 </style>

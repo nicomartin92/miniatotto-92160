@@ -13,9 +13,11 @@
           <img :src="imageView" :alt="imageLabel">
         </div>
       </div>
-      <div class="modal__close">
-        X
-      </div>
+      <button class="buttonClose outer" @click="displayModal(false)">
+        <div class="inner">
+          <label>Fermer</label>
+        </div>
+      </button>
     </div>
   </transition>
 </template>
@@ -101,23 +103,12 @@ export default {
     display: block;
   }
 
-  &__close {
+  .buttonClose {
+    @include buttonClose(100px, $colorBlack, $colorBlack);
+
     position: absolute;
-    right: 10%;
-    top: 5%;
-    width: 3rem;
-    height: 3rem;
-    font-size: 1.5rem;
-    font-weight: 300;
-    border-radius: 100%;
-    background-color: $colorBlack;
-    z-index: 4;
-    color: #fff;
-    line-height: 3rem;
-    text-align: center;
-    cursor: pointer;
-    text-decoration: none;
-    color: $colorWhite;
+    right: 7%;
+    top: 7%;
   }
 
   &-footer {
