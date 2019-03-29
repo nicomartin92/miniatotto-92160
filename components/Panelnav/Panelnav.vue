@@ -54,7 +54,7 @@ export default {
     overflow-x: hidden;
     background-color: $colorWhite;
     color: $colorBlack;
-    width: 40vw;
+    width: 50vw;
     z-index: 6;
     padding: 18vh 8.5vmax 0 9vmax;
     transition: right 2s cubic-bezier(.19,1,.22,1),left 2s cubic-bezier(.19,1,.22,1);

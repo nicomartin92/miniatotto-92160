@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Panelnav :initialdata="carsData" />
+    <Panelnav :initialdata="cars" />
     <div class="pdp">
       <h3>Modèle: {{ $route.params.id }}</h3>
       <div class="textBlock">
@@ -67,12 +67,15 @@
         return this.carsData.length
       }
     },
-    asyncData (params) {
-      return axios
-        .get(`http://localhost:3001/cars?q=${ params.params.id }`)
-        .then(response => {
-          return { carsData: response.data }
-        }) 
+    async asyncData(params) {
+      let [cardataSelected, carAllList] = await Promise.all([
+        axios.get(`http://localhost:3001/cars?q=${ params.params.id }`),
+        axios.get('http://localhost:3001/cars'),
+      ])
+      return {
+        carsData: cardataSelected.data,
+        cars: carAllList.data
+      }
     },
     middleware: 'search',
     methods: {
