@@ -2,6 +2,7 @@
   "cars": [
     {
       "id": 1,
+      "country": "fr",
       "brandshop": "Ottomobile",
       "brand": "Peugeot",
       "model": "305",
@@ -24,6 +25,7 @@
     },
     {
       "id": 2,
+      "country": "fr",
       "brandshop": "Ottomobile",
       "brand": "Peugeot",
       "model": "505",
@@ -46,6 +48,7 @@
     },
     {
       "id": 3,
+      "country": "fr",
       "brandshop": "Ottomobile",
       "brand": "Renault",
       "model": "Megane 4",
@@ -68,6 +71,7 @@
     },
     {
       "id": 4,
+      "country": "fr",
       "brandshop": "Ottomobile",
       "brand": "Alpine",
       "model": "A110",
@@ -90,6 +94,7 @@
     },
     {
       "id": 5,
+      "country": "de",
       "brandshop": "Ottomobile",
       "brand": "BMW",
       "model": "E36",
@@ -112,6 +117,7 @@
     },
     {
       "id": 6,
+      "country": "de",
       "brandshop": "Ottomobile",
       "brand": "BMW",
       "model": "E34",
@@ -134,6 +140,7 @@
     },
     {
       "id": 7,
+      "country": "fr",
       "brandshop": "Ottomobile",
       "brand": "Renault",
       "model": "Megane 4",
@@ -156,6 +163,7 @@
     },
     {
       "id": 8,
+      "country": "it",
       "brandshop": "Ottomobile",
       "brand": "Alfa Romeo",
       "model": "Giulia",
@@ -178,6 +186,7 @@
     },
     {
       "id": 9,
+      "country": "de",
       "brandshop": "Ottomobile",
       "brand": "Audi",
       "model": "RS4",
@@ -200,6 +209,7 @@
     },
     {
       "id": 10,
+      "country": "de",
       "brandshop": "Ottomobile",
       "brand": "BMW",
       "model": "E46",
@@ -222,6 +232,7 @@
     },
     {
       "id": 11,
+      "country": "fr",
       "brandshop": "Ottomobile",
       "brand": "Renault",
       "model": "Clio",
@@ -239,6 +250,29 @@
       "available": true,
       "price": "110€",
       "description": "(R)évolution de la M3 E46, la CSL se veut plus puissante (360ch), plus précise (trains revus) et plus légère (1385kg) que sa grande sœur. Le kit carrosserie évolue pour la rendre plus bestiale (pare-chocs, malle arrière avec becquet intégré, jantes en 19 et toit tout carbone). ",
+      "nouveauté": true,
+      "stock": 3
+    },
+    {
+      "id": 12,
+      "country": "fr",
+      "brandshop": "Ottomobile",
+      "brand": "Renault",
+      "model": "Clio",
+      "version": "R.S",
+      "year": "2015",
+      "reference": "OT257",
+      "color": "#E1E5E4",
+      "colorname": "Blanc perle Mica",
+      "image": "/_nuxt/assets/cars/renault-clio-4-rs.jpg",
+      "views": [
+        {
+          "image1": "/_nuxt/assets/cars/renault-clio-4-rs-profil.jpg"
+        }
+      ],
+      "available": true,
+      "price": "110€",
+      "description": "La version RS de la Renault Clio 4 se distingue de ses sœurs par un bouclier et un becquet spécifiques, de nouvelles jantes et un diffuseur d’air. ",
       "nouveauté": true,
       "stock": 3
     }

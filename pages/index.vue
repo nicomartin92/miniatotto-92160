@@ -5,6 +5,10 @@
       Miniatotto
     </h1>
 
+    <div v-for="item in germanCars">
+      {{ item.brand }} {{ item.model }} {{ item.version }}
+    </div>
+
     <chronos :chrono-data="cars" :order="ascDirection" />
 
     <panelIntro v-for="(car, index) in carNumber" :key="car.id"
@@ -46,7 +50,7 @@ export default {
   data() {
     return {
       title: 'Miniatauto',
-      carNumber: [0,1,2,3,4,5,6,7,8,9],
+      carNumber: [0,1,2,3,4,5,6,7,8,9,10,11],
       carOption: 'Peugeot',
       ascDirection: 'asc',
       descDirection: 'desc'
@@ -67,6 +71,9 @@ export default {
   computed: {
     carsFromStore() {
       return this.$store.getters.loadedCars
+    },
+    germanCars() {
+      return this.$store.getters.germanCars
     },
     allCars() {
       return this.cars.filter(car => {

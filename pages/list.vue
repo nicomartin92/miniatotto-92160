@@ -23,20 +23,16 @@
           <span>Voir tous les modèles</span>
         </label>
         <label>
-          <input v-model="selectedCategory" type="radio" value="Peugeot">
-          <span>Peugeot</span>
+          <input v-model="selectedCategory" type="radio" value="fr">
+          <span>France</span>
         </label>
         <label>
-          <input v-model="selectedCategory" type="radio" value="Renault">
-          <span>Renault</span>
+          <input v-model="selectedCategory" type="radio" value="de">
+          <span>Allemagne</span>
         </label>
         <label>
-          <input v-model="selectedCategory" type="radio" value="BMW">
-          <span>BMW</span>
-        </label>
-        <label>
-          <input v-model="selectedCategory" type="radio" value="Alpine">
-          <span>Alpine</span>
+          <input v-model="selectedCategory" type="radio" value="it">
+          <span>Italienne</span>
         </label>
       </div>
     </div>
@@ -119,12 +115,15 @@
         let vm = this
         let category = vm.selectedCategory
 
-        if (category === 'All') {
-          return vm.cars
-        } else {
-          return vm.cars.filter(function (car) {
-            return car.brand === category
-          })
+        switch(category) {
+          case 'fr':
+            return this.$store.getters.frenchCars
+          case 'de':
+            return this.$store.getters.germanCars
+          case 'it':
+            return this.$store.getters.italianCars  
+          default:
+            return this.$store.getters.loadedCars
         }
       },
       filteredList () {

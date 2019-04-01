@@ -20,5 +20,9 @@ export default {
   border: 0;
   background: transparent;
   cursor: pointer;
+
+  img {
+    cursor: crosshair; 
+  }
 }
 </style>
