@@ -100,7 +100,7 @@ export default {
   }
 
   img {
-    max-width: 140px;
+    max-width: 100px;
     height: auto;
   }
 

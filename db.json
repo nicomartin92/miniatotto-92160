@@ -21,7 +21,8 @@
       "price": "90€",
       "description": "",
       "nouveauté": false,
-      "stock": 2
+      "stock": 2,
+      "preference": 1
     },
     {
       "id": 2,
@@ -44,7 +45,8 @@
       "price": "130€",
       "description": "",
       "nouveauté": false,
-      "stock": 3
+      "stock": 3,
+      "preference": 2
     },
     {
       "id": 3,
@@ -67,7 +69,8 @@
       "price": "90€",
       "description": "La Megane RS Trophy de 2018 est la plus puissante des Megane jamais construite. Pour passer la barre des 300 chevaux elle se dote du moteur de sa cousine Alpine dans une version retravaillée. La puissance augmente de 20 chevaux tandis que le couple progresse lui de 20 Nm. La transmission est confiée à une boîte EDC à double embrayage et 6 rapports. Avec une vitesse de pointe de 260 km/h, cette Megane n’a plus grand chose de commun avec une paisible compacte.",
       "nouveauté": false,
-      "stock": 2
+      "stock": 2,
+      "preference": 5
     },
     {
       "id": 4,
@@ -90,7 +93,8 @@
       "price": "90€",
       "description": "Réinterprétation moderne de la Berlinette originale, la Première Edition est lancée au printemps 2017 et marque le retour tant espéré et attendu de la marque. Produite à 1955 exemplaires seulement, cette série limitée rend hommage à l’année de création d’Alpine par Jean Rédélé.",
       "nouveauté": false,
-      "stock": 0
+      "stock": 0,
+      "preference": 6
     },
     {
       "id": 5,
@@ -113,7 +117,8 @@
       "price": "110€",
       "description": "",
       "nouveauté": false,
-      "stock": 0
+      "stock": 0,
+      "preference": 7
     },
     {
       "id": 6,
@@ -136,7 +141,8 @@
       "price": "90€",
       "description": "",
       "nouveauté": false,
-      "stock": 3
+      "stock": 3,
+      "preference": 8
     },
     {
       "id": 7,
@@ -159,7 +165,8 @@
       "price": "100€",
       "description": "La Megane RS Trophy de 2018 est la plus puissante des Megane jamais construite. Pour passer la barre des 300 chevaux elle se dote du moteur de sa cousine Alpine dans une version retravaillée.",
       "nouveauté": true,
-      "stock": 4
+      "stock": 4,
+      "preference": 4
     },
     {
       "id": 8,
@@ -182,7 +189,8 @@
       "price": "120€",
       "description": "L’Alfa Romeo Giulia Quadrifoglio est bouillante comme un volcan italien en éruption. Avec ses 4 sorties d’échappement format XXL, son diffuseur arrière, ses disques en carbone céramique, son capot en carbone, elle renferme une pièce d'orfèvrerie.",
       "nouveauté": false,
-      "stock": 0
+      "stock": 0,
+      "preference": 9
     },
     {
       "id": 9,
@@ -205,7 +213,8 @@
       "price": "90€",
       "description": "Soucieux de proposer une sportive à tout type de clientèle, Audi propose son fameux label RS et transforme le tranquille break des familles. Animé par le V8 420ch, vous ne rechignerez plus pour aller faire (la) les courses !",
       "nouveauté": false,
-      "stock": 2
+      "stock": 2,
+      "preference": 10
     },
     {
       "id": 10,
@@ -228,14 +237,15 @@
       "price": "200€",
       "description": "(R)évolution de la M3 E46, la CSL se veut plus puissante (360ch), plus précise (trains revus) et plus légère (1385kg) que sa grande sœur. Le kit carrosserie évolue pour la rendre plus bestiale (pare-chocs, malle arrière avec becquet intégré, jantes en 19 et toit tout carbone). ",
       "nouveauté": true,
-      "stock": 3
+      "stock": 3,
+      "preference": 11
     },
     {
       "id": 11,
       "country": "fr",
       "brandshop": "Ottomobile",
       "brand": "Renault",
-      "model": "Clio",
+      "model": "Clio 4",
       "version": "R.S. 16 Concept",
       "year": "2016",
       "reference": "OT629",
@@ -251,14 +261,15 @@
       "price": "110€",
       "description": "(R)évolution de la M3 E46, la CSL se veut plus puissante (360ch), plus précise (trains revus) et plus légère (1385kg) que sa grande sœur. Le kit carrosserie évolue pour la rendre plus bestiale (pare-chocs, malle arrière avec becquet intégré, jantes en 19 et toit tout carbone). ",
       "nouveauté": true,
-      "stock": 3
+      "stock": 3,
+      "preference": 12
     },
     {
       "id": 12,
       "country": "fr",
       "brandshop": "Ottomobile",
       "brand": "Renault",
-      "model": "Clio",
+      "model": "Clio 4",
       "version": "R.S",
       "year": "2015",
       "reference": "OT257",
@@ -274,7 +285,32 @@
       "price": "110€",
       "description": "La version RS de la Renault Clio 4 se distingue de ses sœurs par un bouclier et un becquet spécifiques, de nouvelles jantes et un diffuseur d’air. ",
       "nouveauté": true,
-      "stock": 3
+      "stock": 3,
+      "preference": 3
+    },
+    {
+      "id": 13,
+      "country": "fr",
+      "brandshop": "Ottomobile",
+      "brand": "Renault",
+      "model": "Clio 2",
+      "version": "R.S",
+      "year": "2004",
+      "reference": "OT552",
+      "color": "#F6EC6D",
+      "colorname": "Sirius Yellow",
+      "image": "/_nuxt/assets/cars/renault-clio-2-rs-ph-3.jpg",
+      "views": [
+        {
+          "image1": "/_nuxt/assets/cars/renault-clio-2-rs-ph-3-profil.jpg"
+        }
+      ],
+      "available": true,
+      "price": "140€",
+      "description": "",
+      "nouveauté": false,
+      "stock": 3,
+      "preference": 1
     }
   ]
 }
