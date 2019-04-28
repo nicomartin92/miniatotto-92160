@@ -77,6 +77,11 @@ export default {
       .expanded & {}
     }
 
+    ul {
+      overflow: auto;
+      max-height: 100vh;
+    }
+
     &__item {
         display: flex;
         align-items: center;

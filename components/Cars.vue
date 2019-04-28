@@ -14,6 +14,8 @@
     <img src="~/assets/cars/renault-clio-4-rs.jpg">
     <img src="~/assets/cars/renault-clio-2-rs-ph-3.jpg">
     <img src="~/assets/cars/nissan-patrol-gr.jpg">
+    <img src="~/assets/cars/bmw-m235i-01-3.jpg">
+    <img src="~/assets/cars/peugeot-306-maxi-mk1.jpg">
     
 
     <img src="~/assets/cars/peugeot-305-gtx-profil.jpg">
@@ -30,6 +32,8 @@
     <img src="~/assets/cars/renault-clio-4-rs-profil.jpg">
     <img src="~/assets/cars/renault-clio-2-rs-ph-3-profil.jpg">
     <img src="~/assets/cars/nissan-patrol-gr-profil.jpg">
+    <img src="~/assets/cars/bmw-m235i-03-3-profil.jpg">
+    <img src="~/assets/cars/peugeot-306-maxi-mk1-profil.jpg">
   </div>
 </template>
 

@@ -333,6 +333,50 @@
       "description": "(R)évolution de la M3 E46, la CSL se veut plus puissante (360ch), plus précise (trains revus) et plus légère (1385kg) que sa grande sœur. Le kit carrosserie évolue pour la rendre plus bestiale (pare-chocs, malle arrière avec becquet intégré, jantes en 19 et toit tout carbone). ",
       "nouveauté": true,
       "stock": 0
+    },
+    {
+      "id": 15,
+      "brandshop": "GT Spirit",
+      "brand": "BMW",
+      "model": "M235",
+      "version": "I",
+      "year": "2014",
+      "reference": "GT039",
+      "color": "#700C0E",
+      "colorname": "red",
+      "image": "/_nuxt/assets/cars/bmw-m235i-01-3.jpg",
+      "views": [
+        {
+          "image1": "/_nuxt/assets/cars/bmw-m235i-03-3-profil.jpg"
+        }
+      ],
+      "available": true,
+      "price": "115€",
+      "description": "Derrière son aspect extérieur relativement sage, la M 235i cache un précieux atout qui saurait convaincre n’importe quel amateur de conduite sportive : un moteur 6 cylindres de 326 chevaux délivré aux seules roues arrières. Un coupé véritablement conçu pour le plaisir.",
+      "nouveauté": true,
+      "stock": 1
+    },
+    {
+      "id": 16,
+      "brandshop": "Ottomobile",
+      "brand": "Peugeot",
+      "model": "306",
+      "version": "Maxi MK1 - Panizzi",
+      "year": "1996",
+      "reference": "OT664",
+      "color": "#053CB1",
+      "colorname": "#7 Panizzi - Tour de Corse",
+      "image": "/_nuxt/assets/cars/peugeot-306-maxi-mk1.jpg",
+      "views": [
+        {
+          "image1": "/_nuxt/assets/cars/peugeot-306-maxi-mk1-profil.jpg"
+        }
+      ],
+      "available": false,
+      "price": "115€",
+      "description": "La 306 Maxi fut la reine des Kit-cars, notamment sur l’asphalte. Aux mains de Gilles et Hervé Panizzi, elle gagna plusieurs championnats de France des rallyes. Elle fit également plusieurs apparitions remarquées en championnat du monde.",
+      "nouveauté": false,
+      "stock": 1
     }
   ]
 }
