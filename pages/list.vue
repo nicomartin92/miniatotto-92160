@@ -51,6 +51,9 @@
           >
             <img :src="car.image" :alt="car.model">
           </CallModal>
+          <div v-if="car.new === true" class="list__new">
+            Nouveauté
+          </div>  
           <div>{{ car.brand }} {{ car.model }} {{ car.version }}</div>
           <div>
             <span class="squareColor" :style="{ background: car.color }" />
@@ -68,6 +71,9 @@
         </div>
       </li>
     </ul>
+  </div>
+  </li>
+  </ul>
   </div>
 </template>
 <script>
@@ -192,15 +198,19 @@
   .list {
     &__wrapper {
       display: flex;
-      align-items: center;
-      justify-content: center;
       flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: stretch;
+      overflow: hidden;
     }
 
     &__item {
-      width: 30%;
+      width: 33.3%;
+      position: relative;
+      box-sizing: border-box;
       text-align: center;
-      margin: 5px;
+      border: #eae8e4 1px solid;
+      margin: 0;
       transition: 0.15s all ease-in-out;
 
       &:hover {
@@ -233,6 +243,16 @@
       label {
         @include button($colorBlack, $colorWhite);
       }
+    }
+
+    &__new {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      background: $colorBlack;
+      color: $colorWhite;
+      padding: 10px;
     }
   }
 </style>

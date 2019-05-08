@@ -11,16 +11,17 @@
       "reference": "OT104",
       "color": "#868C8C",
       "colorname": "Winchester Grey",
-      "image": "/_nuxt/assets/cars/peugeot-305-gtx.jpg",
+      "image": "/cars/peugeot-305-gtx.jpg",
       "views": [
         {
-          "image1": "/_nuxt/assets/cars/peugeot-305-gtx-profil.jpg"
+          "image1": "/cars/peugeot-305-gtx-profil.jpg",
+          "image2": "/cars/peugeot-305-gtx-rear.jpg"
         }
       ],
       "available": true,
       "price": "90€",
       "description": "",
-      "nouveauté": false,
+      "new": false,
       "stock": 2,
       "preference": 1
     },
@@ -35,16 +36,17 @@
       "reference": "OT057",
       "color": "#373F52",
       "colorname": "Bleu Delft",
-      "image": "/_nuxt/assets/cars/peugeot-505-v6.jpg",
+      "image": "/cars/peugeot-505-v6.jpg",
       "views": [
         {
-          "image1": "/_nuxt/assets/cars/peugeot-505-v6-profil.jpg"
+          "image1": "/cars/peugeot-505-v6-profil.jpg",
+          "image2": "/cars/peugeot-505-v6-rear.jpg"
         }
       ],
       "available": true,
       "price": "130€",
       "description": "",
-      "nouveauté": false,
+      "new": false,
       "stock": 3,
       "preference": 2
     },
@@ -59,16 +61,17 @@
       "reference": "OT751",
       "color": "#B92B29",
       "colorname": "Rouge Flamme",
-      "image": "/_nuxt/assets/cars/renault-megane-rs-trophy.jpg",
+      "image": "/cars/renault-megane-rs-trophy.jpg",
       "views": [
         {
-          "image1": "/_nuxt/assets/cars/renault-megane-rs-trophy-profil.jpg"
+          "image1": "/cars/renault-megane-rs-trophy-profil.jpg",
+          "image2": "/cars/renault-megane-rs-trophy-rear.jpg"
         }
       ],
       "available": true,
       "price": "90€",
       "description": "La Megane RS Trophy de 2018 est la plus puissante des Megane jamais construite. Pour passer la barre des 300 chevaux elle se dote du moteur de sa cousine Alpine dans une version retravaillée. La puissance augmente de 20 chevaux tandis que le couple progresse lui de 20 Nm. La transmission est confiée à une boîte EDC à double embrayage et 6 rapports. Avec une vitesse de pointe de 260 km/h, cette Megane n’a plus grand chose de commun avec une paisible compacte.",
-      "nouveauté": false,
+      "new": false,
       "stock": 2,
       "preference": 5
     },
@@ -83,16 +86,17 @@
       "reference": "OT278",
       "color": "#0043B2",
       "colorname": "Bleu Alpine",
-      "image": "/_nuxt/assets/cars/alpine-a110-premiere-edition.jpg",
+      "image": "/cars/alpine-a110-premiere-edition.jpg",
       "views": [
         {
-          "image1": "/_nuxt/assets/cars/alpine-a110-premiere-edition-profil.jpg"
+          "image1": "/cars/alpine-a110-premiere-edition-profil.jpg",
+          "image2": "/cars/alpine-a110-premiere-edition-rear.jpg"
         }
       ],
       "available": false,
       "price": "90€",
       "description": "Réinterprétation moderne de la Berlinette originale, la Première Edition est lancée au printemps 2017 et marque le retour tant espéré et attendu de la marque. Produite à 1955 exemplaires seulement, cette série limitée rend hommage à l’année de création d’Alpine par Jean Rédélé.",
-      "nouveauté": false,
+      "new": false,
       "stock": 0,
       "preference": 6
     },
@@ -107,16 +111,17 @@
       "reference": "OT307",
       "color": "#4B3F4D",
       "colorname": "Daytona Violet",
-      "image": "/_nuxt/assets/cars/bmw-e36-m3-4-doors.jpg",
+      "image": "/cars/bmw-e36-m3-4-doors.jpg",
       "views": [
         {
-          "image1": "/_nuxt/assets/cars/bmw-e36-m3-4-doors-profil.jpg"
+          "image1": "/cars/bmw-e36-m3-4-doors-profil.jpg",
+          "image2": "/cars/bmw-e36-m3-4-doors-rear.jpg"
         }
       ],
       "available": false,
       "price": "110€",
       "description": "",
-      "nouveauté": false,
+      "new": false,
       "stock": 0,
       "preference": 7
     },
@@ -131,16 +136,17 @@
       "reference": "OT690",
       "color": "#101010",
       "colorname": "Black I 086",
-      "image": "/_nuxt/assets/cars/bmw-e34-m5-phase-i.jpg",
+      "image": "/cars/bmw-e34-m5-phase-i.jpg",
       "views": [
         {
-          "image1": "/_nuxt/assets/cars/bmw-e34-m5-phase-i-profil.jpg"
+          "image1": "/cars/bmw-e34-m5-phase-i-profil.jpg",
+          "image2": "/cars/bmw-e34-m5-phase-i-rear.jpg"
         }
       ],
       "available": true,
       "price": "90€",
       "description": "",
-      "nouveauté": false,
+      "new": false,
       "stock": 3,
       "preference": 8
     },
@@ -155,16 +161,17 @@
       "reference": "OT807",
       "color": "#000000",
       "colorname": "Noir étoilé",
-      "image": "/_nuxt/assets/cars/renault-megane-rs-trophy-n.jpg",
+      "image": "/cars/renault-megane-rs-trophy-n.jpg",
       "views": [
         {
-          "image1": "/_nuxt/assets/cars/renault-megane-rs-trophy-n-profil.jpg"
+          "image1": "/cars/renault-megane-rs-trophy-n-profil.jpg",
+          "image2": "/cars/renault-megane-rs-trophy-n-rear.jpg"
         }
       ],
       "available": true,
       "price": "100€",
       "description": "La Megane RS Trophy de 2018 est la plus puissante des Megane jamais construite. Pour passer la barre des 300 chevaux elle se dote du moteur de sa cousine Alpine dans une version retravaillée.",
-      "nouveauté": true,
+      "new": true,
       "stock": 4,
       "preference": 4
     },
@@ -179,16 +186,17 @@
       "reference": "OT284",
       "color": "#AF3432",
       "colorname": "Rosso Competizione",
-      "image": "/_nuxt/assets/cars/alfa-romeo-giulia-quadrifoglio.jpg",
+      "image": "/cars/alfa-romeo-giulia-quadrifoglio.jpg",
       "views": [
         {
-          "image1": "/_nuxt/assets/cars/alfa-romeo-giulia-quadrifoglio-profil.jpg"
+          "image1": "/cars/alfa-romeo-giulia-quadrifoglio-profil.jpg",
+          "image2": "/cars/alfa-romeo-giulia-quadrifoglio-rear.jpg"
         }
       ],
       "available": false,
       "price": "120€",
       "description": "L’Alfa Romeo Giulia Quadrifoglio est bouillante comme un volcan italien en éruption. Avec ses 4 sorties d’échappement format XXL, son diffuseur arrière, ses disques en carbone céramique, son capot en carbone, elle renferme une pièce d'orfèvrerie.",
-      "nouveauté": false,
+      "new": false,
       "stock": 0,
       "preference": 9
     },
@@ -203,16 +211,17 @@
       "reference": "OT721",
       "color": "#8F8F91",
       "colorname": "Daytona Grey",
-      "image": "/_nuxt/assets/cars/audi-rs4-b7.jpg",
+      "image": "/cars/audi-rs4-b7.jpg",
       "views": [
         {
-          "image1": "/_nuxt/assets/cars/audi-rs4-b7-profil.jpg"
+          "image1": "/cars/audi-rs4-b7-profil.jpg",
+          "image2": "/cars/audi-rs4-b7-rear.jpg"
         }
       ],
       "available": true,
       "price": "90€",
       "description": "Soucieux de proposer une sportive à tout type de clientèle, Audi propose son fameux label RS et transforme le tranquille break des familles. Animé par le V8 420ch, vous ne rechignerez plus pour aller faire (la) les courses !",
-      "nouveauté": false,
+      "new": false,
       "stock": 2,
       "preference": 10
     },
@@ -227,16 +236,17 @@
       "reference": "G034",
       "color": "#000000",
       "colorname": "Black",
-      "image": "/_nuxt/assets/cars/bmw-e46-m3-csl.jpg",
+      "image": "/cars/bmw-e46-m3-csl.jpg",
       "views": [
         {
-          "image1": "/_nuxt/assets/cars/bmw-e46-m3-csl-profil.jpg"
+          "image1": "/cars/bmw-e46-m3-csl-profil.jpg",
+          "image2": "/cars/bmw-e46-m3-csl-rear.jpg"
         }
       ],
       "available": true,
       "price": "200€",
       "description": "(R)évolution de la M3 E46, la CSL se veut plus puissante (360ch), plus précise (trains revus) et plus légère (1385kg) que sa grande sœur. Le kit carrosserie évolue pour la rendre plus bestiale (pare-chocs, malle arrière avec becquet intégré, jantes en 19 et toit tout carbone). ",
-      "nouveauté": true,
+      "new": true,
       "stock": 3,
       "preference": 11
     },
@@ -251,16 +261,17 @@
       "reference": "OT629",
       "color": "#F0C80E",
       "colorname": "Jaune Sirius",
-      "image": "/_nuxt/assets/cars/concept-car-clio-rs-16.jpg",
+      "image": "/cars/concept-car-clio-rs-16.jpg",
       "views": [
         {
-          "image1": "/_nuxt/assets/cars/concept-car-clio-rs-16-profil.jpg"
+          "image1": "/cars/concept-car-clio-rs-16-profil.jpg",
+          "image2": "/cars/concept-car-clio-rs-16-rear.jpg"
         }
       ],
       "available": true,
       "price": "110€",
       "description": "(R)évolution de la M3 E46, la CSL se veut plus puissante (360ch), plus précise (trains revus) et plus légère (1385kg) que sa grande sœur. Le kit carrosserie évolue pour la rendre plus bestiale (pare-chocs, malle arrière avec becquet intégré, jantes en 19 et toit tout carbone). ",
-      "nouveauté": true,
+      "new": true,
       "stock": 3,
       "preference": 12
     },
@@ -275,16 +286,17 @@
       "reference": "OT257",
       "color": "#E1E5E4",
       "colorname": "Blanc perle Mica",
-      "image": "/_nuxt/assets/cars/renault-clio-4-rs.jpg",
+      "image": "/cars/renault-clio-4-rs.jpg",
       "views": [
         {
-          "image1": "/_nuxt/assets/cars/renault-clio-4-rs-profil.jpg"
+          "image1": "/cars/renault-clio-4-rs-profil.jpg",
+          "image2": "/cars/renault-clio-4-rs-rear.jpg"
         }
       ],
       "available": true,
       "price": "110€",
       "description": "La version RS de la Renault Clio 4 se distingue de ses sœurs par un bouclier et un becquet spécifiques, de nouvelles jantes et un diffuseur d’air. ",
-      "nouveauté": true,
+      "new": true,
       "stock": 3,
       "preference": 3
     },
@@ -299,21 +311,23 @@
       "reference": "OT552",
       "color": "#F6EC6D",
       "colorname": "Sirius Yellow",
-      "image": "/_nuxt/assets/cars/renault-clio-2-rs-ph-3.jpg",
+      "image": "/cars/renault-clio-2-rs-ph-3.jpg",
       "views": [
         {
-          "image1": "/_nuxt/assets/cars/renault-clio-2-rs-ph-3-profil.jpg"
+          "image1": "/cars/renault-clio-2-rs-ph-3-profil.jpg",
+          "image2": "/cars/renault-clio-2-rs-ph-3-rear.jpg"
         }
       ],
       "available": true,
       "price": "140€",
       "description": "",
-      "nouveauté": false,
+      "new": false,
       "stock": 3,
       "preference": 1
     },
     {
       "id": 14,
+      "country": "jp",
       "brandshop": "Ottomobile",
       "brand": "Nissan",
       "model": "Patrol",
@@ -322,20 +336,22 @@
       "reference": "OT265",
       "color": "#F0C80E",
       "colorname": "Blue & Silver",
-      "image": "/_nuxt/assets/cars/nissan-patrol-gr.jpg",
+      "image": "/cars/nissan-patrol-gr.jpg",
       "views": [
         {
-          "image1": "/_nuxt/assets/cars/nissan-patrol-gr-profil.jpg"
+          "image1": "/cars/nissan-patrol-gr-profil.jpg",
+          "image2": "/cars/nissan-patrol-gr-rear.jpg"
         }
       ],
       "available": false,
       "price": "90€",
       "description": "(R)évolution de la M3 E46, la CSL se veut plus puissante (360ch), plus précise (trains revus) et plus légère (1385kg) que sa grande sœur. Le kit carrosserie évolue pour la rendre plus bestiale (pare-chocs, malle arrière avec becquet intégré, jantes en 19 et toit tout carbone). ",
-      "nouveauté": true,
+      "new": false,
       "stock": 0
     },
     {
       "id": 15,
+      "country": "de",
       "brandshop": "GT Spirit",
       "brand": "BMW",
       "model": "M235",
@@ -344,20 +360,22 @@
       "reference": "GT039",
       "color": "#700C0E",
       "colorname": "red",
-      "image": "/_nuxt/assets/cars/bmw-m235i-01-3.jpg",
+      "image": "/cars/bmw-m235i-01-3.jpg",
       "views": [
         {
-          "image1": "/_nuxt/assets/cars/bmw-m235i-03-3-profil.jpg"
+          "image1": "/cars/bmw-m235i-01-3-profil.jpg",
+          "image2": "/cars/bmw-m235i-01-3-rear.jpg"
         }
       ],
       "available": true,
       "price": "115€",
       "description": "Derrière son aspect extérieur relativement sage, la M 235i cache un précieux atout qui saurait convaincre n’importe quel amateur de conduite sportive : un moteur 6 cylindres de 326 chevaux délivré aux seules roues arrières. Un coupé véritablement conçu pour le plaisir.",
-      "nouveauté": true,
+      "new": true,
       "stock": 1
     },
     {
       "id": 16,
+      "country": "fr",
       "brandshop": "Ottomobile",
       "brand": "Peugeot",
       "model": "306",
@@ -366,16 +384,41 @@
       "reference": "OT664",
       "color": "#053CB1",
       "colorname": "#7 Panizzi - Tour de Corse",
-      "image": "/_nuxt/assets/cars/peugeot-306-maxi-mk1.jpg",
+      "image": "/cars/peugeot-306-maxi-mk1.jpg",
       "views": [
         {
-          "image1": "/_nuxt/assets/cars/peugeot-306-maxi-mk1-profil.jpg"
+          "image1": "/cars/peugeot-306-maxi-mk1-profil.jpg",
+          "image2": "/cars/peugeot-306-maxi-mk1-rear.jpg"
         }
       ],
-      "available": false,
+      "available": true,
       "price": "115€",
       "description": "La 306 Maxi fut la reine des Kit-cars, notamment sur l’asphalte. Aux mains de Gilles et Hervé Panizzi, elle gagna plusieurs championnats de France des rallyes. Elle fit également plusieurs apparitions remarquées en championnat du monde.",
-      "nouveauté": false,
+      "new": false,
+      "stock": 1
+    },
+    {
+      "id": 17,
+      "country": "de",
+      "brandshop": "Ottomobile",
+      "brand": "Audi",
+      "model": "RS2",
+      "version": "RS",
+      "year": "1994",
+      "reference": "OT831",
+      "color": "#000000",
+      "colorname": "Noir Brillant Vernis",
+      "image": "/cars/audi-rs2.jpg",
+      "views": [
+        {
+          "image1": "/cars/audi-rs2-profil.jpg",
+          "image2": "/cars/audi-rs2-rear.jpg"
+        }
+      ],
+      "available": true,
+      "price": "104€",
+      "description": "Présentée à Francfort en 1993, l’Audi RS2 apparaît sous les traits d’un banal break Audi 80. Pourtant cette sportive va révolutionner le créneau des familiales.",
+      "new": false,
       "stock": 1
     }
   ]

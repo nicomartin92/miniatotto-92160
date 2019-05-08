@@ -79,7 +79,7 @@ export default {
 
     ul {
       overflow: auto;
-      max-height: 100vh;
+      max-height: 90vh;
     }
 
     &__item {
