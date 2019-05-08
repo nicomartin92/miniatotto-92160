@@ -26,7 +26,12 @@
         </p>
       </div>
       <div class="imageContent">
-        <img :src="carsData[0].views[0].image1" :alt="carsData[0].model">
+        <div class="imageContent__item">
+          <img :src="carsData[0].views[0].image1" :alt="carsData[0].model">   
+        </div>
+        <div class="imageContent__item">
+          <img :src="carsData[0].views[0].image2" :alt="carsData[0].model">
+        </div>
       </div>
     </div>
   </div>
@@ -162,6 +167,11 @@
 
   .imageContent {
     text-align: center;
+    display: flex;
+
+    &__item {
+      max-width: 50%;
+    }
 
     img {
       max-width: 100%;

@@ -6,7 +6,7 @@
 
     <div class="sticky">
       <h3 class="center">
-        Chercher un modèle particulier:
+        Chercher un modèle particulier: ({{ carsLength }} modèles au total)
       </h3>
       <form class="center" @submit.prevent="submit()">
         <input
@@ -72,9 +72,6 @@
       </li>
     </ul>
   </div>
-  </li>
-  </ul>
-  </div>
 </template>
 <script>
   import axios from 'axios'
@@ -136,6 +133,9 @@
         return this.cars.filter(car => {
           return car.brand.toLowerCase().includes(this.search.toLowerCase())
         })
+      },
+      carsLength () {
+        return this.$store.getters.loadedCars.length
       }
     },
 
