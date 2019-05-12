@@ -20,17 +20,66 @@
           <img :src="carsData[0].image" :alt="carsData[0].model">
         </div>
       </div>
-      <div class="textContent">
-        <p class="textContent__description">
-          {{ carsData[0].description }}
-        </p>
-      </div>
+
       <div class="imageContent">
-        <div class="imageContent__item">
+        <div class="imageContent__item -medium">
           <img :src="carsData[0].views[0].image1" :alt="carsData[0].model">   
         </div>
-        <div class="imageContent__item">
-          <img :src="carsData[0].views[0].image2" :alt="carsData[0].model">
+        <div class="imageContent__item -small">
+          <div class="textContent">
+            <h3 class="subTitle">
+              Détails
+            </h3>
+            <p class="textContent__description">
+              {{ carsData[0].description }}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="imageContent">
+        <div class="imageContent__item -small">
+          <div class="textContent">
+            <h3 class="subTitle">
+              Caractéristiques
+            </h3>
+            <ul class="specs">
+              <li class="specs__item">
+                <span>Référence:</span>
+                <span>{{ carsData[0].reference }}</span>
+              </li>
+              <li class="specs__item">
+                <span>Producteur:</span>
+                <span>{{ carsData[0].brandshop }}</span>
+              </li>
+              <li class="specs__item">
+                <span>Marque:</span>
+                <span>{{ carsData[0].brand }}</span>
+              </li>
+              <li class="specs__item">
+                <span>Modèle:</span>
+                <span>{{ carsData[0].model }}</span>
+              </li>
+              <li class="specs__item">
+                <span>Version:</span>
+                <span>{{ carsData[0].version }}</span>
+              </li>
+              <li class="specs__item">
+                <span>Année:</span>
+                <span>{{ carsData[0].year }}</span>
+              </li>
+              <li class="specs__item">
+                <span>Couleur:</span>
+                <span>
+                  <span class="skew" />
+                  {{ carsData[0].colorname }}
+                </span>
+              </li>
+            </ul>  
+          </div>
+        </div>
+        <div class="imageContent__item -medium">
+          <img :src="carsData[0].views[0].image2" :alt="carsData[0].model">   
         </div>
       </div>
     </div>
@@ -140,14 +189,20 @@
     &__subLabel {
       font-size: 18px;
       text-transform: uppercase;
+      color: $colorBlue;
     }
 
-    &__version {
+    &__version,
+    &__year {
       background: $colorBlack;
       transform: skewX(-18deg);
       display: inline-block;
       padding: 2px 40px;
       color: $colorWhite;
+    }
+
+    &__year {
+      background: $colorBlue;
     }
 
     &__image {
@@ -161,20 +216,59 @@
   }
 
   .textContent {
-    padding: 20px 10%;
-    text-align: center;
+    padding: 20px 7%;
+    text-align: left;
   }
 
   .imageContent {
     text-align: center;
     display: flex;
+    align-items: center;
 
     &__item {
-      max-width: 50%;
+      max-width: 100%;
+
+      &.-large {
+        max-width: 75%;
+        min-width: 75%;
+      }
+
+      &.-medium {
+        max-width: 65%;
+        min-width: 65%;
+      }
+
+      &.-small {
+        max-width: 35%;
+        min-width: 35%;
+      }
+
+      &.-xsmall {
+        max-width: 25%;
+        min-width: 25%;
+      }
     }
 
     img {
       max-width: 100%;
+    }
+  }
+
+  .specs {
+    &__item {
+      padding: 20px 0;
+      border-bottom: 1px solid $colorGray03;
+      display: flex;
+      justify-content: space-between;
+
+      span {
+        color: $colorBlue;
+        font-weight: bold;
+
+        + span {
+          color: $colorBlack;
+        }
+      }
     }
   }
 </style>

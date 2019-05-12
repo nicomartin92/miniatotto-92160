@@ -1,15 +1,16 @@
 <template>
   <div class="container">
     <Panelnav :initialdata="cars" />
-    <h1 class="center">
-      Miniatotto
-    </h1>
 
-    <div v-for="item in germanCars">
-      {{ item.brand }} {{ item.model }} {{ item.version }}
+    <div class="headLine">
+      <h3 class="headLine__subTitle">
+        La passion des minatures
+      </h3>
+      <h1 class="headLine__title">
+        Miniatotto
+      </h1>
     </div>
-
-    <chronos :chrono-data="cars" :order="ascDirection" />
+    
 
     <panelIntro v-for="(car, index) in carNumber" :key="car.id"
                 :reversedisplay="(index % 2) ? true : false"
@@ -26,6 +27,12 @@
                 :price="carsFromStore[car].price"
                 :stock="carsFromStore[car].stock"
     />
+
+    <chronos :chrono-data="cars" :order="ascDirection" />
+
+    <div v-for="item in germanCars">
+      {{ item.brand }} {{ item.model }} {{ item.version }}
+    </div>
 
     <p>ALL {{ carOption }}</p>
     <div v-for="(result, index) in allCars" :key="index">

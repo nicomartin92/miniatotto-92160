@@ -29,7 +29,11 @@ module.exports = {
   Loading: false,
 
   styleResources: {
-    scss: ['@/assets/scss/variables.scss', '@/assets/scss/mixins.scss']
+    scss: [
+      '@/assets/scss/variables.scss',
+      '@/assets/scss/mixins.scss',
+      '@assets/scss/atoms.scss'
+    ]
   },
 
   /*

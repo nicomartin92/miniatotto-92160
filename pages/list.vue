@@ -247,12 +247,13 @@
 
     &__new {
       position: absolute;
-      left: 0;
+      left: 5%;
       top: 0;
-      width: 100%;
-      background: $colorBlack;
+      width: 50%;
+      background: $colorBlue;
       color: $colorWhite;
-      padding: 10px;
+      padding: 5px 10px;
+      transform: skewX(-18deg);
     }
   }
 </style>

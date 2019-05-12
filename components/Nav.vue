@@ -52,7 +52,7 @@ export default {
 
   a {
     &.nuxt-link-exact-active {
-      border-bottom: 1px solid $colorBlack;
+      border-bottom: 2px solid $colorBlue;
     }
   }
 }

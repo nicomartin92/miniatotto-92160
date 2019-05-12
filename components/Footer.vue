@@ -10,8 +10,9 @@
   z-index: 3;
   width: 100%;
   bottom: 0;
-  background: $colorBlack;
+  background: $colorBlue;
   color: $colorWhite;
-  padding: 25px;
+  padding: 5px 25px;
+  text-transform: uppercase;
 }
 </style>

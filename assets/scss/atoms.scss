@@ -1,0 +1,44 @@
+.headLine {
+    margin: 0 auto;
+    flex: 0 0 30%;
+    max-width: 30%;
+    border-left: 4px solid $colorBlue;
+    padding: 10px 0 0 25px;
+    text-align: left;
+
+    &__title {
+        text-transform: uppercase;
+    }
+
+    &__subtitle {
+        font-size: 18px;
+    }
+}
+
+.subTitle {
+    font-size: 45px;
+    color: $colorBlue;
+    position: relative;
+    display: inline-block;
+    padding-right: 30px;
+    margin-bottom: 30px;
+
+    &::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: -25px;
+        width: 1px;
+        height: 100px;
+        background: $colorBlue;
+        transform: skewX(-18deg);
+    }
+}
+
+.skew {
+    background: $colorBlack;
+    transform: skewX(-18deg);
+    display: inline-block;
+    padding: 2px 20px;
+    height: 15px;
+}
