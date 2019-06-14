@@ -51,16 +51,22 @@ export default {
     z-index: 4;
     position: fixed;
     top: 0;
-    left: -60vw;
-    height: 100vh;
+    left: -120vw;
+    height: 100%;
     background-color: $colorWhite;
     color: $colorBlack;
-    width: 50vw;
+    width: 100vw;
     z-index: 6;
     padding: 18vh 8.5vmax 0 9vmax;
     transition: right 2s cubic-bezier(.19,1,.22,1),left 2s cubic-bezier(.19,1,.22,1);
     padding: 60px 25px;
     box-shadow: 0 10px 36px 0 rgba(186, 194, 195, 0.47);
+
+    @include large {
+      height: 100vh;
+      left: -60vw;
+      width: 50vw;
+    }
 
     &.expanded {
       left: 0;
@@ -95,7 +101,7 @@ export default {
     }
 
     .buttonClose {
-      @include buttonClose(70px, $colorBlack, $colorBlack);
+      @include buttonClose(70px, 40px, $colorBlack, $colorBlack);
 
       position: absolute;
       right: 20px;

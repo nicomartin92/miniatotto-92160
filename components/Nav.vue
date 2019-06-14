@@ -14,6 +14,11 @@
       </nuxt-link>
     </li>
     <li>
+      <nuxt-link to="/wishlist">
+        Whishlist
+      </nuxt-link>
+    </li>
+    <li>
       <nuxt-link to="/about">
         About
       </nuxt-link>

@@ -22,7 +22,7 @@
       "price": "90€",
       "description": "",
       "new": false,
-      "stock": 2,
+      "stock": 1,
       "preference": 1
     },
     {
@@ -47,7 +47,7 @@
       "price": "130€",
       "description": "",
       "new": false,
-      "stock": 3,
+      "stock": 1,
       "preference": 2
     },
     {
@@ -72,7 +72,7 @@
       "price": "90€",
       "description": "La Megane RS Trophy de 2018 est la plus puissante des Megane jamais construite. Pour passer la barre des 300 chevaux elle se dote du moteur de sa cousine Alpine dans une version retravaillée. La puissance augmente de 20 chevaux tandis que le couple progresse lui de 20 Nm. La transmission est confiée à une boîte EDC à double embrayage et 6 rapports. Avec une vitesse de pointe de 260 km/h, cette Megane n’a plus grand chose de commun avec une paisible compacte.",
       "new": false,
-      "stock": 2,
+      "stock": 1,
       "preference": 5
     },
     {
@@ -93,11 +93,11 @@
           "image2": "/cars/alpine-a110-premiere-edition-rear.jpg"
         }
       ],
-      "available": false,
+      "available": true,
       "price": "90€",
       "description": "Réinterprétation moderne de la Berlinette originale, la Première Edition est lancée au printemps 2017 et marque le retour tant espéré et attendu de la marque. Produite à 1955 exemplaires seulement, cette série limitée rend hommage à l’année de création d’Alpine par Jean Rédélé.",
       "new": false,
-      "stock": 0,
+      "stock": 1,
       "preference": 6
     },
     {
@@ -118,11 +118,11 @@
           "image2": "/cars/bmw-e36-m3-4-doors-rear.jpg"
         }
       ],
-      "available": false,
+      "available": true,
       "price": "110€",
       "description": "",
       "new": false,
-      "stock": 0,
+      "stock": 3,
       "preference": 7
     },
     {
@@ -147,7 +147,7 @@
       "price": "90€",
       "description": "",
       "new": false,
-      "stock": 3,
+      "stock": 1,
       "preference": 8
     },
     {
@@ -172,7 +172,7 @@
       "price": "100€",
       "description": "La Megane RS Trophy de 2018 est la plus puissante des Megane jamais construite. Pour passer la barre des 300 chevaux elle se dote du moteur de sa cousine Alpine dans une version retravaillée.",
       "new": true,
-      "stock": 4,
+      "stock": 1,
       "preference": 4
     },
     {
@@ -222,7 +222,7 @@
       "price": "90€",
       "description": "Soucieux de proposer une sportive à tout type de clientèle, Audi propose son fameux label RS et transforme le tranquille break des familles. Animé par le V8 420ch, vous ne rechignerez plus pour aller faire (la) les courses !",
       "new": false,
-      "stock": 2,
+      "stock": 1,
       "preference": 10
     },
     {
@@ -247,7 +247,7 @@
       "price": "200€",
       "description": "(R)évolution de la M3 E46, la CSL se veut plus puissante (360ch), plus précise (trains revus) et plus légère (1385kg) que sa grande sœur. Le kit carrosserie évolue pour la rendre plus bestiale (pare-chocs, malle arrière avec becquet intégré, jantes en 19 et toit tout carbone). ",
       "new": true,
-      "stock": 3,
+      "stock": 1,
       "preference": 11
     },
     {
@@ -272,7 +272,7 @@
       "price": "110€",
       "description": "(R)évolution de la M3 E46, la CSL se veut plus puissante (360ch), plus précise (trains revus) et plus légère (1385kg) que sa grande sœur. Le kit carrosserie évolue pour la rendre plus bestiale (pare-chocs, malle arrière avec becquet intégré, jantes en 19 et toit tout carbone). ",
       "new": true,
-      "stock": 3,
+      "stock": 1,
       "preference": 12
     },
     {
@@ -297,7 +297,7 @@
       "price": "110€",
       "description": "La version RS de la Renault Clio 4 se distingue de ses sœurs par un bouclier et un becquet spécifiques, de nouvelles jantes et un diffuseur d’air. ",
       "new": true,
-      "stock": 3,
+      "stock": 1,
       "preference": 3
     },
     {
@@ -322,7 +322,7 @@
       "price": "140€",
       "description": "",
       "new": false,
-      "stock": 3,
+      "stock": 1,
       "preference": 1
     },
     {
@@ -419,7 +419,7 @@
       "price": "104€",
       "description": "Présentée à Francfort en 1993, l’Audi RS2 apparaît sous les traits d’un banal break Audi 80. Pourtant cette sportive va révolutionner le créneau des familiales.",
       "new": false,
-      "stock": 1
+      "stock": 2
     }
   ]
 }

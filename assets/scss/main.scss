@@ -28,11 +28,25 @@ body {
   transition: all .5s cubic-bezier(.55,0,.1,1);
   max-width: 1600px;
   margin: 0 auto;
+  width: 100%;
 }
 
 /* glabal styles */
 h1 {
   margin: 20px 0;
+  font-size: 20px;
+
+  @include medium {
+    font-size: 30px;
+  }
+}
+
+h2 {
+  font-size: 18px;
+
+  @include medium {
+    font-size: 25px;
+  }
 }
 
 ul {

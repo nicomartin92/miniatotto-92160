@@ -1,6 +1,5 @@
 <template>
   <div class="list">
-    <Cars />
     <Panelnav :initialdata="cars" />
     <Modal />
 
@@ -39,7 +38,7 @@
 
     <ul class="list__wrapper">
       <li v-for="car in filteredCars" :key="car.id" class="list__item">
-        <div>
+        <div :class="{ 'unavailable': car.stock < 1 }">
           <CallModal
             :image-data="{
               image: car.image,
@@ -76,7 +75,6 @@
 <script>
   import axios from 'axios'
 
-  import Cars from '~/components/Cars.vue'
   import Modal from '~/components/modal/ModalContent.vue'
   import Panelnav from '~/components/Panelnav/Panelnav.vue'
   import CallModal from '~/components/modal/CallModal.vue'
@@ -85,7 +83,6 @@
     layout: 'modelLayout',
     name: 'List',
     components: {
-      Cars,
       Modal,
       CallModal,
       Panelnav
@@ -205,13 +202,25 @@
     }
 
     &__item {
-      width: 33.3%;
+      width: 100%;
       position: relative;
       box-sizing: border-box;
       text-align: center;
       border: #eae8e4 1px solid;
       margin: 0;
       transition: 0.15s all ease-in-out;
+
+      @include medium {
+        width: 50%;
+      }
+
+      @include large {
+        width: 33.3%;
+      }
+
+      @include xlarge {
+        width: 25%;
+      }
 
       &:hover {
         transform: scale(1.1);
@@ -239,6 +248,7 @@
       margin: 20px 0;
       border-top: 1px solid #999;
       border-bottom: 1px solid #999;
+      flex-wrap: wrap;
 
       label {
         @include button($colorBlack, $colorWhite);
@@ -254,6 +264,12 @@
       color: $colorWhite;
       padding: 5px 10px;
       transform: skewX(-18deg);
+    }
+  }
+
+  .unavailable {
+    img {
+      opacity: .5;
     }
   }
 </style>

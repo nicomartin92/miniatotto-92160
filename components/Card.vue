@@ -1,7 +1,5 @@
 <template>
   <div id="e3" class="card" :class="{ unavailable: !available }">
-    <cars />
-
     <div class="container">
       <div class="layout">
         <h3 class="card__title">

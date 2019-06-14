@@ -1,3 +1,17 @@
+@mixin medium {
+  @media (min-width: $width768) { @content; }
+}
+@mixin large {
+  @media (min-width: $width1024) { @content; }
+}
+@mixin xlarge {
+  @media (min-width: $width1440) { @content; }
+}
+@mixin xxlarge {
+  @media (min-width: $width1600) { @content; }
+}
+
+
 @mixin button($color1, $color2) {
   background-color: transparent;
   margin-bottom: 0;
@@ -55,13 +69,17 @@
   }
 }
 
-@mixin buttonClose($width, $color, $colorText) {
+@mixin buttonClose($width, $widthMobile, $color, $colorText) {
   position: relative;
   margin: auto;
-  width: $width;
+  width: $widthMobile;
   cursor: pointer;
   background: none;
   border: none;
+
+  @include large {
+    width: $width;
+  }
 
   &:hover {
     .inner {

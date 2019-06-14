@@ -104,7 +104,7 @@ export default {
   }
 
   .buttonClose {
-    @include buttonClose(100px, $colorBlack, $colorBlack);
+    @include buttonClose(100px, 40px, $colorBlack, $colorBlack);
 
     position: absolute;
     right: 7%;

@@ -78,13 +78,21 @@ export default {
   position: relative;
   max-width: 100%;
   overflow: hidden;
-  padding: 7% 5% 4% 0;
+  padding: 7% 0 4% 0;
   margin-top: 70px;
   margin-bottom: 70px;
   $root: '';
 
+  @include large {
+    padding: 7% 5% 4% 0;
+  }
+
   &.reverse {
-    padding: 7% 0 4% 5%;
+    padding: 7% 0 4% 0;
+
+    @include large {
+      padding: 7% 0 4% 5%;
+    }
   }
 
   &.animate {
@@ -107,21 +115,21 @@ export default {
     position: absolute;
     left: 0;
     top: 0;
-    width: 60%;
+    width: 100%;
     height: 100%;
     z-index: 0;
     transform: translate3d(-100%, 0, 0);
     visibility: visible;
-    /* animation-name: slideInLeft;
-      animation-fill-mode: both;
-      animation-duration: 1.5s; */
+
+    @include large {
+      width: 60%;
+    }
 
     .reverse & {
       right: 0;
       left: auto;
       transform: translate3d(100%, 0, 0);
       visibility: visible;
-      // animation-name: slideInRight;
     }
   }
 
@@ -147,6 +155,11 @@ export default {
     position: relative;
     z-index: 1;
     display: flex;
+    flex-direction: column-reverse;
+
+    @include large {
+      flex-direction: initial;
+    }
 
     button,
     a {
@@ -154,19 +167,32 @@ export default {
     }
 
     .reverse & {
-      flex-direction: row-reverse;
+      flex-direction: column-reverse;
+
+      @include large {
+        flex-direction: row-reverse;
+      }
     }
   }
 
   &__text {
-    flex: 0 0 40%;
-    max-width: 40%;
+    flex: 0 0 100%;
+    max-width: 100%;
     padding: 4%;
     color: $colorWhite;
 
+    @include large {
+      flex: 0 0 40%;
+      max-width: 40%;
+    }
+
     .shop,
     .title {
-      font-size: 34px;
+      font-size: 24px;
+
+      @include large {
+        font-size: 34px;
+      }
     }
 
     .title,
@@ -176,8 +202,13 @@ export default {
   }
 
   &__image {
-    flex: 0 0 60%;
-    max-width: 60%;
+    flex: 0 0 100%;
+    max-width: 100%;
+
+    @include large {
+      flex: 0 0 60%;
+      max-width: 60%;
+    }
 
     img {
       width: 100%;

@@ -9,8 +9,8 @@
       Voir les résulats: ({{ resultLength }})
     </h2>
 
-    <div v-if="carExists" class="cardContainer">
-      <div v-for="(car, index) in carsData" :key="index">
+    <ul v-if="carExists" class="cardContainer">
+      <li v-for="(car, index) in carsData" :key="index" class="cardContainer__item">
         <Card
           :class="{ odd: odd(index) }"
           :brand="car.brandshop"
@@ -24,8 +24,8 @@
           :available="car.available"
           :price="car.price"
         />
-      </div>
-    </div>
+      </li>
+    </ul>
     <div v-else class="center">
       {{ noResults }}: {{ $route.params.id }}
       <p>Vous serez peut être intéressé par ces modèles :</p>
@@ -156,6 +156,20 @@ export default {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+
+  &__item {
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+
+    @include medium {
+      width: 50%;
+    }
+
+    @include large {
+      width: 33.3%;
+    }
+  }
 }
 
 .center {

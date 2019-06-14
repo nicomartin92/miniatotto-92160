@@ -71,7 +71,7 @@
               <li class="specs__item">
                 <span>Couleur:</span>
                 <span>
-                  <span class="skew" />
+                  <span class="skew" :style="{ backgroundColor: carsData[0].color }" />
                   {{ carsData[0].colorname }}
                 </span>
               </li>

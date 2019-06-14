@@ -1,10 +1,15 @@
 .headLine {
     margin: 0 auto;
-    flex: 0 0 30%;
-    max-width: 30%;
+    flex: 0 0 80%;
+    max-width: 80%;
     border-left: 4px solid $colorBlue;
     padding: 10px 0 0 25px;
     text-align: left;
+
+    @include medium {    
+        flex: 0 0 30%;
+        max-width: 30%;
+    }
 
     &__title {
         text-transform: uppercase;
