@@ -18,7 +18,7 @@
           </div>
           <div class="chronosItem__marker" />
           <div class="chronosItem__content">
-            <span><img :src="chrono.image" alt=""></span>
+            <span><img :src="chrono.image" loading="lazy" alt=""></span>
             <h3>{{ chrono.brand }} {{ chrono.model }} {{ chrono.version }}</h3>
           </div>
         </div>

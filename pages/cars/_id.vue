@@ -17,13 +17,13 @@
           <span class="textBlock__year">{{ carsData[0].year }}</span>
         </div>
         <div class="textBlock__image">
-          <img :src="carsData[0].image" :alt="carsData[0].model">
+          <img :src="carsData[0].image" loading="lazy" :alt="carsData[0].model">
         </div>
       </div>
 
       <div class="imageContent">
         <div class="imageContent__item -medium">
-          <img :src="carsData[0].views[0].image1" :alt="carsData[0].model">   
+          <img :src="carsData[0].views[0].image1" loading="lazy" :alt="carsData[0].model">   
         </div>
         <div class="imageContent__item -small">
           <div class="textContent">
@@ -79,7 +79,7 @@
           </div>
         </div>
         <div class="imageContent__item -medium">
-          <img :src="carsData[0].views[0].image2" :alt="carsData[0].model">   
+          <img :src="carsData[0].views[0].image2" loading="lazy" :alt="carsData[0].model">   
         </div>
       </div>
     </div>

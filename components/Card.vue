@@ -7,7 +7,7 @@
           <span>{{ version }}</span>
         </h3>
         <div class="card__image">
-          <img :src="image" :alt="brand">
+          <img loading="lazy" :src="image" :alt="brand">
         </div>
         <div class="color">
           <span class="bold">Couleur:</span>

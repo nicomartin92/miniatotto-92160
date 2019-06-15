@@ -27,7 +27,7 @@
         </button>
       </article>
       <section class="panelIntro__image">
-        <img :src="image" :alt="model">
+        <img :src="image" loading="lazy" :alt="model">
       </section>
     </div>
   </div>

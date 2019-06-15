@@ -33,6 +33,12 @@ const createStore = () => {
       },
       italianCars(state) {
         return state.loadedCars.filter(car => car.country === 'it')
+      },
+      preferenceCars(state) {
+        let sort = state.loadedCars.filter(car => car.preference > 0).sort((a, b) => {
+          return a.preference - b.preference
+        })
+        return sort
       }
     }
   })

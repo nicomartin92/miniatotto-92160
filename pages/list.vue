@@ -48,7 +48,7 @@
               color: car.color
             }"
           >
-            <img :src="car.image" :alt="car.model">
+            <img :src="car.image" loading="lazy" :alt="car.model">
           </CallModal>
           <div v-if="car.new === true" class="list__new">
             Nouveauté

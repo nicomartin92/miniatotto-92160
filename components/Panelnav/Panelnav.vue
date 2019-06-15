@@ -14,7 +14,7 @@
             {{ car.brand }} {{ car.model }} {{ car.version }}
           </div>
           <div class="panelNav__image">
-            <img :src="car.views[0].image1" :alt="car.model">
+            <img :src="car.views[0].image1" loading="lazy" :alt="car.model">
           </div>
         </nuxt-link>
       </li>

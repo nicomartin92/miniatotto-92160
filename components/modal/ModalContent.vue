@@ -10,7 +10,7 @@
               :style="{ backgroundColor: imageColor }"
             />
           </h3>
-          <img :src="imageView" :alt="imageLabel">
+          <img :src="imageView" loading="lazy" :alt="imageLabel">
         </div>
       </div>
       <button class="buttonClose outer" @click="displayModal(false)">
