@@ -4,23 +4,20 @@
     
     <h1>My wishlist</h1>    
 
-    <ul>
-      <li v-for="(car, index) in preferenceFromStore">
-        {{ car.brand }} {{ car.model }} - {{ car.preference }}
-        <img :src="car.image" loading="lazy" :alt="car.model" width="200">
-      </li>
-    </ul>
+    <Grid :initial-data="preferenceFromStore" />
   </div>
 </template>
 
 <script>
 import axios from 'axios'
 import Panelnav from '~/components/Panelnav/Panelnav.vue'
+import Grid from '~/components/Grid.vue'
 
 export default {
   layout: 'default',
   components: {
-    Panelnav
+    Panelnav,
+    Grid
   },
   computed: {
     preferenceFromStore() {
