@@ -5,7 +5,7 @@
         {{ car.preference }}
       </div>
       <nuxt-link :to="`/cars/${car.reference}`">
-        <img class="grid__image" loading="lazy" :src="car.image" :alt="`${car.brand} ${car.model} ${car.version} - ${car.brandshop}`">
+        <img class="grid__image" loading="lazy" :src="car.views[0].image1" :alt="`${car.brand} ${car.model} ${car.version} - ${car.brandshop}`">
       </nuxt-link>
       <div class="grid__info">
         <h3>{{ car.brandshop }} - {{ car.brand }} {{ car.model }} {{ car.version }}</h3>
@@ -19,7 +19,7 @@
 <script>
 export default {
     props: {
-       initialData: { type: Object, required: true }
+       initialData: { type: Array, required: true }
     }
 }
 </script>
@@ -42,9 +42,14 @@ export default {
     width: 100%;
     box-sizing: border-box;
     margin: 0;
+    overflow: hidden;
 
     @include medium {
       width: 50%;
+    }
+
+    @include xlarge {
+      width: 33.3%;
     }
   }
 

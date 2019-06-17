@@ -443,6 +443,31 @@
       "description": "La Clio 16 soupapes avait une lourde tâche à assumer. Succéder aux mythiques Renault 5 Turbo et Supercinq GT Turbo dans la dynastie des petites sportives du constructeur.",
       "new": true,
       "stock": 2
+    },
+    {
+      "id": 19,
+      "country": "fr",
+      "brandshop": "Ottomobile",
+      "brand": "Peugeot",
+      "model": "205",
+      "version": "GTI 1.9 ph2",
+      "year": "1989",
+      "reference": "G041",
+      "color": "#184DAD",
+      "colorname": "Blue Miami",
+      "image": "/cars/peugeot/peugeot-205-gti-19.jpg",
+      "views": [
+        {
+          "image1": "/cars/peugeot/peugeot-205-gti-19-profil.jpg",
+          "image2": "/cars/peugeot/peugeot-205-gti-19-rear.jpg"
+        }
+      ],
+      "available": true,
+      "price": "199€",
+      "description": "On dit de cette voiture qu’elle a sauvé la marque au lion dans les années 80. Si la Peugeot 205 est depuis longtemps devenue une icône, c’est en grande partie grâce à cette version GTI, sortie le 1er mars 1984.",
+      "new": true,
+      "stock": 1,
+      "preference": 1
     }
   ]
 }
