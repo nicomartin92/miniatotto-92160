@@ -11,7 +11,17 @@
       </h1>
     </div>
 
-    <xray :car1="carsFromStore[2].views[0].image1" :car2="carsFromStore[6].views[0].image1" />
+    <imagecompare :car-before="carsFromStore[2].views[0].image1" 
+                  :car-after="carsFromStore[6].views[0].image1"
+                  label-color-before="Rouge Flame"
+                  label-color-after="Noir"
+    />
+
+    <imagecompare :car-before="carsFromStore[19].views[0].image1" 
+                  :car-after="carsFromStore[20].views[0].image1"
+                  label-color-before="White"
+                  label-color-after="Rosso Competizione"
+    />
 
     <panelIntro v-for="(car, index) in carNumber" :key="car.id"
                 :reversedisplay="(index % 2) ? true : false"
@@ -47,7 +57,7 @@ import axios from 'axios'
 import panelIntro from '~/components/PanelIntro.vue'
 import Panelnav from '~/components/Panelnav/Panelnav.vue'
 import Chronos from '~/components/Chronos.vue'
-import Xray from '~/components/Xray.vue'
+import imagecompare from '~/components/ImageCompare.vue'
 
 export default {
   layout: 'default',
@@ -55,12 +65,12 @@ export default {
     panelIntro,
     Chronos,
     Panelnav,
-    Xray
+    imagecompare
   },
   data() {
     return {
       title: 'Miniatauto',
-      carNumber: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15, 16, 17, 18],
+      carNumber: [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15, 16, 17, 18, 19, 20],
       carOption: 'Peugeot',
       ascDirection: 'asc',
       descDirection: 'desc'

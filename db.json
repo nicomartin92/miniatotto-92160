@@ -468,6 +468,56 @@
       "new": true,
       "stock": 1,
       "preference": 1
+    },
+    {
+      "id": 20,
+      "country": "it",
+      "brandshop": "Ottomobile",
+      "brand": "Alfa Romeo",
+      "model": "Stelvio",
+      "version": "Quadrifoglio",
+      "year": "2017",
+      "reference": "OT830",
+      "color": "#D0CFCA",
+      "colorname": "White",
+      "image": "/cars/alfa-romeo/alfa-romeo-stelvio-quadrifoglio-w.jpg",
+      "views": [
+        {
+          "image1": "/cars/alfa-romeo/alfa-romeo-stelvio-quadrifoglio-w-profil.jpg",
+          "image2": "/cars/alfa-romeo/alfa-romeo-stelvio-quadrifoglio-w-rear.jpg"
+        }
+      ],
+      "available": true,
+      "price": "95€",
+      "description": "On dit de cette voiture qu’elle a sauvé la marque au lion dans les années 80. Si la Peugeot 205 est depuis longtemps devenue une icône, c’est en grande partie grâce à cette version GTI, sortie le 1er mars 1984.",
+      "new": true,
+      "stock": 1,
+      "preference": 1
+    },
+    {
+      "id": 21,
+      "country": "it",
+      "brandshop": "Ottomobile",
+      "brand": "Alfa Romeo",
+      "model": "Stelvio",
+      "version": "Quadrifoglio",
+      "year": "2017",
+      "reference": "OT285",
+      "color": "#710507",
+      "colorname": "Rosso Competizione",
+      "image": "/cars/alfa-romeo/alfa-romeo-stelvio-quadrifoglio.jpg",
+      "views": [
+        {
+          "image1": "/cars/alfa-romeo/alfa-romeo-stelvio-quadrifoglio-profil.jpg",
+          "image2": "/cars/alfa-romeo/alfa-romeo-stelvio-quadrifoglio-rear.jpg"
+        }
+      ],
+      "available": true,
+      "price": "95€",
+      "description": "On dit de cette voiture qu’elle a sauvé la marque au lion dans les années 80. Si la Peugeot 205 est depuis longtemps devenue une icône, c’est en grande partie grâce à cette version GTI, sortie le 1er mars 1984.",
+      "new": true,
+      "stock": 1,
+      "preference": 1
     }
   ]
 }
