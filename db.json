@@ -489,10 +489,10 @@
       ],
       "available": true,
       "price": "95€",
-      "description": "On dit de cette voiture qu’elle a sauvé la marque au lion dans les années 80. Si la Peugeot 205 est depuis longtemps devenue une icône, c’est en grande partie grâce à cette version GTI, sortie le 1er mars 1984.",
+      "description": "Le Stelvio porte à sa sortie en 2017, tous les espoirs de la marque Alfa Romeo. Ce SUV sportif reprend tous les codes de la catégorie mais pas seulement.",
       "new": true,
       "stock": 1,
-      "preference": 1
+      "preference": 16
     },
     {
       "id": 21,
@@ -514,10 +514,10 @@
       ],
       "available": true,
       "price": "95€",
-      "description": "On dit de cette voiture qu’elle a sauvé la marque au lion dans les années 80. Si la Peugeot 205 est depuis longtemps devenue une icône, c’est en grande partie grâce à cette version GTI, sortie le 1er mars 1984.",
-      "new": true,
+      "description": "Le Stelvio porte à sa sortie en 2017, tous les espoirs de la marque Alfa Romeo. Ce SUV sportif reprend tous les codes de la catégorie mais pas seulement.",
+      "new": false,
       "stock": 1,
-      "preference": 1
+      "preference": 17
     }
   ]
 }

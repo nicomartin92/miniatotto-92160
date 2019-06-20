@@ -15,12 +15,14 @@
                   :car-after="carsFromStore[6].views[0].image1"
                   label-color-before="Rouge Flame"
                   label-color-after="Noir"
+                  :divider="2"
     />
 
     <imagecompare :car-before="carsFromStore[19].views[0].image1" 
                   :car-after="carsFromStore[20].views[0].image1"
                   label-color-before="White"
                   label-color-after="Rosso Competizione"
+                  :divider="1.5"
     />
 
     <panelIntro v-for="(car, index) in carNumber" :key="car.id"

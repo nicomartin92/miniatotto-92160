@@ -27,7 +27,8 @@ export default {
         carBefore: { type: String, required: true },
         carAfter: { type: String, required: true },
         labelColorBefore: { type: String, required: true },
-        labelColorAfter: { type: String, required: true }
+        labelColorAfter: { type: String, required: true },
+        divider: { type: Number, required: false, default: 2 }
     },
     data() {
       return {
@@ -49,6 +50,8 @@ export default {
     mounted() {
       this.onResize()
       window.addEventListener('resize', this.onResize)
+
+      this.posX = this.width/this.divider
     },
     beforeDestroy() {
       window.removeEventListener('resize', this.onResize)
