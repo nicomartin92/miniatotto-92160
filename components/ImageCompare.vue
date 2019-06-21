@@ -1,20 +1,20 @@
 <template>
-  <figure class="image-compare" 
+  <figure class="imageCompare" 
           @mousemove.prevent="onMouseMove" 
           @touchstart="onMouseMove($event, true)" 
           @touchmove="onMouseMove($event, true)" 
           @click="onMouseMove($event, true)"
   >
-    <div class="image-compare-wrapper" :style="{ width: posX + 'px' }">
+    <div class="imageCompare__wrapper" :style="{ width: posX + 'px' }">
       <img :src="carBefore" :style="dimensions">
     </div>
     <img :src="carAfter" :style="dimensions">
 
-    <div class="image-compare-handle" :style="{ left: posX + 'px' }" @mousedown.prevent="onMouseDown">
-      <span class="image-compare-handle-icon left">
+    <div class="imageCompare__handle" :style="{ left: posX + 'px' }" @mousedown.prevent="onMouseDown">
+      <span class="imageCompare__handle-icon left">
         <slot name="icon-left" /> {{ labelColorBefore }}
       </span>
-      <span class="image-compare-handle-icon right">
+      <span class="imageCompare__handle-icon right">
         <slot name="icon-right" /> {{ labelColorAfter }}
       </span>
     </div>
@@ -89,7 +89,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.image-compare {
+.imageCompare {
   position: relative;
   margin: 0;
   overflow: hidden;
@@ -108,58 +108,67 @@ export default {
       height: 100%;
     }
   }
+
   img {
     max-width: none;
     display: block;
   }
-}
-.image-compare-wrapper,
-.image-compare-handle {
-  bottom: 0;
-  position: absolute;
-  top: 0;
-}
-.image-compare-wrapper {
-  left: 0;
-  overflow: hidden;
-  width: 100%;
-  z-index: 1;
-  // transform: translateZ(0);
-  transform: skewX(-18deg);
-  will-change: width;
 
-  img {
-    transform: skewX(18deg);
+  &__wrapper,
+  &__handle {
+    bottom: 0;
+    position: absolute;
+    top: 0;
   }
-}
-.image-compare-handle {
-  color: #fff;
-  background-color: currentColor;
-  cursor: ew-resize;
-  // transform: translateX(-50%) translateZ(0);
-  transform: skewX(-18deg);
-  border: 1px solid $colorBlack;
-  width: 2px;
-  height: 80%;
-  top: 10%;
-  z-index: 2;
-  will-change: left;
-}
-.image-compare-handle-icon {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  font-size: 2rem;
-  color: currentColor;
-  line-height: normal;
-  &.left {
-    padding-right: 10px;
-    transform: translate(-100%, -50%);
+
+  &__wrapper {
+    left: 0;
+    overflow: hidden;
+    width: 100%;
+    z-index: 1;
+    // transform: translateZ(0);
+    transform: skewX(-18deg);
+    will-change: width;
+    box-shadow: 23px -5px 36px -19px rgba(0, 0, 0, 0.1);
+
+    img {
+      transform: skewX(18deg);
+    }
   }
-  &.right {
-    padding-left: 10px;
-    transform: translate(0, -50%);
+
+  &__handle {
+    color: #fff;
+    background-color: currentColor;
+    cursor: ew-resize;
+    // transform: translateX(-50%) translateZ(0);
+    transform: skewX(-18deg);
+    border: 1px solid $colorBlack;
+    width: 2px;
+    height: 90%;
+    top: 5%;
+    z-index: 2;
+    will-change: left;
   }
+
+  &__handle-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 25px;
+    color: currentColor;
+    line-height: normal;
+
+    &.left {
+      padding-right: 10px;
+      transform: translate(-100%, -50%);
+    }
+
+    &.right {
+      padding-left: 10px;
+      transform: translate(0, -50%);
+    }
+  }
+
 }
 </style>
 
