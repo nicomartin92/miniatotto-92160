@@ -11,6 +11,8 @@
       </h1>
     </div>
 
+    <slider :initial-data="carsFromStore" />
+
     <imagecompare :car-before="carsFromStore[2].views[0].image1" 
                   :car-after="carsFromStore[6].views[0].image1"
                   label-color-before="Rouge Flame"
@@ -60,6 +62,7 @@ import panelIntro from '~/components/PanelIntro.vue'
 import Panelnav from '~/components/Panelnav/Panelnav.vue'
 import Chronos from '~/components/Chronos.vue'
 import imagecompare from '~/components/ImageCompare.vue'
+import slider from '~/components/Slider.vue'
 
 export default {
   layout: 'default',
@@ -67,7 +70,8 @@ export default {
     panelIntro,
     Chronos,
     Panelnav,
-    imagecompare
+    imagecompare,
+    slider
   },
   data() {
     return {
