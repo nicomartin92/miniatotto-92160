@@ -1,18 +1,36 @@
 <template>
-  <div class="slider">
-    <ul class="slider__navigation">
-      <li v-for="(number, index) in initialData" :key="number.id" class="slider__navigationItem">
-        <button class="button" @click="changeSlide(index)">
-          {{ index }}
-        </button>
+  <div class="sliderMain">
+    <ul class="silder__navigation">
+      <li class="navigationPrev">
+        <button @click="changeSlide(activeSlide-1)">
+          prev
+        </button> 
+      </li>
+      <li class="navigationNext">
+        <button @click="changeSlide(activeSlide+1)">
+          next
+        </button>  
       </li>
     </ul>
-    <ul ref="slideItem" class="slider__container" :style="styleObject">
-      <li v-for="slide in initialData" :key="slide.id" class="slider__item">
-        {{ slide.brand }} {{ slide.model }} {{ slide.version }}
-        <img loading="lazy" :src="slide.image"> 
-      </li>
-    </ul>
+    <div class="slider">
+      <ul ref="slideItem" class="slider__container" :style="styleObject">
+        <li v-for="slide in initialData" :key="slide.id" class="slider__item">
+          {{ slide.brand }} {{ slide.model }} {{ slide.version }}
+          <img loading="lazy" :src="slide.image"> 
+        </li>
+      </ul>
+      <ul class="slider__pagination">
+        <li v-for="(number, index) in initialData" 
+            :key="number.id" 
+            class="slider__paginationItem"
+            :class="{ '-active': index === activeSlide-1 }"
+        >
+          <button class="button" @click="changeSlide(index+1)">
+            {{ index }}
+          </button>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -23,7 +41,8 @@ export default {
     },
     data() {
         return {
-            activeSlide: 1
+            activeSlide: 1,
+            itemLength: 0
         }
     },
     computed: {
@@ -44,13 +63,24 @@ export default {
     methods: {
       changeSlide(number) {
          this.activeSlide = number
-         console.warn(number)
+
+         if(this.activeSlide > this.initialData.length) {
+            this.activeSlide = 1
+         }
+
+         if(this.activeSlide < 1) {
+            this.activeSlide = this.initialData.length
+         }
       }
     }
 }
 </script>
 
 <style lang="scss" scoped>
+.sliderMain {
+  position: relative;
+}
+
 .slider {
     overflow: hidden;
     width: 900px;
@@ -76,14 +106,50 @@ export default {
       }
     }
 
-    &__navigation {
+    &__pagination {
+      position: absolute;
+      width: 100%;
+      bottom: 40px;
       display: flex;
+      flex-wrap: nowrap;
+      justify-content: center;
     }
 
-    &__navigationItem {
+    &__paginationItem {
       margin: 0 5px;
       padding: 0;
+
+      &.-active {
+        button {
+          background: $colorBlue;
+        }
+      }
+
+      button {
+        background: none;
+        border: 2px solid $colorBlue;
+        transform: skewX(-18deg);
+        transition: all .3 ease-in;
+        cursor: pointer;
+
+        &:hover {
+          background: $colorBlue;
+          transition: all .3 ease-in;
+        }
+      }
     }
+}
+
+.navigationPrev {
+  position: absolute;
+  left: 0;
+  top: 50%;
+}
+
+.navigationNext {
+  position: absolute;
+  top: 50%;
+  right: 0;
 }
 </style>
 
