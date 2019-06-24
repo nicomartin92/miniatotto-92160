@@ -42,7 +42,12 @@ export default {
     data() {
         return {
             activeSlide: 1,
-            itemLength: 0
+            itemLength: 0,
+            dragOffset: 0,
+            dragStartX: 0,
+            mousedown: false,
+            maxSwipeAngle: 60,
+            minSwipeDistance: 20
         }
     },
     computed: {
@@ -60,6 +65,11 @@ export default {
         }
       }
     },
+    mounted () {
+      this.$el.addEventListener('mousedown', this.handleMousedown)
+      this.$el.addEventListener('mouseup', this.handleMouseup)
+      this.$el.addEventListener('mousemove', this.handleMousemove)
+    },
     methods: {
       changeSlide(number) {
          this.activeSlide = number
@@ -71,6 +81,56 @@ export default {
          if(this.activeSlide < 1) {
             this.activeSlide = this.initialData.length
          }
+      },
+      swipeAngle(main, sub) {
+        return Math.atan(Math.abs(sub) / Math.abs(main)) * (180 / Math.PI)
+      },
+      handleMousedown(e) {
+        if (!e.touches) {
+          e.preventDefault()
+        }
+
+        this.mousedown = true
+        this.dragStart = (e.touches) ? e.touches[0] : e
+      },
+      handleMouseup() {
+        this.mousedown = false
+        this.dragOffset = 0
+      },
+      handleMousemove(e) {
+        if (!this.mousedown) {
+          return
+        }
+
+        const event = (e.touches) ? e.touches[0] : e
+
+        let mainDirectionDragDistance = 0
+        let subDirectionDragDistance = 0
+
+        mainDirectionDragDistance = (this.dragStart.clientX - event.clientX)
+        subDirectionDragDistance = (this.dragStart.clientY - event.clientY)
+
+        this.angle = this.swipeAngle(mainDirectionDragDistance, subDirectionDragDistance)
+
+        /**
+         * If the swipe angle is less then the max swipe angle then
+         * the user is probably using the slideshow to see the next slide
+         *
+         * We want to use prevent default to prevent the page from scrolling when switching to a new slide.
+         */
+        if (this.angle < this.maxSwipeAngle) {
+          e.preventDefault()
+        }
+
+        this.dragOffset = mainDirectionDragDistance
+
+        if (this.dragOffset > this.minSwipeDistance) {
+          this.handleMouseup()
+          this.changeSlide(this.activeSlide+1)
+        } else if (this.dragOffset < -this.minSwipeDistance) {
+          this.handleMouseup()
+          this.changeSlide(this.activeSlide-1)
+        }
       }
     }
 }
@@ -131,6 +191,9 @@ export default {
         transform: skewX(-18deg);
         transition: all .3 ease-in;
         cursor: pointer;
+        width: 20px;
+        height: 20px;
+        text-indent: -9000px;
 
         &:hover {
           background: $colorBlue;
