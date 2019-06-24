@@ -1,0 +1,49 @@
+@keyframes scaleDown {
+    0%, 20%, 40%, 60%, 80%, 100% {
+        transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    }
+
+    0% {
+        opacity: 0;
+        transform: scale3d(1, 1, 1) skewX(-18deg);
+    }
+
+    40% {
+        transform: scale3d(1, 1, 1) skewX(-18deg);
+    }
+
+    60% {
+        opacity: 1;
+        transform: scale3d(.7, .7, .7) skewX(-18deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale3d(.7, .7, .7) skewX(-18deg);
+    }
+}
+
+@keyframes scaleUp {
+    0%, 20%, 40%, 60%, 80%, 100% {
+        transition-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    }
+
+    0% {
+        opacity: 0;
+        transform: scale3d(.8, .8, .8);
+    }
+
+    40% {
+        transform: scale3d(.8, .8, .8);
+    }
+
+    60% {
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale3d(1, 1, 1);
+    }
+}

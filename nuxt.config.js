@@ -32,7 +32,8 @@ module.exports = {
     scss: [
       '@/assets/scss/variables.scss',
       '@/assets/scss/mixins.scss',
-      '@assets/scss/atoms.scss'
+      '@assets/scss/atoms.scss',
+      '@assets/scss/animations.scss'
     ]
   },
 

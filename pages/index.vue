@@ -11,7 +11,9 @@
       </h1>
     </div>
 
-    <slider :initial-data="carsFromStore" />
+    <slider :initial-data="carsFromStore" 
+            pattern="/pattern/pattern-metal.jpg"
+    />
 
     <imagecompare :car-before="carsFromStore[2].views[0].image1" 
                   :car-after="carsFromStore[6].views[0].image1"

@@ -14,9 +14,20 @@
     </ul>
     <div class="slider">
       <ul ref="slideItem" class="slider__container" :style="styleObject">
-        <li v-for="slide in initialData" :key="slide.id" class="slider__item">
-          {{ slide.brand }} {{ slide.model }} {{ slide.version }}
-          <img loading="lazy" :src="slide.image"> 
+        <li v-for="(slide, index) in initialData" 
+            :key="slide.id" 
+            class="slider__item"
+            :class="{ '-animated': index === activeSlide-1 }"
+          >
+          <div class="slider__title">
+            {{ slide.brand }} {{ slide.model }} <span class="skew">{{ slide.version }}</span>
+          </div>
+          <div class="slider__image">
+            <img loading="lazy" :src="slide.image">
+            <div class="slider__color" :style="{ backgroundImage: `url('${pattern}')`, backgroundColor: slide.color }">
+              {{ slide.colorname }}
+            </div>
+          </div> 
         </li>
       </ul>
       <ul class="slider__pagination">
@@ -37,7 +48,8 @@
 <script>
 export default {
     props: {
-      initialData: { type: Array, required: true }
+      initialData: { type: Array, required: true },
+      pattern: { type: String, required: false, default: '' }
     },
     data() {
         return {
@@ -154,6 +166,10 @@ export default {
       transition: all .32s ease;
     }
 
+    &__title {
+      font-size: 30px;
+    }
+
     &__item {
       float: left;
       width: 900px;
@@ -161,8 +177,43 @@ export default {
       margin: 0;
       padding: 40px 0;
 
+      &.-animated {
+        img {
+          animation: scaleUp .75s ease-in both;
+        } 
+      }
+
       img {
         width: 100%;
+        max-width: 90%; 
+        position: relative;
+        z-index: 2;
+      }
+    }
+
+    &__image {
+      position: relative;
+      z-index: 2;
+    }
+
+    &__color {
+      position: absolute;
+      right: 41px;
+      top: -72px;
+      z-index: 2;
+      width: 30%;
+      height: 169px;
+      background-size: cover;
+      overflow: hidden;
+      background-blend-mode: multiply;
+      color: white;
+      text-transform: uppercase;
+      font-size: 15px;
+      padding: 10px;
+      transform: skewX(-18deg);
+
+      .-animated & {
+        animation: scaleDown .75s ease-in both;
       }
     }
 
