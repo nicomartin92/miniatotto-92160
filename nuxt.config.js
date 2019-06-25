@@ -50,7 +50,12 @@ module.exports = {
   /*
    ** Nuxt.js modules
    */
-  modules: ['@nuxtjs/style-resources'],
+  modules: [
+    '@nuxtjs/style-resources',
+    ['nuxt-svg-sprite-module', {
+      directory: '~/assets/icons'
+    }]
+  ],
 
   /*
    ** Build configuration

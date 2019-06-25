@@ -3,12 +3,16 @@
     <ul class="silder__navigation">
       <li class="navigationPrev">
         <button @click="changeSlide(activeSlide-1)">
-          prev
+          <svg class="icon">
+            <use xlink:href="#icon-arrow-prev" />
+          </svg>
         </button> 
       </li>
       <li class="navigationNext">
         <button @click="changeSlide(activeSlide+1)">
-          next
+          <svg class="icon">
+            <use xlink:href="#icon-arrow-next" />
+          </svg>
         </button>  
       </li>
     </ul>
@@ -176,6 +180,7 @@ export default {
       font-size: 40px;
       margin: 0;
       padding: 40px 0;
+      min-height: 500px;
 
       &.-animated {
         img {
@@ -254,15 +259,19 @@ export default {
     }
 }
 
-.navigationPrev {
+.navigationPrev,
+.navigationNext {
   position: absolute;
   left: 0;
   top: 50%;
+  
+  button {
+    padding: 15px;
+  }
 }
 
 .navigationNext {
-  position: absolute;
-  top: 50%;
+  left: auto;
   right: 0;
 }
 </style>

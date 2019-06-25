@@ -1,0 +1,23 @@
+
+    <!DOCTYPE html>
+    <html {{ HTML_ATTRS }}>
+      <head>
+        {{ HEAD }}
+        <style>
+          #svg-defs {
+            width: 0;
+            height: 0;
+            overflow: hidden;
+            position: absolute;
+          }
+        </style>
+      </head>
+      <body {{ BODY_ATTRS }}>
+        <!-- svg-sprite -->
+    <div id='svg-defs'>
+      <?xml version="1.0" encoding="UTF-8"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><symbol viewBox="0 0 19 39" id="icon-arrow-next" xmlns="http://www.w3.org/2000/svg"><path d="M2 2l15 17.5L2 37" stroke-width="3" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"/></symbol><symbol viewBox="0 0 19 39" id="icon-arrow-prev" xmlns="http://www.w3.org/2000/svg"><path d="M17 37L2 19.5 17 2" stroke-width="3" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"/></symbol></svg>
+    </div>
+  <!-- endsvg-sprite -->
+        {{ APP }}
+      </body>
+    </html>
