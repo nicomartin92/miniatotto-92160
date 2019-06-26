@@ -22,6 +22,7 @@
             :key="slide.id" 
             class="slider__item"
             :class="{ '-animated': index === activeSlide-1 }"
+            :style="{ width: `${browserWidth}px` }"
           >
           <div class="slider__title" :class="animation">
             {{ slide.brand }} {{ slide.model }} <span class="skew">{{ slide.version }}</span>
@@ -50,6 +51,8 @@
 </template>
 
 <script>
+import { debounce } from 'lodash'
+
 export default {
     props: {
       initialData: { type: Array, required: true },
@@ -64,12 +67,13 @@ export default {
             dragStartX: 0,
             mousedown: false,
             maxSwipeAngle: 60,
-            minSwipeDistance: 20
+            minSwipeDistance: 20,
+            browserWidth: 900
         }
     },
     computed: {
       styleObject() {
-        const width = 0 - ((this.activeSlide-1) * 900)
+        const width = 0 - ((this.activeSlide-1) * this.browserWidth)
         return {
           transform: 'translateX('+width+'px)'
         }
@@ -83,6 +87,10 @@ export default {
       }
     },
     mounted () {
+      this.getBrowserWidth()
+
+      window.addEventListener('resize', debounce(this.getBrowserWidth, 16))
+      
       this.$el.addEventListener('mousedown', this.handleMousedown)
       this.$el.addEventListener('mouseup', this.handleMouseup)
       this.$el.addEventListener('mousemove', this.handleMousemove)
@@ -148,6 +156,13 @@ export default {
           this.handleMouseup()
           this.changeSlide(this.activeSlide-1)
         }
+      },
+      screenWidth() {
+        // return window.innerWidth
+      },
+      getBrowserWidth() {
+        this.browserWidth = window.innerWidth
+        return this.browserWidth
       }
     }
 }
@@ -160,10 +175,10 @@ export default {
 
 .slider {
     overflow: hidden;
-    width: 900px;
     height: auto;
     position: relative;
     margin: 0 auto;
+    z-index: 1;
 
     &__container {
       width: 2000000px;
@@ -177,7 +192,7 @@ export default {
 
     &__item {
       float: left;
-      width: 900px;
+      width: 100%;
       font-size: 40px;
       margin: 0;
       padding: 40px 0;
@@ -234,7 +249,7 @@ export default {
     &__pagination {
       position: absolute;
       width: 100%;
-      bottom: 40px;
+      bottom: 100px;
       display: flex;
       flex-wrap: nowrap;
       justify-content: center;
@@ -273,6 +288,7 @@ export default {
   position: absolute;
   left: 0;
   top: 50%;
+  z-index: 2;
   
   button {
     padding: 15px;
