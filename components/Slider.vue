@@ -74,15 +74,10 @@ export default {
     computed: {
       styleObject() {
         const width = 0 - ((this.activeSlide-1) * this.browserWidth)
+        const itemWidth = this.initialData.length * this.browserWidth
         return {
-          transform: 'translateX('+width+'px)'
-        }
-      },
-      styleSliderWidth() {
-        const width = this.$refs.slideItem.offsetWidth 
-        console.warn("width", width)
-        return{
-          width: `${width}px`
+          transform: 'translateX('+width+'px)',
+          width: `${itemWidth}px`
         }
       }
     },
@@ -184,6 +179,7 @@ export default {
       width: 2000000px;
       overflow: hidden;
       transition: all .32s ease;
+      display: flex;
     }
 
     &__title {
@@ -191,11 +187,10 @@ export default {
     }
 
     &__item {
-      float: left;
       width: 100%;
       font-size: 40px;
       margin: 0;
-      padding: 40px 0;
+      padding: 40px 20px;
       min-height: 500px;
 
       &.-animated {
@@ -227,7 +222,7 @@ export default {
 
     &__color {
       position: absolute;
-      right: 41px;
+      right: 10px;
       top: -72px;
       z-index: 2;
       width: 30%;
