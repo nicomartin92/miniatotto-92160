@@ -23,7 +23,7 @@
             class="slider__item"
             :class="{ '-animated': index === activeSlide-1 }"
           >
-          <div class="slider__title">
+          <div class="slider__title" :class="animation">
             {{ slide.brand }} {{ slide.model }} <span class="skew">{{ slide.version }}</span>
           </div>
           <div class="slider__image">
@@ -53,7 +53,8 @@
 export default {
     props: {
       initialData: { type: Array, required: true },
-      pattern: { type: String, required: false, default: '' }
+      pattern: { type: String, required: false, default: '' },
+      animation: { type: String, required: false, default: 'scaleDown' }
     },
     data() {
         return {
@@ -183,9 +184,17 @@ export default {
       min-height: 500px;
 
       &.-animated {
-        img {
-          animation: scaleUp .75s ease-in both;
-        } 
+        .scaleDown {
+          img {
+            animation: scaleDown .75s ease-in both;
+          } 
+        }
+
+        .scaleUp {
+          img {
+            animation: scaleUp .75s ease-in both;
+          } 
+        }
       }
 
       img {

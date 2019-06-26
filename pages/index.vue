@@ -11,8 +11,12 @@
       </h1>
     </div>
 
+    <!-- 
+      Props: animation: scaleDown, scaleUp
+    -->
     <slider :initial-data="carsFromStore" 
             pattern="/pattern/pattern-metal.jpg"
+            animation="scaleUp"
     />
 
     <imagecompare :car-before="carsFromStore[2].views[0].image1" 

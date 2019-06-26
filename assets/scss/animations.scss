@@ -30,20 +30,20 @@
 
     0% {
         opacity: 0;
-        transform: scale3d(.8, .8, .8);
+        transform: scale3d(.8, .8, .8) skewX(-18deg);
     }
 
     40% {
-        transform: scale3d(.8, .8, .8);
+        transform: scale3d(.8, .8, .8) skewX(-18deg);
     }
 
     60% {
         opacity: 1;
-        transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1) skewX(-18deg);
     }
 
     100% {
         opacity: 1;
-        transform: scale3d(1, 1, 1);
+        transform: scale3d(1, 1, 1) skewX(-18deg);
     }
 }
