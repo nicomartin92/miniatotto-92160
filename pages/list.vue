@@ -4,18 +4,31 @@
     <Modal />
 
     <div class="sticky">
-      <h3 class="center">
-        Chercher un modèle particulier: ({{ carsLength }} modèles au total)
-      </h3>
-      <form class="center" @submit.prevent="submit()">
-        <input
-          v-model="search"
-          type="text"
-          placeholder="Exemple: BMW..."
-          autofocus
-        >
-      </form>
-
+      <div class="list__category">
+        <div class="list__categoryTitle">
+          <span class="bold">Voitures</span> ({{ carsLength }})
+        </div>
+        <button class="list__filterButton">
+          <svg class="icon">
+            <use xlink:href="#icon-filter" />
+          </svg>
+          <span>Filtrer</span>
+        </button>
+      </div>
+      <div class="list__search">
+        <h3 class="center">
+          Chercher un modèle particulier: ({{ carsLength }} modèles au total)
+        </h3>
+        <form class="center" @submit.prevent="submit()">
+          <input
+            v-model="search"
+            type="text"
+            placeholder="Exemple: BMW..."
+            autofocus
+          >
+        </form>
+      </div>
+      
       <div class="list__filter">
         <label>
           <input v-model="selectedCategory" type="radio" value="All">
@@ -201,6 +214,22 @@
       overflow: hidden;
     }
 
+    &__category {
+      display: flex;
+      justify-content: center;
+      border-bottom: 1px solid $colorGray03;
+    }
+
+    &__categoryTitle {
+      padding: 20px;
+    }
+
+    &__filterButton {
+      padding: 20px;
+      border-left: 1px solid $colorGray03;
+      border-right: 1px solid $colorGray03;
+    }
+
     &__item {
       width: 100%;
       position: relative;
@@ -239,7 +268,6 @@
     .sticky {
       top: 50px;
       background: rgba(255, 255, 255, 0.85);
-      padding: 20px;
     }
 
     &__filter {
