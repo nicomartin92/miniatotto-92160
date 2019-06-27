@@ -8,44 +8,57 @@
         <div class="list__categoryTitle">
           <span class="bold">Voitures</span> ({{ carsLength }})
         </div>
-        <button class="list__filterButton">
+        <button class="list__filterButton"
+                :class="{ '-active': activeFilter }"
+                @click="expand()"
+        >
           <svg class="icon">
             <use xlink:href="#icon-filter" />
           </svg>
           <span>Filtrer</span>
         </button>
       </div>
-      <div class="list__search">
-        <h3 class="center">
-          Chercher un modèle particulier: ({{ carsLength }} modèles au total)
-        </h3>
-        <form class="center" @submit.prevent="submit()">
-          <input
-            v-model="search"
-            type="text"
-            placeholder="Exemple: BMW..."
-            autofocus
-          >
-        </form>
-      </div>
-      
-      <div class="list__filter">
-        <label>
-          <input v-model="selectedCategory" type="radio" value="All">
-          <span>Voir tous les modèles</span>
-        </label>
-        <label>
-          <input v-model="selectedCategory" type="radio" value="fr">
-          <span>France</span>
-        </label>
-        <label>
-          <input v-model="selectedCategory" type="radio" value="de">
-          <span>Allemagne</span>
-        </label>
-        <label>
-          <input v-model="selectedCategory" type="radio" value="it">
-          <span>Italienne</span>
-        </label>
+      <div v-show="expanded" class="list__searchBar">
+        <div class="list__search">
+          <h3 class="center">
+            Chercher un modèle particulier: ({{ carsLength }} modèles au total)
+          </h3>
+          <form class="center" @submit.prevent="submit()">
+            <input
+              v-model="search"
+              type="text"
+              placeholder="Exemple: BMW..."
+              autofocus
+            >
+          </form>
+        </div>
+
+        <div class="list__filter">
+          <label>
+            <input v-model="selectedCategory" type="radio" value="All">
+            <span>Voir tous les modèles</span>
+          </label>
+          <label>
+            <input v-model="selectedCategory" type="radio" value="fr">
+            <span>France</span>
+          </label>
+          <label>
+            <input v-model="selectedCategory" type="radio" value="de">
+            <span>Allemagne</span>
+          </label>
+          <label>
+            <input v-model="selectedCategory" type="radio" value="it">
+            <span>Italienne</span>
+          </label>
+          <label>
+            <input v-model="selectedCategory" type="radio" value="1/18">
+            <span>1/18</span>
+          </label>
+          <label>
+            <input v-model="selectedCategory" type="radio" value="1/12">
+            <span>1/12</span>
+          </label>
+        </div>
       </div>
     </div>
 
@@ -104,7 +117,9 @@
       return {
         title: 'Mianiatauto - page catégorie',
         search: '',
-        selectedCategory: 'All'
+        selectedCategory: 'All',
+        expanded: false,
+        activeFilter: false
       }
     },
     head () {
@@ -134,7 +149,11 @@
           case 'de':
             return this.$store.getters.germanCars
           case 'it':
-            return this.$store.getters.italianCars  
+            return this.$store.getters.italianCars
+          case '1/18':
+            return this.$store.getters.sizeCars18
+          case '1/12':
+            return this.$store.getters.sizeCars12   
           default:
             return this.$store.getters.loadedCars
         }
@@ -199,6 +218,10 @@
           (bounds.bottom >= viewport.top && bounds.bottom <= viewport.bottom) ||
           (bounds.top <= viewport.bottom && bounds.top >= viewport.top)
         )
+      },
+      expand() {
+        this.expanded = !this.expanded
+        this.activeFilter = !this.activeFilter
       }
     }
   }
@@ -217,17 +240,34 @@
     &__category {
       display: flex;
       justify-content: center;
+      align-items: center;
       border-bottom: 1px solid $colorGray03;
+      border-top: 1px solid $colorGray03;
     }
 
     &__categoryTitle {
       padding: 20px;
     }
 
+    &__searchBar {
+      padding: 30px 0;
+    }
+
     &__filterButton {
       padding: 20px;
       border-left: 1px solid $colorGray03;
       border-right: 1px solid $colorGray03;
+      transition: all .3s ease-in;
+      display: flex;
+      align-items: center;
+
+      &.-active {
+        border-bottom: 5px solid $colorBlack;
+      }
+
+      svg {
+        margin-right: 15px;
+      }
     }
 
     &__item {
@@ -267,7 +307,7 @@
 
     .sticky {
       top: 50px;
-      background: rgba(255, 255, 255, 0.85);
+      background: rgba(255, 255, 255, 0.90);
     }
 
     &__filter {
