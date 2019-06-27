@@ -12,11 +12,12 @@
     "test": "jest",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "lint:fix": "eslint --fix --ext .js,.vue  --ignore-path .gitignore --ignore-pattern *.config.js .",
-    "jsonserver": "json-server db.json --port 3001"
+    "jsonserver": "json-server db.json --port 3001",
+    "storybook": "start-storybook"
   },
   "dependencies": {
     "@nuxtjs/style-resources": "^0.1.2",
-    "axios": "^0.18.0",
+    "axios": "^0.19.0",
     "cross-env": "^5.2.0",
     "json-server": "^0.14.2",
     "lodash": "^4.17.11",
@@ -26,10 +27,14 @@
     "vuetify": "^1.5.5"
   },
   "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@storybook/vue": "^5.1.9",
     "@vue/test-utils": "^1.0.0-beta.27",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
-    "babel-jest": "^23.6.0",
+    "babel-jest": "^24.8.0",
+    "babel-loader": "^8.0.6",
+    "babel-preset-vue": "^2.0.2",
     "coffee-loader": "^0.9.0",
     "coffeescript": "^2.3.2",
     "eslint": "^5.15.3",
@@ -38,7 +43,7 @@
     "eslint-plugin-prettier": "^3.0.1",
     "eslint-plugin-vue": "^5.2.2",
     "husky": "^1.3.1",
-    "jest": "^23.6.0",
+    "jest": "^24.8.0",
     "lint-staged": "^8.1.5",
     "node-sass": "^4.11.0",
     "nodemon": "^1.18.9",
@@ -46,7 +51,9 @@
     "pug": "^2.0.3",
     "pug-plain-loader": "^1.0.0",
     "sass-loader": "^7.1.0",
-    "vue-jest": "^3.0.2"
+    "vue-jest": "^3.0.2",
+    "vue-loader": "^15.7.0",
+    "vue-template-compiler": "^2.6.10"
   },
   "husky": {
     "pre-commit": "lint-staged",
