@@ -1,9 +1,11 @@
 <template>
   <div>
-    <Panelnav :initialdata="cars" />
+    <!-- <Panelnav :initialdata="cars" /> -->
+    <Panelnav :initialdata="carsFromStore" />
+
     <div class="pdp">
       <h3>Modèle: {{ $route.params.id }}</h3>
-      <div class="textBlock">
+      <div class="textBlock" v-if="carsData[0]">
         <div class="textBlock__text">
           <h2 class="textBlock__subLabel">
             {{ carsData[0].brandshop }}
@@ -21,7 +23,7 @@
         </div>
       </div>
 
-      <div class="imageContent">
+      <div class="imageContent" v-if="carsData[0]">
         <div class="imageContent__item -medium">
           <img :src="carsData[0].views[0].image1" loading="lazy" :alt="carsData[0].model">   
         </div>
@@ -37,7 +39,7 @@
         </div>
       </div>
 
-      <div class="imageContent">
+      <div class="imageContent" v-if="carsData[0]">
         <div class="imageContent__item -small">
           <div class="textContent">
             <h3 class="subTitle">
@@ -78,7 +80,7 @@
             </ul>  
           </div>
         </div>
-        <div class="imageContent__item -medium">
+        <div class="imageContent__item -medium" v-if="carsData[0]">
           <img :src="carsData[0].views[0].image2" loading="lazy" :alt="carsData[0].model">   
         </div>
       </div>
@@ -113,7 +115,16 @@
       }
     },
     transition: 'bounce',
+
     computed: {
+      carsFromStore () {
+        return this.$store.getters.loadedCars
+      },
+      selectedCar () {
+        return this.$store.getters.loadedCars.filter(car => {
+          return car.reference === 'GT039'
+        });
+      },
       carExists () {
         return this.carsData.length > 0
       },
@@ -121,6 +132,7 @@
         return this.carsData.length
       }
     },
+
     async asyncData(params) {
       let [cardataSelected, carAllList] = await Promise.all([
         axios.get(`http://localhost:3001/cars?q=${ params.params.id }`),
@@ -131,7 +143,13 @@
         cars: carAllList.data
       }
     },
+
     middleware: 'search',
+
+    created() {
+      this.carsData = this.selectedCar;
+    },
+
     methods: {
       odd (index) {
         return index % 2 == 0 ? 'odd' : 'even'

@@ -1,6 +1,7 @@
 <template>
   <div class="list">
-    <Panelnav :initialdata="cars" />
+    <!-- <Panelnav :initialdata="cars" /> -->
+    <Panelnav :initialdata="carsFromStore" />
     <Modal />
 
     <div class="sticky">
@@ -136,7 +137,7 @@
     },
     transition: 'bounce',
     computed: {
-      filteredCarsFromStore () {
+      carsFromStore () {
         return this.$store.getters.loadedCars
       },
       filteredCars () {
@@ -159,7 +160,8 @@
         }
       },
       filteredList () {
-        return this.cars.filter(car => {
+        //  return this.cars.filter(car => {
+        return this.$store.getters.loadedCars.filter(car => {
           return car.brand.toLowerCase().includes(this.search.toLowerCase())
         })
       },
@@ -168,7 +170,7 @@
       }
     },
 
-    async asyncData () {
+    /* async asyncData () {
       return axios.get('http://localhost:3001/cars').then(response => {
         return { cars: response.data }
       })
@@ -177,7 +179,7 @@
     async fetch ({ store }) {
       let { data } = await axios.get('http://localhost:3001/cars')
       store.commit('setCars', data)
-    },
+    }, */
 
     mounted () {
       var elem = document.querySelectorAll('.panelIntro')
@@ -292,7 +294,7 @@
       }
 
       &:hover {
-        transform: scale(1.1);
+        transform: scale(1.05);
       }
 
       img {
