@@ -12,10 +12,9 @@ const createStore = () => {
       }
     },
     actions: {
-      fetch (context) {
-        return axios.get('http://localhost:3001/cars').then((res) => {
-          context.store.commit('setCars', res.data)
-        })
+      async fetch ({ store, params }) {
+        let { data } = await axios.get('http://localhost:3001/cars')
+        store.commit('setCars', data)
       },
       setCars({ commit }, cars) {
         commit('setCars', cars)
