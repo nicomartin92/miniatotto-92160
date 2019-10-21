@@ -1,5 +1,5 @@
 <template>
-  <div v-show="showT">
+  <div v-show="visibleContent">
     <h1>Contact page</h1>
     <div class="result"></div>
     <input type="text" class="inputT" />
@@ -23,6 +23,11 @@ export default {
       input1: null,
       input2: null
     };
+  },
+  computed: {
+    visibleContent() {
+      return this.$store.getters.getVisibleContent
+    }
   },
   mounted() {
     window.onkeyup = keyup;

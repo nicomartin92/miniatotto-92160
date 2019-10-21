@@ -11,7 +11,8 @@ const createStore = () => {
           "url": "",
           "error": "Error"
       },
-      stock: 14,
+      visibleContent: false,
+      countCar: 0,
       loadedCars: [
           {
               "id": 1,
@@ -797,6 +798,9 @@ const createStore = () => {
     mutations: {
       setCars(state, cars) {
         state.loadedCars = cars
+      },
+      incrementCar(state) {
+        state.countCar++
       }
     },
     actions: {
@@ -832,6 +836,24 @@ const createStore = () => {
           return a.preference - b.preference
         })
         return sort
+      },
+      stockCars(state) {
+        let stock = state.loadedCars.filter(car => car.available === true && car.stock > 0)
+        return stock
+      },
+      getCorrectCarById: (state) => (id) => {
+        let result = state.loadedCars.filter(car => car.id === id)
+        return result
+      },
+      getCorrectCarByRef: (state) => (ref) => {
+        let result = state.loadedCars.filter(car => car.reference === ref)
+        return result
+      },
+      countCar(state) {
+        return state.countCar
+      },
+      getVisibleContent(state) {
+        return state.visibleContent
       }
     }
   })

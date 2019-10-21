@@ -122,7 +122,7 @@
       },
       selectedCar () {
         return this.$store.getters.loadedCars.filter(car => {
-          return car.reference === 'GT039'
+          return car.reference === this.$route.params.id
         });
       },
       carExists () {
@@ -133,7 +133,7 @@
       }
     },
 
-    async asyncData(params) {
+    /* async asyncData(params) {
       let [cardataSelected, carAllList] = await Promise.all([
         axios.get(`http://localhost:3001/cars?q=${ params.params.id }`),
         axios.get('http://localhost:3001/cars'),
@@ -142,7 +142,7 @@
         carsData: cardataSelected.data,
         cars: carAllList.data
       }
-    },
+    }, */
 
     middleware: 'search',
 
