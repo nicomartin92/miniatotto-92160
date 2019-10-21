@@ -61,6 +61,10 @@ module.exports = {
 
   buildDir: '../functions/nuxt',
 
+  router: {
+    middleware: 'router-auth'
+  },
+
   /*
    ** Build configuration
    */

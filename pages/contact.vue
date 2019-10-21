@@ -16,7 +16,7 @@
       <div>{{ allCountries }}</div>
     </div>
 
-    <div class="firestore" v-show="isContentFirestore">
+    <!-- <div class="firestore" v-show="isContentFirestore">
       <div>
         <h2>Write to Firestore.</h2>
         <div>
@@ -37,14 +37,15 @@
           <p>{{text}}</p>
         </div>
       </div>
-    </div>
+    </div> -->
+
   </div>
 </template>
 
 <script>
 import axios from "axios";
 import { mapActions } from "vuex";
-import { fireDb } from "~/plugins/firebase.js";
+// import { fireDb } from "~/plugins/firebase.js";
 
 export default {
   layout: "contactlayout",
@@ -88,7 +89,7 @@ export default {
   },
 
   // ASYNC DATA from FIRESTORE
-  async asyncData({ app, params, error }) {
+  /* async asyncData({ app, params, error }) {
     const ref = fireDb.collection("visibleContents").doc("visible");
     let snap;
     try {
@@ -101,7 +102,7 @@ export default {
     return {
       isContentFirestore: snap.data().value
     };
-  },
+  }, */
 
   methods: {
     checkForm(e) {
@@ -118,7 +119,7 @@ export default {
 
     // FIRESTORE
 
-    async writeToFirestore() {
+    /* async writeToFirestore() {
       const ref = fireDb.collection("test").doc("test");
       const document = {
         text: "This is a test message."
@@ -145,7 +146,7 @@ export default {
       console.error("oki2");
       this.text = snap.data().text;
       this.readSuccessful = true;
-    }
+    } */
   },
 
   created() {

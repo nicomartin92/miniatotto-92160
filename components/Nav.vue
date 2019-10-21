@@ -28,6 +28,11 @@
         Contact
       </nuxt-link>
     </li>
+    <li>
+      <nuxt-link to="/login">
+        Login
+      </nuxt-link>
+    </li>
   </div>
 </template>
 
