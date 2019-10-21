@@ -62,26 +62,64 @@ export default {
     Panelnav,
     panelIntro
   },
+
+   head() {
+    return {
+      title: this.title,
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: "Miniatauto - modèle"
+        }
+      ]
+    };
+  },
+  
+  transition: "bounce",
+
   data() {
     return {
       title: "Miniatauto",
       noResults: "Désolé pas de résultats concernant votre demande",
-      carNumber: [1, 2]
+      carNumber: [1, 2],
+      carsData: [],
+      paramUrl: (this.$route.params.id).toLowerCase()
     };
   },
+
+  created() {
+    this.carsData = this.selectedCar;
+
+    console.warn(this.paramUrl, this.selectedCar);
+  },
+
   computed: {
     carsFromStore() {
       return this.$store.getters.loadedCars;
     },
+
     carExists() {
-      return this.carsData.length > 0;
+      return this.carsFromStore.length > 0;
     },
+    
     resultLength() {
-      return this.carsData.length;
+      return this.carsFromStore.length;
+    },
+
+    selectedCar() {
+      return this.$store.getters.loadedCars.filter(car => {
+        return car.brand.toLowerCase() === this.paramUrl ||
+               car.brandshop.toLowerCase() === this.paramUrl ||
+               car.model.toLowerCase() === this.paramUrl ||
+               car.year.toLowerCase() === this.paramUrl ||
+               car.version.toLowerCase() === this.paramUrl || 
+               car.reference.toLowerCase() === this.paramUrl;
+      });
     }
   },
 
-  async asyncData(params) {
+  /* async asyncData(params) {
     let [cardataSelected, carAllList] = await Promise.all([
       axios.get(`http://localhost:3001/cars?q=${params.params.id}`),
       axios.get("http://localhost:3001/cars")
@@ -90,7 +128,7 @@ export default {
       carsData: cardataSelected.data,
       cars: carAllList.data
     };
-  },
+  }, */
 
   mounted() {
     var elem = document.querySelectorAll(".panelIntro");
@@ -105,20 +143,9 @@ export default {
       false
     );
   },
-  head() {
-    return {
-      title: this.title,
-      meta: [
-        {
-          hid: "description",
-          name: "description",
-          content: "Miniatauto - modèle"
-        }
-      ]
-    };
-  },
-  transition: "bounce",
+
   middleware: "search",
+
   methods: {
     odd(index) {
       return index % 2 == 0 ? "odd" : "even";
