@@ -12,7 +12,7 @@ const createStore = () => {
                 "error": "Error"
             },
             countries: [],
-            visibleContent: false,
+            visibleContent: true,
             countCar: 0,
             loadedCars: [
                 {

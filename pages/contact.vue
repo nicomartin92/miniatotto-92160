@@ -13,11 +13,34 @@
     </form>
 
     <div>{{ allCountries }}</div>
+
+    <div>
+      <h2>Write to Firestore.</h2>
+      <div>
+        <button @click="writeToFirestore" :disabled="writeSuccessful">
+          <span v-if="!writeSuccessful">Write now</span>
+          <span v-else>Successful!</span>
+        </button>
+      </div>
+    </div>
+
+    <div>
+      <h2>Read from Firestore.</h2>
+      <div>
+        <button @click="readFromFirestore" :disabled="readSuccessful">
+          <span v-if="!readSuccessful">Read now</span>
+          <span v-else>Successful!</span>
+        </button>
+        <p>{{text}}</p>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import { mapActions } from 'vuex';
+import axios from "axios";
+import { mapActions } from "vuex";
+import { fireDb } from "~/plugins/firebase.js";
 
 export default {
   layout: "contactlayout",
@@ -25,32 +48,39 @@ export default {
     return {
       showT: false,
       input1: null,
-      input2: null
+      input2: null,
+
+      writeSuccessful: false,
+      readSuccessful: false,
+      text: ""
     };
   },
+
   computed: {
     visibleContent() {
-      return this.$store.getters.getVisibleContent
+      return this.$store.getters.getVisibleContent;
     },
-    allCountries () {
-      return this.$store.state.countries
+    allCountries() {
+      return this.$store.state.countries;
     }
   },
+
   mounted() {
     window.onkeyup = keyup;
     let inputTV;
 
     function keyup(e) {
-      if(e.keyCode >= 65 && e.keyCode <= 90) {
+      if (e.keyCode >= 65 && e.keyCode <= 90) {
         inputTV = e.target.value;
-        document.querySelector('.result').innerHTML = inputTV; 
+        document.querySelector(".result").innerHTML = inputTV;
       }
-    };
+    }
 
-    keyup(document.querySelector('.inputT'));
+    keyup(document.querySelector(".inputT"));
 
-    this.$store.dispatch('increment');
+    this.$store.dispatch("increment");
   },
+
   methods: {
     checkForm(e) {
       if (this.input1 && this.input2) {
@@ -61,12 +91,39 @@ export default {
     },
 
     ...mapActions({
-      getSomeCountry: 'getCountry'
-    })
+      getSomeCountry: "getCountry"
+    }),
+
+    async writeToFirestore() {
+      const ref = fireDb.collection("projects").doc("test");
+      const document = {
+        text: "This is a test message."
+      };
+      try {
+        await ref.set(document);
+      } catch (e) {
+        // TODO: error handling
+        console.error(e);
+      }
+      this.writeSuccessful = true;
+    },
+
+    async readFromFirestore() {
+      const ref = fireDb.collection("projects").doc("test");
+      let snap;
+      try {
+        snap = await ref.get();
+      } catch (e) {
+        // TODO: error handling
+        console.error(e);
+      }
+      this.text = snap.data().text;
+      this.readSuccessful = true;
+    }
   },
 
-  created () {
-    this.getSomeCountry('france');
+  created() {
+    this.getSomeCountry("france");
   }
 };
 </script>
