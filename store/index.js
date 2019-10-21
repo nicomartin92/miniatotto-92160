@@ -800,13 +800,13 @@ const createStore = () => {
             setCars(state, cars) {
                 state.loadedCars = cars
             },
-            
+
             incrementCar(state) {
                 state.countCar++
             },
 
             addCountry(state, name) {
-                state.countries.push(name); 
+                state.countries.push(name);
             }
         },
         actions: {
@@ -817,17 +817,17 @@ const createStore = () => {
                 }, 1000);
             },
 
-            getCountry ({commit}, name) { 
+            getCountry({ commit }, name) {
                 axios.get('https://restcountries.eu/rest/v2/name/' + name)
-                  .then(function (response) {
-                  if (response.data[0]) {
-                    commit('addCountry', response.data[0].name);
-                  }
-                });
-             }
+                    .then(function (response) {
+                        if (response.data[0]) {
+                            commit('addCountry', response.data[0].name);
+                        }
+                    });
+            },
 
             /* async fetch ({ store, params }) {
-              let { data } = await axios.get('http://localhost:3001/cars')
+              let { data } = await axios.get('../api/cars')
               store.commit('setCars', data)
             },
             setCars({ commit }, cars) {
@@ -838,53 +838,53 @@ const createStore = () => {
             loadedCars(state) {
                 return state.loadedCars
             },
-            
+
             frenchCars(state) {
                 return state.loadedCars.filter(car => car.country === 'fr')
             },
-            
+
             germanCars(state) {
                 return state.loadedCars.filter(car => car.country === 'de')
             },
-            
+
             italianCars(state) {
                 return state.loadedCars.filter(car => car.country === 'it')
             },
-            
+
             sizeCars18(state) {
                 return state.loadedCars.filter(car => car.size === '1/18')
             },
-            
+
             sizeCars12(state) {
                 return state.loadedCars.filter(car => car.size === '1/12')
             },
-            
+
             preferenceCars(state) {
                 let sort = state.loadedCars.filter(car => car.preference > 0).sort((a, b) => {
                     return a.preference - b.preference
                 })
                 return sort
             },
-            
+
             stockCars(state) {
                 let stock = state.loadedCars.filter(car => car.available === true && car.stock > 0)
                 return stock
             },
-            
+
             getCorrectCarById: (state) => (id) => {
                 let result = state.loadedCars.filter(car => car.id === id)
                 return result
             },
-            
+
             getCorrectCarByRef: (state) => (ref) => {
                 let result = state.loadedCars.filter(car => car.reference === ref)
                 return result
             },
-            
+
             countCar(state) {
                 return state.countCar
             },
-            
+
             getVisibleContent(state) {
                 return state.visibleContent
             }
