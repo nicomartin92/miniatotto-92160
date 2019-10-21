@@ -1,37 +1,41 @@
 <template>
-  <div v-show="visibleContent">
-    <h1>Contact page</h1>
-    <div class="result"></div>
-    <input type="text" class="inputT" />
+  <div>
+    <div class="form" v-show="isContentFirestore">
+      <h1>Contact page</h1>
+      <div class="result"></div>
+      <input type="text" class="inputT" />
 
-    <form @submit="checkForm" action="/" method="post">
-      <h2>result: {{input1}} {{input2}}</h2>
-      <input type="text" class="input1" v-model="input1" placeholder="message 1" />
-      <input type="text" class="input2" v-model="input2" placeholder="message 2" />
+      <form @submit="checkForm" action="/" method="post">
+        <h2>result: {{input1}} {{input2}}</h2>
+        <input type="text" class="input1" v-model="input1" placeholder="message 1" />
+        <input type="text" class="input2" v-model="input2" placeholder="message 2" />
 
-      <button>submit</button>
-    </form>
+        <button>submit</button>
+      </form>
 
-    <div>{{ allCountries }}</div>
-
-    <div>
-      <h2>Write to Firestore.</h2>
-      <div>
-        <button @click="writeToFirestore" :disabled="writeSuccessful">
-          <span v-if="!writeSuccessful">Write now</span>
-          <span v-else>Successful!</span>
-        </button>
-      </div>
+      <div>{{ allCountries }}</div>
     </div>
 
-    <div>
-      <h2>Read from Firestore.</h2>
+    <div class="firestore" v-show="isContentFirestore">
       <div>
-        <button @click="readFromFirestore" :disabled="readSuccessful">
-          <span v-if="!readSuccessful">Read now</span>
-          <span v-else>Successful!</span>
-        </button>
-        <p>{{text}}</p>
+        <h2>Write to Firestore.</h2>
+        <div>
+          <button @click="writeToFirestore" :disabled="writeSuccessful">
+            <span v-if="!writeSuccessful">Write now</span>
+            <span v-else>Successful!</span>
+          </button>
+        </div>
+      </div>
+
+      <div>
+        <h2>Read from Firestore.</h2>
+        <div>
+          <button @click="readFromFirestore" :disabled="readSuccessful">
+            <span v-if="!readSuccessful">Read now</span>
+            <span v-else>Successful!</span>
+          </button>
+          <p>{{text}}</p>
+        </div>
       </div>
     </div>
   </div>
@@ -49,6 +53,8 @@ export default {
       showT: false,
       input1: null,
       input2: null,
+
+      isContentFirestore: true,
 
       writeSuccessful: false,
       readSuccessful: false,
@@ -81,6 +87,22 @@ export default {
     this.$store.dispatch("increment");
   },
 
+  // ASYNC DATA from FIRESTORE
+  async asyncData({ app, params, error }) {
+    const ref = fireDb.collection("visibleContents").doc("visible");
+    let snap;
+    try {
+      snap = await ref.get();
+    } catch (e) {
+      // TODO: error handling
+      console.error(e);
+      this.isContentFirestore = false;
+    }
+    return {
+      isContentFirestore: snap.data().value
+    };
+  },
+
   methods: {
     checkForm(e) {
       if (this.input1 && this.input2) {
@@ -94,8 +116,10 @@ export default {
       getSomeCountry: "getCountry"
     }),
 
+    // FIRESTORE
+
     async writeToFirestore() {
-      const ref = fireDb.collection("projects").doc("test");
+      const ref = fireDb.collection("test").doc("test");
       const document = {
         text: "This is a test message."
       };
@@ -105,11 +129,12 @@ export default {
         // TODO: error handling
         console.error(e);
       }
+      console.error("oki1");
       this.writeSuccessful = true;
     },
 
     async readFromFirestore() {
-      const ref = fireDb.collection("projects").doc("test");
+      const ref = fireDb.collection("test").doc("test");
       let snap;
       try {
         snap = await ref.get();
@@ -117,6 +142,7 @@ export default {
         // TODO: error handling
         console.error(e);
       }
+      console.error("oki2");
       this.text = snap.data().text;
       this.readSuccessful = true;
     }
