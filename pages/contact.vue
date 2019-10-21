@@ -11,10 +11,14 @@
 
       <button>submit</button>
     </form>
+
+    <div>{{ allCountries }}</div>
   </div>
 </template>
 
 <script>
+import { mapActions } from 'vuex';
+
 export default {
   layout: "contactlayout",
   data() {
@@ -27,6 +31,9 @@ export default {
   computed: {
     visibleContent() {
       return this.$store.getters.getVisibleContent
+    },
+    allCountries () {
+      return this.$store.state.countries
     }
   },
   mounted() {
@@ -41,6 +48,8 @@ export default {
     };
 
     keyup(document.querySelector('.inputT'));
+
+    this.$store.dispatch('increment');
   },
   methods: {
     checkForm(e) {
@@ -49,7 +58,15 @@ export default {
         return true;
       }
       e.preventDefault();
-    }
+    },
+
+    ...mapActions({
+      getSomeCountry: 'getCountry'
+    })
+  },
+
+  created () {
+    this.getSomeCountry('france');
   }
 };
 </script>
