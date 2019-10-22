@@ -1,6 +1,8 @@
 <template>
   <div>
-    <h1>Admin</h1>
+    <h1>Hello {{getName}}</h1>
+    <h2>Welcome to the Admin page</h2>
+    <span>your email: {{getEmail}}</span>
 
     <LogOut />
   </div>
@@ -13,6 +15,14 @@ export default {
   layout: "default",
   components: {
     LogOut
-  }
+  },
+  computed: {
+    getName() {
+      return (this.$store.state.user) ? this.$store.state.user.displayName : ''
+    },
+    getEmail() {
+      return (this.$store.state.user) ? this.$store.state.user.email : ''
+    }
+  }  
 }
 </script>
