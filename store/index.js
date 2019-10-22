@@ -1,9 +1,11 @@
 import Vuex from 'vuex'
 import axios from 'axios'
+import {auth, GoogleProvider} from '@/services/fireinit.js'
 
 const createStore = () => {
     return new Vuex.Store({
         state: {
+            user: null,
             toast: {
                 "succes": "Véhicule ajouté",
                 "text": "",
@@ -797,6 +799,10 @@ const createStore = () => {
             ]
         },
         mutations: {
+            setUser(state, payload) {
+                state.user = payload
+            },
+
             setCars(state, cars) {
                 state.loadedCars = cars
             },
@@ -810,6 +816,13 @@ const createStore = () => {
             }
         },
         actions: {
+            signInWithGoogle({ commit }) {
+                return new Promise((resolve, reject) => {
+                    auth.signInWithRedirect(GoogleProvider)
+                    resolve()
+                })
+            },
+
             increment(context) {
                 setTimeout(() => {
                     context.commit('incrementCar');

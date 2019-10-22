@@ -47,7 +47,8 @@ module.exports = {
    ** Plugins to load before mounting the App
    */
   plugins: [
-    '~/plugins/firebase.js'
+    '~/plugins/firebase.js',
+    '~/plugins/fireauth.js'
   ],
 
   /*
@@ -61,10 +62,6 @@ module.exports = {
   ],
 
   buildDir: '../functions/nuxt',
-
-  router: {
-    middleware: 'router-auth'
-  },
 
   /*
    ** Build configuration
@@ -90,5 +87,9 @@ module.exports = {
         'regenerator': true,
       }]
     ],
+  },
+
+  router: {
+    middleware: 'router-auth'
   }
 }

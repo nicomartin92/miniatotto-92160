@@ -65,6 +65,10 @@ export default {
   background: $colorWhite;
   width: 100%;
 
+  li {
+    margin: 0 10px;
+  }
+
   a {
     &.nuxt-link-exact-active {
       border-bottom: 2px solid $colorBlue;

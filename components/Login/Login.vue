@@ -13,12 +13,6 @@
 import firebase, {auth, GoogleProvider} from '@/services/fireinit.js'
 
 export default {
-  data () {
-    return {
-      formEmail: '',
-      formPassword: ''
-    }
-  },
   methods: {
 
     emailLogin () {
@@ -34,18 +28,18 @@ export default {
     },
 
     googleSignUp () {
-      console.warn('sign in');  
-      auth.signInWithRedirect(GoogleProvider);
-      /* this.$store.dispatch('signInWithGoogle').then(() => {
+      this.$store.dispatch('signInWithGoogle').then(() => {
         console.log('inside then statement on login');
       }).catch((e) => {
         console.log(e.message);
-      }) */
+      })
     },
 
-    signOut () {
-        console.warn('sign out');  
-        auth.signOut(GoogleProvider);
+    signOut () { 
+        auth.signOut().then(() => {
+          this.$store.commit('setUser', null);
+          this.$router.push('/');
+        }).catch(error => console.log(error));
     }
   }
 }
