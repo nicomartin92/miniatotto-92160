@@ -819,6 +819,7 @@ const createStore = () => {
             signInWithGoogle({ commit }) {
                 return new Promise((resolve, reject) => {
                     auth.signInWithRedirect(GoogleProvider)
+                    this.$router.push('/admin')
                     resolve()
                 })
             },

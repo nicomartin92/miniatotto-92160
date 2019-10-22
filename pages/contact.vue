@@ -118,7 +118,6 @@ export default {
     }),
 
     // FIRESTORE
-
     async writeToFirestore() {
       const ref = StoreDB.collection("test").doc("test");
       const document = {

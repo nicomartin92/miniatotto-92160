@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import {auth} from '@/services/fireinit.js'
+import {auth} from '@/services/fireinit.js';
 
 export default {
   methods: {
