@@ -30,6 +30,7 @@ module.exports = {
 
   styleResources: {
     scss: [
+      '@/assets/scss/zindex.scss',
       '@/assets/scss/variables.scss',
       '@/assets/scss/mixins.scss',
       '@assets/scss/atoms.scss',
@@ -46,7 +47,8 @@ module.exports = {
    ** Plugins to load before mounting the App
    */
   plugins: [
-    '~/plugins/firebase.js'
+    '~/plugins/firebase.js',
+    '~/plugins/fireauth.js'
   ],
 
   /*
@@ -85,5 +87,9 @@ module.exports = {
         'regenerator': true,
       }]
     ],
+  },
+
+  router: {
+    middleware: 'router-auth'
   }
 }

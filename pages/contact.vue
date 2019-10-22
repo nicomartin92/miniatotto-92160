@@ -38,13 +38,14 @@
         </div>
       </div>
     </div>
+
   </div>
 </template>
 
 <script>
 import axios from "axios";
 import { mapActions } from "vuex";
-import { fireDb } from "~/plugins/firebase.js";
+import { StoreDB } from "~/plugins/firebase.js";
 
 export default {
   layout: "contactlayout",
@@ -89,7 +90,7 @@ export default {
 
   // ASYNC DATA from FIRESTORE
   async asyncData({ app, params, error }) {
-    const ref = fireDb.collection("visibleContents").doc("visible");
+    const ref = StoreDB.collection("visibleContents").doc("visible");
     let snap;
     try {
       snap = await ref.get();
@@ -117,9 +118,8 @@ export default {
     }),
 
     // FIRESTORE
-
     async writeToFirestore() {
-      const ref = fireDb.collection("test").doc("test");
+      const ref = StoreDB.collection("test").doc("test");
       const document = {
         text: "This is a test message."
       };
@@ -129,12 +129,11 @@ export default {
         // TODO: error handling
         console.error(e);
       }
-      console.error("oki1");
       this.writeSuccessful = true;
     },
 
     async readFromFirestore() {
-      const ref = fireDb.collection("test").doc("test");
+      const ref = StoreDB.collection("test").doc("test");
       let snap;
       try {
         snap = await ref.get();
@@ -142,7 +141,6 @@ export default {
         // TODO: error handling
         console.error(e);
       }
-      console.error("oki2");
       this.text = snap.data().text;
       this.readSuccessful = true;
     }
