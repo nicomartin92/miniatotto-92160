@@ -10,7 +10,6 @@
 </template>
 
 <script>
-import axios from 'axios'
 import Nav from '~/components/Nav.vue'
 import Footer from '~/components/Footer.vue'
 

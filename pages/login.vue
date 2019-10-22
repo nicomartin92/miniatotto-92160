@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import LoginForm from "~/components/Login/Login.vue";
+import LoginForm from "~/components/Login/Login.vue"
 
 export default {
   layout: "default",
@@ -14,5 +14,5 @@ export default {
   components: {
     LoginForm
   }
-};
+}P
 </script>

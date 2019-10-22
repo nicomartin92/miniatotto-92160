@@ -5,7 +5,7 @@
 
     <div class="pdp">
       <h3>Modèle: {{ $route.params.id }}</h3>
-      <div class="textBlock" v-if="carsData[0]">
+      <div v-if="carsData[0]" class="textBlock">
         <div class="textBlock__text">
           <h2 class="textBlock__subLabel">
             {{ carsData[0].brandshop }}
@@ -23,7 +23,7 @@
         </div>
       </div>
 
-      <div class="imageContent" v-if="carsData[0]">
+      <div v-if="carsData[0]" class="imageContent">
         <div class="imageContent__item -medium">
           <img :src="carsData[0].views[0].image1" loading="lazy" :alt="carsData[0].model">   
         </div>
@@ -39,7 +39,7 @@
         </div>
       </div>
 
-      <div class="imageContent" v-if="carsData[0]">
+      <div v-if="carsData[0]" class="imageContent">
         <div class="imageContent__item -small">
           <div class="textContent">
             <h3 class="subTitle">
@@ -80,7 +80,7 @@
             </ul>  
           </div>
         </div>
-        <div class="imageContent__item -medium" v-if="carsData[0]">
+        <div v-if="carsData[0]" class="imageContent__item -medium">
           <img :src="carsData[0].views[0].image2" loading="lazy" :alt="carsData[0].model">   
         </div>
       </div>
@@ -89,7 +89,6 @@
 </template>
 
 <script>
-  import axios from 'axios'
   import Panelnav from '~/components/Panelnav/Panelnav.vue'
 
   export default {
@@ -123,7 +122,7 @@
       selectedCar () {
         return this.$store.getters.loadedCars.filter(car => {
           return car.reference === this.$route.params.id
-        });
+        })
       },
       carExists () {
         return this.carsData.length > 0
@@ -147,7 +146,7 @@
     middleware: 'search',
 
     created() {
-      this.carsData = this.selectedCar;
+      this.carsData = this.selectedCar
     },
 
     methods: {

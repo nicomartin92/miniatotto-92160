@@ -10,9 +10,8 @@
 </template>
 
 <script>
-import axios from "axios";
-import Panelnav from "~/components/Panelnav/Panelnav.vue";
-import Grid from "~/components/Grid.vue";
+import Panelnav from "~/components/Panelnav/Panelnav.vue"
+import Grid from "~/components/Grid.vue"
 
 export default {
   layout: "default",
@@ -22,10 +21,10 @@ export default {
   },
   computed: {
     carsFromStore() {
-      return this.$store.getters.loadedCars;
+      return this.$store.getters.loadedCars
     },
     preferenceFromStore() {
-      return this.$store.getters.preferenceCars;
+      return this.$store.getters.preferenceCars
     }
   },
   
@@ -38,5 +37,5 @@ export default {
     let { data } = await axios.get("http://localhost:3001/cars");
     store.commit("setCars", data);
   } */
-};
+}
 </script>

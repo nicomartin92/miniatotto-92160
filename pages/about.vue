@@ -7,5 +7,5 @@
 <script>
 export default {
   layout: "aboutLayout"
-};
+}
 </script>

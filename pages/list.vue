@@ -19,44 +19,50 @@
       </div>
       <div v-show="expanded" class="list__searchBar">
         <div class="list__search">
-          <h3 class="center">Chercher un modèle particulier: ({{ carsLength }} modèles au total)</h3>
+          <h3 class="center">
+            Chercher un modèle particulier: ({{ carsLength }} modèles au total)
+          </h3>
           <form class="center" @submit.prevent="submit()">
-            <input v-model="search" type="text" placeholder="Exemple: BMW..." autofocus />
+            <input v-model="search" type="text" placeholder="Exemple: BMW..." autofocus>
           </form>
           <div class="center">
             Véhicules actuellement disponibles:
             <label>
-              <input v-model="selectedCategory" type="radio" value="sell" />
-              <span>{{stockCars}}</span>
+              <input v-model="selectedCategory" type="radio" value="sell">
+              <span>{{ stockCars }}</span>
             </label>
-            <div v-show="visibleContent">{{countCar}}</div>
-            <button v-show="visibleContent" class="button" @click="addCar">Increment</button>
+            <div v-show="visibleContent">
+              {{ countCar }}
+            </div>
+            <button v-show="visibleContent" class="button" @click="addCar">
+              Increment
+            </button>
           </div>
         </div>
 
         <div class="list__filter">
           <label>
-            <input v-model="selectedCategory" type="radio" value="All" />
+            <input v-model="selectedCategory" type="radio" value="All">
             <span>Voir tous les modèles</span>
           </label>
           <label>
-            <input v-model="selectedCategory" type="radio" value="fr" />
+            <input v-model="selectedCategory" type="radio" value="fr">
             <span>France</span>
           </label>
           <label>
-            <input v-model="selectedCategory" type="radio" value="de" />
+            <input v-model="selectedCategory" type="radio" value="de">
             <span>Allemagne</span>
           </label>
           <label>
-            <input v-model="selectedCategory" type="radio" value="it" />
+            <input v-model="selectedCategory" type="radio" value="it">
             <span>Italienne</span>
           </label>
           <label>
-            <input v-model="selectedCategory" type="radio" value="1/18" />
+            <input v-model="selectedCategory" type="radio" value="1/18">
             <span>1/18</span>
           </label>
           <label>
-            <input v-model="selectedCategory" type="radio" value="1/12" />
+            <input v-model="selectedCategory" type="radio" value="1/12">
             <span>1/12</span>
           </label>
         </div>
@@ -75,9 +81,11 @@
               color: car.color
             }"
           >
-            <img :src="car.image" loading="lazy" :alt="car.model" />
+            <img :src="car.image" loading="lazy" :alt="car.model">
           </CallModal>
-          <div v-if="car.new === true" class="list__new">Nouveauté</div>
+          <div v-if="car.new === true" class="list__new">
+            Nouveauté
+          </div>
           <div>{{ car.brand }} {{ car.model }} {{ car.version }}</div>
           <div>
             <span class="squareColor" :style="{ background: car.color }" />
@@ -86,19 +94,23 @@
           <div>Disponibilité: {{ car.available }}</div>
           <div>Prix: {{ car.price }}</div>
           <div>Stock: {{ car.stock }}</div>
-          <nuxt-link class="button-like" :to="`/cars/${car.reference}`">{{ car.model }} Profil</nuxt-link>
-          <button v-if="car.stock > 0" class="button-like">Add to bag</button>
+          <nuxt-link class="button-like" :to="`/cars/${car.reference}`">
+            {{ car.model }} Profil
+          </nuxt-link>
+          <button v-if="car.stock > 0" class="button-like">
+            Add to bag
+          </button>
         </div>
       </li>
     </ul>
   </div>
 </template>
 <script>
-import axios from "axios";
+import axios from "axios"
 
-import Modal from "~/components/modal/ModalContent.vue";
-import Panelnav from "~/components/Panelnav/Panelnav.vue";
-import CallModal from "~/components/modal/CallModal.vue";
+import Modal from "~/components/modal/ModalContent.vue"
+import Panelnav from "~/components/Panelnav/Panelnav.vue"
+import CallModal from "~/components/modal/CallModal.vue"
 
 export default {
   layout: "modelLayout",
@@ -115,7 +127,7 @@ export default {
       selectedCategory: "All",
       expanded: false,
       activeFilter: false
-    };
+    }
   },
   head() {
     return {
@@ -127,45 +139,45 @@ export default {
           content: "Miniatauto - voir les catégories"
         }
       ]
-    };
+    }
   },
   transition: "bounce",
   computed: {
     carsFromStore() {
-      return this.$store.getters.loadedCars;
+      return this.$store.getters.loadedCars
     },
     filteredCars() {
-      let vm = this;
-      let category = vm.selectedCategory;
+      let vm = this
+      let category = vm.selectedCategory
 
       switch (category) {
         case "fr":
-          return this.$store.getters.frenchCars;
+          return this.$store.getters.frenchCars
         case "de":
-          return this.$store.getters.germanCars;
+          return this.$store.getters.germanCars
         case "it":
-          return this.$store.getters.italianCars;
+          return this.$store.getters.italianCars
         case "1/18":
-          return this.$store.getters.sizeCars18;
+          return this.$store.getters.sizeCars18
         case "1/12":
-          return this.$store.getters.sizeCars12;
+          return this.$store.getters.sizeCars12
         case "sell":
-          return this.$store.getters.stockCars;
+          return this.$store.getters.stockCars
         default:
-          return this.$store.getters.loadedCars;
+          return this.$store.getters.loadedCars
       }
     },
     filteredList() {
       //  return this.cars.filter(car => {
       return this.$store.getters.loadedCars.filter(car => {
-        return car.brand.toLowerCase().includes(this.search.toLowerCase());
-      });
+        return car.brand.toLowerCase().includes(this.search.toLowerCase())
+      })
     },
     carsLength() {
-      return this.$store.getters.loadedCars.length;
+      return this.$store.getters.loadedCars.length
     },
     stockCars() {
-      return this.$store.getters.stockCars.length;
+      return this.$store.getters.stockCars.length
     },
     countCar() {
       return this.$store.getters.countCar
@@ -187,54 +199,54 @@ export default {
     }, */
 
   mounted() {
-    var elem = document.querySelectorAll(".panelIntro");
+    var elem = document.querySelectorAll(".panelIntro")
 
     window.addEventListener(
       "scroll",
       () => {
         elem.forEach(item => {
           if (this.inViewPort(item)) {
-            item.classList.add("animate");
+            item.classList.add("animate")
           } else {
-            item.classList.remove("animate");
+            item.classList.remove("animate")
           }
-        });
+        })
       },
       false
-    );
+    )
   },
   methods: {
     submit() {
-      this.$router.push(`results/${this.search}`);
+      this.$router.push(`results/${this.search}`)
     },
     inViewPort(elem) {
-      const scroll = window.scrollY || window.pageYOffset;
-      const boundsTop = elem.getBoundingClientRect().top + scroll;
+      const scroll = window.scrollY || window.pageYOffset
+      const boundsTop = elem.getBoundingClientRect().top + scroll
 
       const viewport = {
         top: scroll,
         bottom: scroll + window.innerHeight
-      };
+      }
 
       const bounds = {
         top: boundsTop,
         bottom: boundsTop + elem.clientHeight
-      };
+      }
 
       return (
         (bounds.bottom >= viewport.top && bounds.bottom <= viewport.bottom) ||
         (bounds.top <= viewport.bottom && bounds.top >= viewport.top)
-      );
+      )
     },
     expand() {
-      this.expanded = !this.expanded;
-      this.activeFilter = !this.activeFilter;
+      this.expanded = !this.expanded
+      this.activeFilter = !this.activeFilter
     },
     addCar() {
-      this.$store.commit('incrementCar'); 
+      this.$store.commit('incrementCar') 
     }
   }
-};
+}
 </script>
 
 <style lang="scss">

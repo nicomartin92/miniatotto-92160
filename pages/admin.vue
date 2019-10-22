@@ -7,12 +7,12 @@
 </template>
 
 <script>
-import LogOut from "~/components/Login/Logout.vue";
+import LogOut from "~/components/Login/Logout.vue"
 
 export default {
   layout: "default",
   components: {
     LogOut
   }
-};
+}
 </script>

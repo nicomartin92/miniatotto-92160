@@ -1,11 +1,11 @@
 export default function ({ store, redirect, route }) {
     if(isLogin(store) && route.name == 'login') {
-        console.warn('redirect admin');
+        console.warn('redirect admin')
         redirect('/admin')
     }
 
     if(!isLogin(store) == null && isAdminRoute(route)) {
-        console.warn('redirect login');
+        console.warn('redirect login')
         redirect('/login')
     }
 }

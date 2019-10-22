@@ -9,10 +9,10 @@ var config = {
     projectId: "nuxtcars",
     storageBucket: "nuxtcars.appspot.com",
     measurementId: "G-2S4P3MKX1G"
-};
+}
 
 !firebase.apps.length ? firebase.initializeApp(config) : ''
-export const GoogleProvider = new firebase.auth.GoogleAuthProvider();
-export const auth = firebase.auth();
-export const DB = firebase.database();
+export const GoogleProvider = new firebase.auth.GoogleAuthProvider()
+export const auth = firebase.auth()
+export const DB = firebase.database()
 export default firebase

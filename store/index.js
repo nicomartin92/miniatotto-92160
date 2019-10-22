@@ -812,7 +812,7 @@ const createStore = () => {
             },
 
             addCountry(state, name) {
-                state.countries.push(name);
+                state.countries.push(name)
             }
         },
         actions: {
@@ -826,18 +826,18 @@ const createStore = () => {
 
             increment(context) {
                 setTimeout(() => {
-                    context.commit('incrementCar');
-                    console.warn('increment car');
-                }, 1000);
+                    context.commit('incrementCar')
+                    console.warn('increment car')
+                }, 1000)
             },
 
             getCountry({ commit }, name) {
                 axios.get('https://restcountries.eu/rest/v2/name/' + name)
                     .then(function (response) {
                         if (response.data[0]) {
-                            commit('addCountry', response.data[0].name);
+                            commit('addCountry', response.data[0].name)
                         }
-                    });
+                    })
             },
 
             /* async fetch ({ store, params }) {
@@ -906,4 +906,4 @@ const createStore = () => {
     })
 }
 
-export default createStore;
+export default createStore

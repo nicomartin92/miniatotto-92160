@@ -1,14 +1,18 @@
 <template>
   <div>
-    <h2 class="title">Sign In with Google</h2>
+    <h2 class="title">
+      Sign In with Google
+    </h2>
     <div class="signIn">
-      <button class="button" primary @click="googleSignUp">Google Sign In</button>
+      <button class="button" primary @click="googleSignUp">
+        Google Sign In
+      </button>
     </div>
   </div>
 </template>
 
 <script>
-import firebase, { auth, GoogleProvider } from "@/services/fireinit.js";
+import firebase, { auth, GoogleProvider } from "@/services/fireinit.js"
 
 export default {
   methods: {
@@ -19,36 +23,36 @@ export default {
           password: this.formPassword
         })
         .then(() => {
-          this.formEmail = "";
-          this.formPassword = "";
+          this.formEmail = ""
+          this.formPassword = ""
         })
         .catch(e => {
-          console.log(e.message);
-        });
+          console.log(e.message)
+        })
     },
 
     googleSignUp() {
       this.$store
         .dispatch("signInWithGoogle")
         .then(() => {
-          console.log("inside then statement on login");
+          console.log("inside then statement on login")
         })
         .catch(e => {
-          console.log(e.message);
-        });
+          console.log(e.message)
+        })
     },
 
     signOut() {
       auth
         .signOut()
         .then(() => {
-          this.$store.commit("setUser", null);
-          this.$router.push("/");
+          this.$store.commit("setUser", null)
+          this.$router.push("/")
         })
-        .catch(error => console.log(error));
+        .catch(error => console.log(error))
     }
   }
-};
+}
 </script>
 
 <style lang="css">

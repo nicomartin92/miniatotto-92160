@@ -4,8 +4,12 @@
     <Panelnav :initialdata="carsFromStore" />
 
     <div class="headLine">
-      <h3 class="headLine__subTitle">La passion des minatures</h3>
-      <h1 class="headLine__title">Miniatotto</h1>
+      <h3 class="headLine__subTitle">
+        La passion des minatures
+      </h3>
+      <h1 class="headLine__title">
+        Miniatotto
+      </h1>
     </div>
 
     <!-- 
@@ -57,17 +61,19 @@
     <div
       v-for="(result, index) in allCars"
       :key="index"
-    >{{ result.brand }} {{ result.model }} {{ result.version }}</div>
+    >
+      {{ result.brand }} {{ result.model }} {{ result.version }}
+    </div>
   </div>
 </template>
 
 <script>
-import axios from "axios";
-import panelIntro from "~/components/PanelIntro.vue";
-import Panelnav from "~/components/Panelnav/Panelnav.vue";
-import Chronos from "~/components/Chronos.vue";
-import imagecompare from "~/components/ImageCompare.vue";
-import slider from "~/components/Slider.vue";
+import axios from "axios"
+import panelIntro from "~/components/PanelIntro.vue"
+import Panelnav from "~/components/Panelnav/Panelnav.vue"
+import Chronos from "~/components/Chronos.vue"
+import imagecompare from "~/components/ImageCompare.vue"
+import slider from "~/components/Slider.vue"
 
 export default {
   layout: "default",
@@ -107,7 +113,7 @@ export default {
       carOption: "Peugeot",
       ascDirection: "asc",
       descDirection: "desc"
-    };
+    }
   },
   head() {
     return {
@@ -119,19 +125,19 @@ export default {
           content: "Miniatauto boutique en ligne"
         }
       ]
-    };
+    }
   },
   computed: {
     carsFromStore() {
-      return this.$store.getters.loadedCars;
+      return this.$store.getters.loadedCars
     },
     germanCars() {
-      return this.$store.getters.germanCars;
+      return this.$store.getters.germanCars
     },
     allCars() {
       return this.$store.getters.loadedCars.filter(car => {
-        return car.brand === this.carOption;
-      });
+        return car.brand === this.carOption
+      })
     }
   },
 
@@ -146,55 +152,55 @@ export default {
   }, */
 
   mounted() {
-    var elem = document.querySelectorAll(".panelIntro");
+    var elem = document.querySelectorAll(".panelIntro")
 
-    this.switchAnimation(elem);
+    this.switchAnimation(elem)
 
     window.addEventListener(
       "scroll",
       () => {
-        this.switchAnimation(elem);
+        this.switchAnimation(elem)
       },
       false
-    );
+    )
   },
   methods: {
     inViewPort(elem) {
-      const scroll = window.scrollY || window.pageYOffset;
-      const boundsTop = elem.getBoundingClientRect().top + scroll;
+      const scroll = window.scrollY || window.pageYOffset
+      const boundsTop = elem.getBoundingClientRect().top + scroll
 
       const viewport = {
         top: scroll,
         bottom: scroll + window.innerHeight
-      };
+      }
 
       const bounds = {
         top: boundsTop,
         bottom: boundsTop + elem.clientHeight
-      };
+      }
 
       return (
         (bounds.bottom >= viewport.top && bounds.bottom <= viewport.bottom) ||
         (bounds.top <= viewport.bottom && bounds.top >= viewport.top)
-      );
+      )
     },
     switchAnimation(elem) {
       elem.forEach(item => {
         if (this.inViewPort(item)) {
-          item.classList.add("animate");
+          item.classList.add("animate")
         } else {
-          item.classList.remove("animate");
+          item.classList.remove("animate")
         }
-      });
+      })
     },
     increase() {
-      this.$store.state.counter++;
+      this.$store.state.counter++
     },
     decrease() {
-      this.$store.state.counter--;
+      this.$store.state.counter--
     }
   }
-};
+}
 </script>
 
 <!-- 

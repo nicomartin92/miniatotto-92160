@@ -37,35 +37,35 @@
 </template>
 
 <script>
-import { StoreDB } from "~/plugins/firebase.js";
-import Panelcall from '~/components/Panelnav/Panelcall.vue';
+import { StoreDB } from "~/plugins/firebase.js"
+import Panelcall from '~/components/Panelnav/Panelcall.vue'
 
 export default {
+
+  components: {
+    Panelcall
+  },
   data() {
     return {
       isContentFirestore: true
     }
   },
 
-  components: {
-    Panelcall
-  },
-
   // ASYNC DATA from FIRESTORE
   async asyncData({ app, params, error }) {
-    const ref = StoreDB.collection("visibleContents").doc("visible");
-    let snap;
+    const ref = StoreDB.collection("visibleContents").doc("visible")
+    let snap
     try {
-      snap = await ref.get();
-      console.warn('here');
+      snap = await ref.get()
+      console.warn('here')
     } catch (e) {
       // TODO: error handling
-      console.error(e);
-      this.isContentFirestore = false;
+      console.error(e)
+      this.isContentFirestore = false
     }
     return {
       isContentFirestore: snap.data().value
-    };
+    }
   }
 }
 </script>
