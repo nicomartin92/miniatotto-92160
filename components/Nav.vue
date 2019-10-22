@@ -28,7 +28,7 @@
         Contact
       </nuxt-link>
     </li>
-    <li>
+    <li v-show="isContentFirestore">
       <nuxt-link to="/login">
         Login
       </nuxt-link>
@@ -40,6 +40,11 @@
 import Panelcall from '~/components/Panelnav/Panelcall.vue'
 
 export default {
+  data() {
+    return {
+      isContentFirestore: true
+    }
+  },
   components: {
     Panelcall
   }

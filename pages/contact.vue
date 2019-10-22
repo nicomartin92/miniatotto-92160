@@ -45,7 +45,7 @@
 <script>
 import axios from "axios";
 import { mapActions } from "vuex";
-// import { fireDb } from "~/plugins/firebase.js";
+import { fireDb } from "~/plugins/firebase.js";
 
 export default {
   layout: "contactlayout",

@@ -50,7 +50,7 @@
     right: 0px;
     height: 100%;
     width: 0px;
-    z-index: -1;
+    z-index: map-get($z-index, negatifIndex);
     content: '';
     color: $color1;
     background: $color1;
@@ -152,3 +152,92 @@
   background: $colorBg;
   color: $color;
 }
+
+@mixin skew($fontSize, $colorBg) {
+  background: $colorBg;
+  transform: skewX(-18deg);
+  display: inline-block;
+  padding: 2px $fontSize 4px;
+  height: auto;
+  color: $colorWhite;
+  font-size: $fontSize;
+}
+
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+  &:after {
+    display: block;
+    content: "";
+    width: 100%;
+    padding-bottom: ($height / $width) * 100%;
+  }
+  .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+}
+
+@mixin fadeIn($dir,$offset,$timing,$cubic,) {
+
+  opacity: 0;
+  transition: transform $timing $timing/2 $cubic, opacity $timing $timing/2 $cubic;
+  &.fadeIn {
+    opacity: 1;
+  }
+
+  @if ($dir == 'left') {
+    transform: translate3d(-$offset, 0, 0);
+    &.fadeIn {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  @elseif ($dir == 'bottom') {
+    transform: translate3d(0, $offset, 0);
+    &.fadeIn {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  @elseif ($dir == 'top') {
+    transform: translate3d(0, -$offset, 0);
+    &.fadeIn {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  @elseif ($dir == 'right') {
+    transform: translate3d($offset, 0, 0);
+    &.fadeIn {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+}
+
+// .my-item { @include fadeIn('left', 20px, .5s, linear); }
+
+@mixin loopDelay($n,$delay,) {
+
+  @for $i from 1 through $n {
+    &:nth-child(#{$i}) {
+      transition-delay: $i * $delay * 1s;
+    }  
+  }
+}
+
+// .items { @include loopDelay(4, .1s); }
+
+@mixin loopDelayRow($delay,$item-per-row,) {
+
+  @for $i from 1 through $item-per-row {
+    $end: #{$item-per-row}n - ($item-per-row - $i);
+    &:nth-child(#{$end}) {
+      transition-delay: $i * $delay * 1s;
+    }
+  }
+}
+
+// .items { @include loopDelay(.1s, 4); }

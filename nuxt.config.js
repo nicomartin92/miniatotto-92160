@@ -30,6 +30,7 @@ module.exports = {
 
   styleResources: {
     scss: [
+      '@/assets/scss/zindex.scss',
       '@/assets/scss/variables.scss',
       '@/assets/scss/mixins.scss',
       '@assets/scss/atoms.scss',

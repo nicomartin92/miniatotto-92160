@@ -1,7 +1,6 @@
 <template>
   <div>
     <h1>Login</h1>
-
     <LoginForm />
   </div>
 </template>
@@ -10,7 +9,7 @@
 import LoginForm from "~/components/Login/Login.vue";
 
 export default {
-  layout: "aboutLayout",
+  layout: "default",
 
   components: {
     LoginForm

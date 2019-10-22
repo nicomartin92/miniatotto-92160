@@ -11,3 +11,19 @@ $width768: 768px;
 $width1024: 1024px;
 $width1440: 1440px;
 $width1600: 1600px;
+
+*, :after, :before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.sticky {
+    position: sticky;
+    z-index: map-get($z-index, stickyHeader);
+}
+
+.squareColor {
+    display: inline-block;
+    width: 30px;
+    height: 14px;
+}
