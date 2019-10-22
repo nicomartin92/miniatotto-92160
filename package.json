@@ -24,6 +24,7 @@
     "nuxt": "2.6.3",
     "nuxt-sass-resources-loader": "^2.0.5",
     "nuxt-svg-sprite-module": "^1.0.5",
+    "stylelint-config-standard": "^19.0.0",
     "vuetify": "^1.5.5"
   },
   "devDependencies": {
