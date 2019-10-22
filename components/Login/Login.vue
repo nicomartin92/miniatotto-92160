@@ -3,7 +3,6 @@
     <h2 class="title">Sign In with Google</h2>
     <div class="signIn">
       <button class="button" primary @click="googleSignUp">Google Sign In</button>
-      <button class="button" @click="signOut">Sign out</button>
     </div>
   </div>
 </template>
