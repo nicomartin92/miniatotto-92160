@@ -14,5 +14,5 @@ export default {
   components: {
     LoginForm
   }
-}P
+}
 </script>
