@@ -6,6 +6,7 @@ const createStore = () => {
     return new Vuex.Store({
         state: {
             user: null,
+            overlay: false,
             toast: {
                 "succes": "Véhicule ajouté",
                 "text": "",
@@ -796,7 +797,8 @@ const createStore = () => {
                     "stock": 1,
                     "preference": 24
                 }
-            ]
+            ],
+            newCars: []
         },
         mutations: {
             setUser(state, payload) {
@@ -807,12 +809,24 @@ const createStore = () => {
                 state.loadedCars = cars
             },
 
+            addCar(state, car) {
+                state.loadedCars.push(car)
+            },
+
             incrementCar(state) {
                 state.countCar++
             },
 
             addCountry(state, name) {
                 state.countries.push(name)
+            },
+
+            newCars(state, cars) {
+                state.newCars = cars
+            },
+
+            overlay(state, value) {
+                state.overlay = value
             }
         },
         actions: {
@@ -839,6 +853,18 @@ const createStore = () => {
                         }
                     })
             },
+
+            loadCars({ commit }) {
+                commit('overlay', true);
+                axios.get('http://localhost:3001/cars')
+                    .then((response) => {
+                        if (response.data[0]) {
+                            commit('newCars', response.data[0]);
+                            commit('overlay', false);
+                        }
+                    })
+
+            }
 
             /* async fetch ({ store, params }) {
               let { data } = await axios.get('../api/cars')

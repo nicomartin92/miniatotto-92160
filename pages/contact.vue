@@ -1,5 +1,7 @@
 <template>
   <div>
+
+    <test />
     <div v-show="isContentFirestore" class="form">
       <h1>Contact page</h1>
       <div class="result" />
@@ -44,6 +46,7 @@
 <script>
 import { mapActions } from "vuex"
 import { StoreDB } from "~/plugins/firebase.js"
+import Test from "~/components/test.vue"
 
 export default {
   layout: "contactlayout",
@@ -59,6 +62,10 @@ export default {
       readSuccessful: false,
       text: ""
     }
+  },
+
+  components: {
+    Test
   },
 
   computed: {
