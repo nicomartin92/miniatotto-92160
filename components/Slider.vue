@@ -23,7 +23,7 @@
             class="slider__item"
             :class="{ '-animated': index === activeSlide-1 }"
             :style="{ width: `${browserWidth}px` }"
-          >
+        >
           <div class="slider__title" :class="animation">
             {{ slide.brand }} {{ slide.model }} <span class="skew">{{ slide.version }}</span>
           </div>

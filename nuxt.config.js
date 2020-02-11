@@ -30,6 +30,7 @@ module.exports = {
 
   styleResources: {
     scss: [
+      '@/assets/scss/zindex.scss',
       '@/assets/scss/variables.scss',
       '@/assets/scss/mixins.scss',
       '@assets/scss/atoms.scss',
@@ -45,7 +46,10 @@ module.exports = {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: [
+    '~/plugins/firebase.js',
+    '~/plugins/fireauth.js'
+  ],
 
   /*
    ** Nuxt.js modules
@@ -57,6 +61,8 @@ module.exports = {
     }]
   ],
 
+  buildDir: '../functions/nuxt',
+
   /*
    ** Build configuration
    */
@@ -65,5 +71,25 @@ module.exports = {
      ** You can extend webpack config here
      */
     // extend(config, ctx) {}
+    publicPath: '/public/',
+    vendor: ['axios'],
+    extractCSS: true
+  },
+
+  babel: {
+    presets: [
+      'es2015',
+      'stage-0'
+    ],
+    plugins: [
+      ['transform-runtime', {
+        'polyfill': true,
+        'regenerator': true,
+      }]
+    ],
+  },
+
+  router: {
+    middleware: 'router-auth'
   }
 }

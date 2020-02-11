@@ -2,19 +2,21 @@
   <div>
     <ul>
       <li v-for="todo in todos" :key="todo.id">
-        <input type="checkbox" :checked="todo.done" @change="toggle(todo)" />
+        <input type="checkbox" :checked="todo.done" @change="toggle(todo)">
         <span :class="{ done: todo.done }">{{ todo.text }}</span>
       </li>
       <li>
-        <input placeholder="What needs to be done?" @keyup.enter="addTodo" />
+        <input placeholder="What needs to be done?" @keyup.enter="addTodo">
       </li>
-       <button @click="$store.commit('increment')"> add counter{{ $store.state.counter }}</button>
+      <button @click="$store.commit('increment')">
+        add counter{{ $store.state.counter }}
+      </button>
     </ul>
   </div>
 </template>
 
 <script>
-import { mapMutations } from "vuex";
+import { mapMutations } from "vuex"
 
 export default {
   computed: {
@@ -24,14 +26,14 @@ export default {
   },
   methods: {
     addTodo(e) {
-      this.$store.commit("todos/add", e.target.value);
-      e.target.value = "";
+      this.$store.commit("todos/add", e.target.value)
+      e.target.value = ""
     },
     ...mapMutations({
       toggle: "todos/toggle"
     })
   }
-};
+}
 </script>
 
 <style>

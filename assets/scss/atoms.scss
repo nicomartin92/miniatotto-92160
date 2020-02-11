@@ -41,13 +41,7 @@
 }
 
 .skew {
-    background: $colorBlack;
-    transform: skewX(-18deg);
-    display: inline-block;
-    padding: 2px 20px;
-    height: auto;
-    color: white;
-    font-size: 20px;
+    @include skew(20px, $colorBlack);
 }
 
 button {
@@ -61,4 +55,77 @@ button {
     height: 30px;
     fill: $colorBlack;
     stroke: $colorBlack;
+}
+
+.button {
+    @include button($colorBlack, $colorWhite);
+}
+
+input {
+    margin: 20px 0;
+    min-height: 40px;
+    padding: 5px 15px;
+}
+
+a {
+    text-decoration: none;
+    color: $colorBlack;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.inputSearch {
+    border: none;
+    font-size: 25px;
+    border-bottom: 1px solid $colorBlack;
+    outline: none;
+
+    @include medium {
+        font-size: 40px;
+    }
+}
+
+.overlay {
+    position: fixed;
+    left: 50vw;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: $colorGray04;
+    opacity: .5;
+    left: 120vw;
+    transition: right 1s cubic-bezier(.19,1,.22,1),left 1s cubic-bezier(.19,1,.22,1);
+
+    &.expanded {
+        left: 120vw;
+
+        @include large {
+            left: 50vw;
+        }
+    }
+}
+
+svg {
+    width: 15px;
+    height: 15px;
+}
+
+.svg-container {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%;
+    vertical-align: middle;
+    overflow: hidden;
+}
+
+.arrow {
+    width: 30px;
+    height: 30px;
+
+    &.left {
+        transform: rotate(180deg);
+    }
 }

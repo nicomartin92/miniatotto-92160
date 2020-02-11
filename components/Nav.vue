@@ -28,15 +28,44 @@
         Contact
       </nuxt-link>
     </li>
+    <li v-show="isContentFirestore">
+      <nuxt-link to="/login">
+        Login
+      </nuxt-link>
+    </li>
   </div>
 </template>
 
 <script>
+import { StoreDB } from "~/plugins/firebase.js"
 import Panelcall from '~/components/Panelnav/Panelcall.vue'
 
 export default {
+
   components: {
     Panelcall
+  },
+  data() {
+    return {
+      isContentFirestore: true
+    }
+  },
+
+  // ASYNC DATA from FIRESTORE
+  async asyncData({ app, params, error }) {
+    const ref = StoreDB.collection("visibleContents").doc("visible")
+    let snap
+    try {
+      snap = await ref.get()
+      console.warn('here')
+    } catch (e) {
+      // TODO: error handling
+      console.error(e)
+      this.isContentFirestore = false
+    }
+    return {
+      isContentFirestore: snap.data().value
+    }
   }
 }
 </script>
@@ -54,6 +83,10 @@ export default {
   z-index: 3;
   background: $colorWhite;
   width: 100%;
+
+  li {
+    margin: 0 10px;
+  }
 
   a {
     &.nuxt-link-exact-active {

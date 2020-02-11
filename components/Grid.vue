@@ -1,6 +1,6 @@
 <template>
   <ul class="grid">
-    <li v-for="(car, index) in initialData" :key="car.id" class="grid__item">
+    <li v-for="car in initialData" :key="car.id" class="grid__item">
       <div class="grid__preference">
         {{ car.preference }}
       </div>
